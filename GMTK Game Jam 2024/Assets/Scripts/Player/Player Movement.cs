@@ -104,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Jump Settings")]
     [SerializeField] private float coyoteTime = 0.2f; // Duration of grace period for jumping after leaving ground
-    [SerializeField] private float jumpHeight = 12; // Height of the jump
+    [SerializeField] private float jumpSpeed = 12; // Height of the jump
     [SerializeField] private float fullJumpDuration = 0.2f; // Duration of the jump
     [SerializeField] private float fallSpeed = 7; // Speed of falling
     [SerializeField] private float jumpVelocityFalloff = 8; // Rate of decrease in jump velocity
@@ -120,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
         // Coyote time jump (first jump off the ground)
         if (Input.GetButtonDown("Jump") && (isGrounded || elapsedTimeSinceLeftGround < coyoteTime) && !hasJumped)
         {       
-            rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+            rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
             hasJumped = true;
         }
 
@@ -128,7 +128,7 @@ public class PlayerMovement : MonoBehaviour
         // Mid air jumps - if the player is not grounded and has jumps remaining they can jump again
         if (Input.GetButtonDown("Jump") && !isGrounded && jumpsRemaining > 0)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+            rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
             jumpsRemaining--;
         }
 

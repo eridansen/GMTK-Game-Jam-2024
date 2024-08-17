@@ -269,6 +269,9 @@ MonoBehaviour:
   jumpHeight: 12
   fallSpeed: 7
   jumpVelocityFalloff: 8
+  dashPower: 20
+  dashDistance: 0.2
+  dashCooldown: 1
 --- !u!212 &283097232
 SpriteRenderer:
   m_ObjectHideFlags: 0

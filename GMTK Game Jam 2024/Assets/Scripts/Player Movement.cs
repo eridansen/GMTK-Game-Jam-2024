@@ -53,11 +53,12 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float moveSpeed = 10; // Speed of regular walking
     [SerializeField] private float sprintSpeed = 13; // Speed of sprinting
+    private float horizontal; // Horizontal input from player
 
     // Handle player walking
     private void Walking()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
+        horizontal = Input.GetAxisRaw("Horizontal");
 
         // Adjust velocity based on sprint input
         if (Input.GetButton("Sprint"))

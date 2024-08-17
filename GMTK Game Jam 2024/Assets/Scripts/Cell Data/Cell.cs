@@ -7,7 +7,31 @@ public class Cell : MonoBehaviour
     private SpriteRenderer _sr;
     public CellData cellData;
     public float checkRadius = 2f;
+    public bool IsInfected;
 
+    public double Attack
+    {
+        get
+        {
+            return cellData.Attack;
+        }
+    }
+
+    public double Defense
+    {
+        get
+        {
+            return cellData.Defense;
+        }
+    }
+
+    public double Mass
+    {
+        get
+        {
+            return cellData.Mass;
+        }
+    }
     private void Awake()
     {
         _sr = GetComponent<SpriteRenderer>();
@@ -32,29 +56,39 @@ public class Cell : MonoBehaviour
             default:
                 break;
         }
+        if (IsInfected)
+        {
+            _sr.color = Color.red;
+        }
     }
-
     private void Update()
     {
-        Collider[] overlappingObjects = Physics.OverlapSphere(transform.position, checkRadius);
+        AttackOtherCells();
+    }
 
+    private void AttackOtherCells()
+    {
+        Collider2D[] overlappingObjects = Physics2D.OverlapCircleAll(transform.position, checkRadius);
+        Debug.Log(overlappingObjects.Length);
         if (overlappingObjects.Length > 0)
         {
             // There are overlapping objects
-            foreach (Collider other in overlappingObjects)
+            foreach (Collider2D other in overlappingObjects)
             {
                 if (other.gameObject != gameObject) // Avoid self-detection
                 {
-                    // Do something when objects overlap
-                    var neighbour = other.GetComponent<Cell>().cellData;
-                    if (neighbour.Defense > 0)
-                        neighbour.Defense -= cellData.Attack * 0.1;
-
+                    Cell cell = other.gameObject.GetComponent<Cell>();
+                    Debug.Log(cell.Defense);
+                    if (IsInfected != cell.IsInfected && Attack > cell.Defense)
+                    {
+                        cell.IsInfected = !cell.IsInfected;
+                    }
                 }
             }
         }
-
     }
+
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;

@@ -6,14 +6,15 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
-    
+    private PlayerCombat playerCombat;
 
     // Start is called before the first frame update
     private void Awake()
     {
         // Get the Rigidbody2D component attached to the GameObject
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponentInChildren<Animator>();
+        animator = GetComponent<Animator>();
+        playerCombat = GetComponent<PlayerCombat>();
     }
     // Update is called once per frame
     private void Update()
@@ -21,6 +22,11 @@ public class PlayerMovement : MonoBehaviour
         // Handle player movement functions
         Grounded();
         Animations();
+        if(UninterruptibleAnim) {
+            rb.velocity = rb.velocity += Vector2.up * (fallSpeed * Physics.gravity.y * Time.deltaTime);
+            if(isGrounded) rb.velocity = Vector2.zero;
+            return;
+        }
         if(isDashing) return;
         WallJumping();
         if(isWallJumping) return;
@@ -36,7 +42,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck; // The transform representing the position to check for ground
     [SerializeField] private float groundCheckRadius = 0.2f; // The radius for ground check
     private bool isGrounded; // Flag indicating if the player is grounded
-    private readonly Collider2D[] ground = new Collider2D[1]; // Array to store colliders of objects on ground
 
     // Check if the player is grounded
     private void Grounded()
@@ -131,18 +136,17 @@ public class PlayerMovement : MonoBehaviour
         if (jumpBufferCounter > 0 && coyoteTimeCounter > 0)
         {       
             rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
-            ChangeAnimationState(PLAYER_JUMP_START);
         }
 
         if(Input.GetButtonUp("Jump")){
             coyoteTimeCounter = 0; // Reset coyote time counter if the player releases the jump button to stop accidental double jumps
         }
-
+        
         // Apply gravity and falloff to jump velocity
         if (rb.velocity.y < jumpVelocityFalloff || rb.velocity.y > 0 && !Input.GetButton("Jump"))
         {
             rb.velocity += Vector2.up * (fallSpeed * Physics.gravity.y * Time.deltaTime);
-            ChangeAnimationState(PLAYER_FALL);
+        
         }
 
 
@@ -254,6 +258,8 @@ public class PlayerMovement : MonoBehaviour
         float originalGravity = rb.gravityScale; // Store the original gravity scale of the player
         rb.gravityScale = 0; // Set gravity to 0 so the player doesn't fall during the dash
         rb.velocity = new Vector2(transform.localScale.x * dashPower, 0f); // Apply the dash power to the player
+        if(!UninterruptibleAnim) ChangeAnimationState(PLAYER_DASH);
+        
         yield return new WaitForSeconds(dashDuration); // Wait for the dash duration to end
 
         rb.gravityScale = originalGravity; // Reset the gravity scale
@@ -267,39 +273,64 @@ public class PlayerMovement : MonoBehaviour
     #region Animation
 
     //animation states    
-    const string PLAYER_WALK = "Walk";
-    const string PLAYER_RUN = "Run";
-    const string PLAYER_IDLE = "Still";
-    const string PLAYER_JUMP_START = "AirUp";
-    const string PLAYER_RISE = "AirMid";
-    const string PLAYER_FALL = "AirDown";
-    const string PLAYER_DASH = "Dash";
+    const string PLAYER_WALK = "Player Walk";
+    const string PLAYER_RUN = "Player Run";
+    const string PLAYER_IDLE = "Player Idle";
+    const string PLAYER_RISE = "Player Jump Rising";
+    const string PLAYER_FALL = "Player Jump Falling";
+    const string PLAYER_DASH = "Player Dash";
+    const string PLAYER_ATTACK= "Player Attack";
 
 
     private Animator animator;
     private string currentState;
-    
+    bool UninterruptibleAnim = false;
 
     private void Animations(){
-        if(isDashing){
-            ChangeAnimationState(PLAYER_DASH);
+        if(playerCombat.isAttacking){
+            UninterruptibleAnim = true;
             return;
+        } else {
+            UninterruptibleAnim = false;
         }
-        
-        if(rb.velocity.x != 0){
+        GroundAnims();      
+        AirAnims();
+
+    }
+
+    private void GroundAnims(){
+        if(!isGrounded) return;
+        if(isDashing) return;
+
+        if(horizontal != 0){
              if(Input.GetButton("Sprint")){
                 ChangeAnimationState(PLAYER_RUN);
             } else {
                 ChangeAnimationState(PLAYER_WALK);
             }
         } else{
+            Debug.Log("Idle");
             ChangeAnimationState(PLAYER_IDLE);
         }
     }
-    public void JumpAnimComplete()
-    {
-        ChangeAnimationState(PLAYER_RISE);
+
+    private void AirAnims(){
+        if(isGrounded) return;
+        if(isDashing) return;
+
+        if(rb.velocity.y > 0){
+            ChangeAnimationState(PLAYER_RISE);
+        } else {
+            ChangeAnimationState(PLAYER_FALL);
+        }
     }
+
+    public void PlayAttackAnim(){
+        ChangeAnimationState(PLAYER_ATTACK);
+    }
+
+
+
 
     void ChangeAnimationState(string newState)
     {

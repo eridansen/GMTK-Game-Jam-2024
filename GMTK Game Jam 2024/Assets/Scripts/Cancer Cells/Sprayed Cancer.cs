@@ -4,7 +4,7 @@ using UnityEngine.Events;
 [RequireComponent (typeof(Rigidbody2D), typeof(Collider2D))]
 public class SprayedCancer : MonoBehaviour
 {
-    [SerializeField] private float _damage;
+    [SerializeField] public float _damage;
     [SerializeField] private float _lifeDuration;
     [SerializeField] private float _speed;
 
@@ -32,9 +32,20 @@ public class SprayedCancer : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("NormalCell"))
         {
+            Cell normalCell = collision.gameObject.GetComponent<Cell>();
+            Debug.Log(normalCell!=null);
             //Get component and infect
-            OnCollisionWithNormalCell?.Invoke();
+            if (normalCell != null && _damage > normalCell.cellData.Defense)
+            {
+
+            }
+            else 
+            {
+                Debug.Log("Normal cell object not null: "+ (normalCell != null));
+                Debug.Log("cancer cell damage ["+_damage+"]"+", normal cell defense [" +normalCell.cellData.Defense+"]");
+            }
         }
         // else just bounce
     }
+
 }

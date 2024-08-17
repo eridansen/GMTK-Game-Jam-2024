@@ -4,6 +4,7 @@ using UnityEngine.Events;
 public class CancerCell : MonoBehaviour
 {
     [Header ("Cell settings")]
+    [SerializeField] private float _damage;
     [SerializeField] private float _lifeDuration;
     [SerializeField] private float _healthPoint;
 
@@ -27,12 +28,10 @@ public class CancerCell : MonoBehaviour
             Vector2 initialPos = this.transform.position + offset;
             var spr = ObjectPooler.ProvideObject(_sprayedPrefab, initialPos, 
                 _sprayedPrefab.transform.rotation) as SprayedCancer;
-            spr.OnCollisionWithNormalCell += OnCellInfected;
+            //spr.OnCollisionWithNormalCell += OnCellInfected;
+            spr._damage = _damage;
         }
     }
 
-    private void OnCellInfected()
-    {
-
-    }
+    
 }

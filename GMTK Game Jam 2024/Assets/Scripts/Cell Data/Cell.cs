@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -36,8 +37,14 @@ public class Cell : MonoBehaviour
     {
         _sr = GetComponent<SpriteRenderer>();
     }
-    // Start is called before the first frame update
-    void Start()
+
+    private void Update()
+    {
+        AttackOtherCells();
+        ChangeColor();
+    }
+
+    private void ChangeColor()
     {
         switch (cellData.CellType)
         {
@@ -61,13 +68,10 @@ public class Cell : MonoBehaviour
             _sr.color = Color.red;
         }
     }
-    private void Update()
-    {
-        AttackOtherCells();
-    }
 
     private void AttackOtherCells()
     {
+        if (!IsInfected) return;
         Collider2D[] overlappingObjects = Physics2D.OverlapCircleAll(transform.position, checkRadius);
         Debug.Log(overlappingObjects.Length);
         if (overlappingObjects.Length > 0)
@@ -79,13 +83,21 @@ public class Cell : MonoBehaviour
                 {
                     Cell cell = other.gameObject.GetComponent<Cell>();
                     Debug.Log(cell.Defense);
-                    if (IsInfected != cell.IsInfected && Attack > cell.Defense)
+                    if (!cell.IsInfected && Attack > cell.Defense)
                     {
-                        cell.IsInfected = !cell.IsInfected;
+                        StartCoroutine(InfectCo(cell));
                     }
                 }
             }
         }
+    }
+
+    IEnumerator InfectCo(Cell cell)
+    {
+        Debug.Log("infected");
+        yield return new WaitForSeconds(2f);
+        cell.IsInfected = true;
+
     }
 
 

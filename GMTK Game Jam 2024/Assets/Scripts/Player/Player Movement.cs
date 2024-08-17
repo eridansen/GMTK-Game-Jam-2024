@@ -103,8 +103,9 @@ public class PlayerMovement : MonoBehaviour
     private float timeLeftGround; // Time when the player left the ground
 
     [Header("Jump Settings")]
+    [SerializeField] private bool playerCanDoubleJump = true; // Flag indicating if the player can jump
     [SerializeField] private float coyoteTime = 0.2f; // Duration of grace period for jumping after leaving ground
-    [SerializeField] private float jumpHeight = 12; // Height of the jump
+    [SerializeField] private float jumpSpeed = 12; // Height of the jump
     [SerializeField] private float fallSpeed = 7; // Speed of falling
     [SerializeField] private float jumpVelocityFalloff = 8; // Rate of decrease in jump velocity
     [SerializeField] private int MidAirJumps = 1; // Number of jumps the player can perform
@@ -119,22 +120,23 @@ public class PlayerMovement : MonoBehaviour
         // Coyote time jump (first jump off the ground)
         if (Input.GetButtonDown("Jump") && (isGrounded || elapsedTimeSinceLeftGround < coyoteTime) && !hasJumped)
         {       
-            rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+            rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
             hasJumped = true;
         }
 
-
-        // Mid air jumps - if the player is not grounded and has jumps remaining they can jump again
-        if (Input.GetButtonDown("Jump") && !isGrounded && jumpsRemaining > 0)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
-            jumpsRemaining--;
-        }
 
         // Apply gravity and falloff to jump velocity
         if (rb.velocity.y < jumpVelocityFalloff || rb.velocity.y > 0 && !Input.GetButton("Jump"))
         {
             rb.velocity += Vector2.up * (fallSpeed * Physics.gravity.y * Time.deltaTime);
+        }
+
+        if(!playerCanDoubleJump) return;
+        // Mid air jumps - if the player is not grounded and has jumps remaining they can jump again
+        if (Input.GetButtonDown("Jump") && !isGrounded && jumpsRemaining > 0)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
+            jumpsRemaining--;
         }
 
     }
@@ -145,13 +147,14 @@ public class PlayerMovement : MonoBehaviour
     private bool isDashing = false; // Flag indicating if the player is in the middle of dashing
 
     [Header("Dash Settings")]
+    [SerializeField] private bool playerCanDash = true; // Flag indicating if the player can dash
     [SerializeField] private float dashPower = 24f; // Power/speed of the dash
     [SerializeField] private float dashDuration = 0.2f; // How long the dash lasts
     [SerializeField] private float dashCooldown = 1f; // Cooldown time between dashes
 
 
     private void Dashing(){
-
+        if(!playerCanDash) return;
         // If the player presses the dash button and can dash, start the dash coroutine
         if (Input.GetButtonDown("Dash") && canDash)
         {

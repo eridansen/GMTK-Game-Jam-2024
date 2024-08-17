@@ -105,6 +105,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Jump Settings")]
     [SerializeField] private float coyoteTime = 0.2f; // Duration of grace period for jumping after leaving ground
     [SerializeField] private float jumpHeight = 12; // Height of the jump
+    [SerializeField] private float fullJumpDuration = 0.2f; // Duration of the jump
     [SerializeField] private float fallSpeed = 7; // Speed of falling
     [SerializeField] private float jumpVelocityFalloff = 8; // Rate of decrease in jump velocity
     [SerializeField] private int MidAirJumps = 1; // Number of jumps the player can perform

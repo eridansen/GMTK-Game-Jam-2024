@@ -266,7 +266,8 @@ MonoBehaviour:
   moveSpeed: 13
   sprintSpeed: 16
   coyoteTime: 0.2
-  jumpHeight: 12
+  jumpHeight: 20
+  fullJumpDuration: 0.2
   fallSpeed: 7
   jumpVelocityFalloff: 8
   MidAirJumps: 1

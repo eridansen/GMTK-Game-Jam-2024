@@ -7,7 +7,6 @@ public class Cell : MonoBehaviour
 {
     private SpriteRenderer _sr;
     public CellData cellData;
-    public float checkRadius = 2f;
     public bool IsInfected;
     #region getters
     public double Attack
@@ -83,7 +82,6 @@ public class Cell : MonoBehaviour
                 if (other.gameObject != gameObject) // Avoid self-detection
                 {
                     Cell cell = other.gameObject.GetComponent<Cell>();
-                    Debug.Log(cell.Defense);
                     if (!cell.IsInfected && Attack > cell.Defense)
                     {
                         StartCoroutine(InfectCo(cell));
@@ -95,17 +93,20 @@ public class Cell : MonoBehaviour
 
     IEnumerator InfectCo(Cell cell)
     {
-        Debug.Log("infected");
         yield return new WaitForSeconds(2f);
         cell.IsInfected = true;
 
     }
 
-
+    #region testing
+    // this region is only to test the detection zone during play mode.
+    // edit circle collider of Cell prefab to actually scale detection zone
+    public float checkRadius = 2f;
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, checkRadius);
 
     }
+    #endregion
 }

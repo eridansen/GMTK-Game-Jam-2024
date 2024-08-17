@@ -31,7 +31,7 @@ public class PlayerCombat : MonoBehaviour,IDamageable
     #endregion
     
     #region Attack 
-    [SerializeField] private int damage = 10; // The player's damage
+    //[SerializeField] private int damage = 10; // The player's damage
     
     
     private IEnumerator Attack()

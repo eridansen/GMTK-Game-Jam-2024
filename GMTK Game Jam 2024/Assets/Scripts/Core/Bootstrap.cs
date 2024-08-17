@@ -6,6 +6,7 @@ namespace Core
     {
         [SerializeField] private SceneLoader _sceneLoader;
         [SerializeField] private UIModule _uiModule;
+        [SerializeField] private AudioManager _audioManager;
 
         private void Awake()
         {
@@ -24,6 +25,7 @@ namespace Core
             //Initialize any global systems, like Audio, Input, etc
             DontDestroyOnLoad(_sceneLoader);
             DontDestroyOnLoad(_uiModule);
+            DontDestroyOnLoad(_audioManager);
         }
 
         private void LoadInitialScene()

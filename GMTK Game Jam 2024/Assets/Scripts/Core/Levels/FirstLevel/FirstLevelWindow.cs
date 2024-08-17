@@ -1,8 +1,7 @@
-﻿using Core;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace FirstLevel
+namespace Core.Levels.FirstLevel
 {
     public class FirstLevelWindow : MonoBehaviour
     {

@@ -84,6 +84,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3669510279465814004}
+  - component: {fileID: 2390301779923222004}
   m_Layer: 5
   m_Name: LoadingWindow
   m_TagString: Untagged
@@ -112,6 +113,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2390301779923222004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043250135177481642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61f5910fd944a789749d2a4219cee67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3329293390961197906
 GameObject:
   m_ObjectHideFlags: 0

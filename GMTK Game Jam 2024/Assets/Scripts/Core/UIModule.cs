@@ -32,11 +32,5 @@ namespace Core
 
             return _currentUIElement;
         }
-
-        public void SetCanvas(Canvas canvasReference)
-        {
-            _canvas = canvasReference;
-        }
     }
-
 }

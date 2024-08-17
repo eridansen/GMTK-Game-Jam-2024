@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MainMenu
+namespace Core.Levels.MainMenu
 {
     public class MainMenuWindow : MonoBehaviour
     {

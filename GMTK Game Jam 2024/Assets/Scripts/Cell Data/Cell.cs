@@ -9,7 +9,7 @@ public class Cell : MonoBehaviour
     public CellData cellData;
     public float checkRadius = 2f;
     public bool IsInfected;
-
+    #region getters
     public double Attack
     {
         get
@@ -33,6 +33,7 @@ public class Cell : MonoBehaviour
             return cellData.Mass;
         }
     }
+    #endregion 
     private void Awake()
     {
         _sr = GetComponent<SpriteRenderer>();

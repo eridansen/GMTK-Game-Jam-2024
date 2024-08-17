@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,13 +8,44 @@ public class Cell : MonoBehaviour
     private SpriteRenderer _sr;
     public CellData cellData;
     public float checkRadius = 2f;
+    public bool IsInfected;
+    #region getters
+    public double Attack
+    {
+        get
+        {
+            return cellData.Attack;
+        }
+    }
 
+    public double Defense
+    {
+        get
+        {
+            return cellData.Defense;
+        }
+    }
+
+    public double Mass
+    {
+        get
+        {
+            return cellData.Mass;
+        }
+    }
+    #endregion 
     private void Awake()
     {
         _sr = GetComponent<SpriteRenderer>();
     }
-    // Start is called before the first frame update
-    void Start()
+
+    private void Update()
+    {
+        AttackOtherCells();
+        ChangeColor();
+    }
+
+    private void ChangeColor()
     {
         switch (cellData.CellType)
         {
@@ -32,29 +64,44 @@ public class Cell : MonoBehaviour
             default:
                 break;
         }
+        if (IsInfected)
+        {
+            _sr.color = Color.red;
+        }
     }
 
-    private void Update()
+    private void AttackOtherCells()
     {
-        Collider[] overlappingObjects = Physics.OverlapSphere(transform.position, checkRadius);
-
+        if (!IsInfected) return;
+        Collider2D[] overlappingObjects = Physics2D.OverlapCircleAll(transform.position, checkRadius);
+        Debug.Log(overlappingObjects.Length);
         if (overlappingObjects.Length > 0)
         {
             // There are overlapping objects
-            foreach (Collider other in overlappingObjects)
+            foreach (Collider2D other in overlappingObjects)
             {
                 if (other.gameObject != gameObject) // Avoid self-detection
                 {
-                    // Do something when objects overlap
-                    var neighbour = other.GetComponent<Cell>().cellData;
-                    if (neighbour.Defense > 0)
-                        neighbour.Defense -= cellData.Attack * 0.1;
-
+                    Cell cell = other.gameObject.GetComponent<Cell>();
+                    Debug.Log(cell.Defense);
+                    if (!cell.IsInfected && Attack > cell.Defense)
+                    {
+                        StartCoroutine(InfectCo(cell));
+                    }
                 }
             }
         }
+    }
+
+    IEnumerator InfectCo(Cell cell)
+    {
+        Debug.Log("infected");
+        yield return new WaitForSeconds(2f);
+        cell.IsInfected = true;
 
     }
+
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;

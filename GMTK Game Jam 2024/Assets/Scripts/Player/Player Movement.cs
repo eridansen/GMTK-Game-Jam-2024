@@ -131,7 +131,6 @@ public class PlayerMovement : MonoBehaviour
         if (jumpBufferCounter > 0 && coyoteTimeCounter > 0)
         {       
             rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
-            ChangeAnimationState(PLAYER_JUMP_START);
         }
 
         if(Input.GetButtonUp("Jump")){
@@ -142,7 +141,6 @@ public class PlayerMovement : MonoBehaviour
         if (rb.velocity.y < jumpVelocityFalloff || rb.velocity.y > 0 && !Input.GetButton("Jump"))
         {
             rb.velocity += Vector2.up * (fallSpeed * Physics.gravity.y * Time.deltaTime);
-            ChangeAnimationState(PLAYER_FALL);
         }
 
 
@@ -280,25 +278,46 @@ public class PlayerMovement : MonoBehaviour
     private string currentState;
     
 
-    private void Animations(){
-        if(isDashing){
-            ChangeAnimationState(PLAYER_DASH);
+    private void Animations()
+    {
+        //Ground states
+        if (isGrounded)
+        {
+            if (isDashing)
+            {
+                ChangeAnimationState(PLAYER_DASH);
+                return;
+            }
+        
+            if (rb.velocity.x != 0)
+            {
+                if (Input.GetButton("Sprint"))
+                {
+                    ChangeAnimationState(PLAYER_RUN);
+                }
+                else
+                {
+                    ChangeAnimationState(PLAYER_WALK);
+                }
+            }
+            else
+            {
+                ChangeAnimationState(PLAYER_IDLE);
+            }
             return;
         }
-        
-        if(rb.velocity.x != 0){
-             if(Input.GetButton("Sprint")){
-                ChangeAnimationState(PLAYER_RUN);
-            } else {
-                ChangeAnimationState(PLAYER_WALK);
-            }
-        } else{
-            ChangeAnimationState(PLAYER_IDLE);
+        //Air states
+        if (rb.velocity.y > 0)
+        {
+            ChangeAnimationState(PLAYER_JUMP_START);
+            return;
         }
-    }
-    public void JumpAnimComplete()
-    {
-        ChangeAnimationState(PLAYER_RISE);
+        if (rb.velocity.y < -0.5f)
+        {
+            ChangeAnimationState(PLAYER_RISE);
+            return;
+        }
+        ChangeAnimationState(PLAYER_FALL);
     }
 
     void ChangeAnimationState(string newState)

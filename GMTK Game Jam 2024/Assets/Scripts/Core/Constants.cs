@@ -7,8 +7,12 @@
             public const string Loading = "Loading";
             
             public const string MainMenu = "MainMenu";
+            
+            public const string Settings = "Settings";
 
             public const string FirstLevel = "FirstLevel";
+            
+            public static string Credits = "Credits";
         }
 
         public static class Tags

@@ -95,18 +95,22 @@ public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
     #region Attack 
     [Header("Combat Stats")]
     [SerializeField] private int _damage = 10; // The player's damage
+    [SerializeField] private AudioClip[] _attackSounds; // The player's attack sounds
 
     public bool isAttacking = false; // Is the player attacking?
     private void Attacking()
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            if(isAttacking) return;
             Attack();
+            AudioManager.Instance.PlayRandomSoundFXClip(_attackSounds, transform, 0.5f);
         }
     }
     private void Attack()
     {
         playerMovement.PlayAttackAnim();  // Play the attack animation
+        
         isAttacking = true; // Set the player to attacking
     }
 

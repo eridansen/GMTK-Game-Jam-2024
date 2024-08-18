@@ -19,10 +19,10 @@ MonoBehaviour:
   _sprintSpeed: 18
   jumpSpeed: 18
   fallSpeed: 10
-  _jumpVelocityFalloff: 16
+  _jumpVelocityFalloff: 15
   wallSlideSpeed: 7
   wallJumpingPower: {x: 3, y: 18}
-  dashPower: 12
+  dashPower: 10
   dashDuration: 0.3
   dashCooldown: 1
   attackPower: 0

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
 {
-    [Header("Player Stats")]
+    [Header("Health Stats")]
     [SerializeField] private float _currentHealth = 100; // The player's health
     [SerializeField] private float _maxHealth = 100; // The player's maximum health
 
@@ -31,6 +31,7 @@ public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
 
     #region Health
 
+    [Header("Health Bar Settings")]
     [SerializeField] private Image _healthBar;
     [SerializeField] private float _healthBarSpeed = 0.05f;
 
@@ -86,6 +87,7 @@ public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
     #endregion
     
     #region Attack 
+    [Header("Combat Stats")]
     [SerializeField] private int _damage = 10; // The player's damage
     public bool isAttacking = false; // Is the player attacking?
     private void Attacking()

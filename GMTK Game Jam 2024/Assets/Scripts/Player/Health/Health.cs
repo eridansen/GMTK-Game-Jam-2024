@@ -9,14 +9,21 @@ public class Health: MonoBehaviour
     [SerializeField] [Range(0.01f,0.1f)] private float _animationSpeed;
     
     private float currentHealth;
-
+    private Coroutine _coroutine;
 
     private void Awake()
     {
         currentHealth = _maxHealth;
     }
 
-    public IEnumerator TakeDamage(float damage)
+    public void TakeDamage(float damage)
+    {
+        if(_coroutine == null)
+        {
+            _coroutine = StartCoroutine(DecreaseHealthRoutine(damage));
+        }
+    }
+    public IEnumerator DecreaseHealthRoutine(float damage)
     {
         currentHealth -= damage;
         if (currentHealth <= 0) 
@@ -33,9 +40,18 @@ public class Health: MonoBehaviour
             iterator += 0.05f;
             yield return null;
         }
+
+        _coroutine = null;
     }
 
-    public IEnumerator RestoreHealth(float health)
+    public void RestoreHealth(float health)
+    {
+        if(_coroutine == null)
+        {
+            _coroutine = StartCoroutine(IncreaseHealthRoutine(health));
+        }
+    }
+    public IEnumerator IncreaseHealthRoutine(float health)
     {
         currentHealth += health;
         if(currentHealth > _maxHealth)
@@ -52,5 +68,7 @@ public class Health: MonoBehaviour
             iterator += 0.05f;
             yield return null;
         }
+
+        _coroutine = null;
     }
 }

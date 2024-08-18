@@ -323,29 +323,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _groundMask:
     serializedVersion: 2
-    m_Bits: 72
-  _groundCheck: {fileID: 858301318}
+    m_Bits: 0
+  _groundCheck: {fileID: 0}
   _groundCheckRadius: 0.2
-  _moveSpeed: 13
-  _sprintSpeed: 18
+  _moveSpeed: 10
+  _sprintSpeed: 13
   _playerCanDoubleJump: 1
   _coyoteTime: 0.2
   _jumpBufferTime: 0.1
-  _jumpSpeed: 18
-  _fallSpeed: 10
-  _jumpVelocityFalloff: 16
+  _jumpSpeed: 12
+  _fallSpeed: 7
+  _jumpVelocityFalloff: 8
   _playerCanWallJump: 1
   _wallMask:
     serializedVersion: 2
-    m_Bits: 72
-  _wallCheck: {fileID: 2086406896}
-  _wallSlideSpeed: 7
+    m_Bits: 0
+  _wallCheck: {fileID: 0}
+  _wallSlideSpeed: 2
   _wallJumpingTime: 0.2
   _wallJumpingDuration: 0.2
-  _wallJumpingPower: {x: 3, y: 18}
+  _wallJumpingPower: {x: 8, y: 16}
   _playerCanDash: 1
-  _dashPower: 12
-  _dashDuration: 0.3
+  _dashPower: 24
+  _dashDuration: 0.2
   _dashCooldown: 1
 --- !u!4 &176997350
 Transform:

@@ -103,7 +103,6 @@ public class PlayerMovement : MonoBehaviour
     #region Jumping
 
 
-
     [Header("Jump Settings")]
     [SerializeField] private bool _playerCanDoubleJump = true; // Flag indicating if the player can jump
     [SerializeField] private float _coyoteTime = 0.2f; // Duration of grace period for jumping after leaving ground

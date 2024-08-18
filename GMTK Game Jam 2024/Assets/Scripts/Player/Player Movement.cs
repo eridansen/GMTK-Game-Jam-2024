@@ -146,7 +146,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Ground Check")]
     [SerializeField] private LayerMask _groundMask; // The layer mask for ground objects
     [SerializeField] private Transform _groundCheck; // The transform representing the position to check for ground
-    [SerializeField] private float _groundCheckRadius = 0.2f; // The radius for ground check
+    [SerializeField] private float _groundCheckRadius = 0.4f; // The radius for ground check
     private bool isGrounded; // Flag indicating if the player is grounded
 
     // Check if the player is grounded

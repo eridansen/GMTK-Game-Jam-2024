@@ -304,10 +304,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentHealth: 100
   _maxHealth: 100
-  _healthBar: {fileID: 1594641861}
-  _healthBarSpeed: 0.01
-  _damage: 50
-  attackHitDetection: {fileID: 1532898368}
+  _healthBar: {fileID: 0}
+  _healthBarSpeed: 0.05
+  _damage: 10
+  attackHitDetection: {fileID: 0}
   isAttacking: 0
 --- !u!114 &176997349
 MonoBehaviour:
@@ -327,7 +327,7 @@ MonoBehaviour:
   _groundCheck: {fileID: 858301318}
   _groundCheckRadius: 0.2
   _moveSpeed: 13
-  _sprintSpeed: 16
+  _sprintSpeed: 18
   _playerCanDoubleJump: 1
   _coyoteTime: 0.2
   _jumpBufferTime: 0.1
@@ -342,7 +342,7 @@ MonoBehaviour:
   _wallSlideSpeed: 7
   _wallJumpingTime: 0.2
   _wallJumpingDuration: 0.2
-  _wallJumpingPower: {x: 4, y: 18}
+  _wallJumpingPower: {x: 3, y: 18}
   _playerCanDash: 1
   _dashPower: 12
   _dashDuration: 0.3

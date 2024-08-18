@@ -462,6 +462,7 @@ public class PlayerMovement : MonoBehaviour
     const string PLAYER_FALL = "Player Jump Falling";
     const string PLAYER_DASH = "Player Dash";
     const string PLAYER_ATTACK = "Player Attack";
+    const string PLAYER_ATTACK_HITBOX = "Player Attack Hitbox";
     const string PLAYER_WALLSLIDE = "Player WallSlide";
 
 

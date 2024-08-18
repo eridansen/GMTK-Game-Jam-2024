@@ -103,8 +103,8 @@ MonoBehaviour:
   _lifeDuration: 0
   _healthPoint: 50
   _sprayedPrefab: {fileID: 2302365377821141973, guid: 18a55d02d2ef8ee468990cfcbf8b3485, type: 3}
-  _sprayInterval: 3
-  _sprayAmount: 4
+  _sprayInterval: 4
+  _sprayAmount: 1
 --- !u!61 &6021177742612889438
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -176,7 +176,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!95 &3927592189570286160
 Animator:
   serializedVersion: 5

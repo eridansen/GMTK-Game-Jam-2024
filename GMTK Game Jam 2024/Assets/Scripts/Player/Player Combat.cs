@@ -1,43 +1,92 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class PlayerCombat : MonoBehaviour,IDamageable
+public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
 {
     [Header("Player Stats")]
-    [SerializeField] private int currentHealth = 100; // The player's health
-    [SerializeField] private int maxHealth = 100; // The player's maximum health
+    [SerializeField] private float _currentHealth = 100; // The player's health
+    [SerializeField] private float _maxHealth = 100; // The player's maximum health
 
     private PlayerMovement playerMovement;
     private void Awake() {
         playerMovement = GetComponent<PlayerMovement>();
     }
     private void Start() {
-        currentHealth = maxHealth; // Set the player's health to the maximum health
+        _currentHealth = _maxHealth; // Set the player's health to the maximum health
     }
     private void Update() {
         Attacking();
+        
+        if(Input.GetKeyDown(KeyCode.B))
+        {
+            Damage(30);
+        }
+        if(Input.GetKeyDown(KeyCode.N))
+        {
+            Heal(30);
+        }
     }
 
     #region Health
+
+    [SerializeField] private Image _healthBar;
+    [SerializeField] private float _healthBarSpeed = 0.05f;
+
     public void Damage(float damageAmount)
     {
-        currentHealth -= (int)damageAmount;
-        if (currentHealth <= 0)
+        _currentHealth -= damageAmount;
+        StartCoroutine(UpdateHealthBarUI());
+        if (_currentHealth <= 0)
         {
-            currentHealth = 0;
+            _currentHealth = 0;
             Die();
         }
     }
 
+    public void Heal(float healAmount)
+    {
+        if(_currentHealth == _maxHealth) return;
+        
+        _currentHealth += healAmount;
+        if (_currentHealth > _maxHealth)
+        {
+            _currentHealth = _maxHealth;
+        }
+        StartCoroutine(UpdateHealthBarUI());
+    }
+
+
+    public IEnumerator UpdateHealthBarUI()
+    {
+
+        float initValue = _healthBar.fillAmount;
+        float percent = _currentHealth / _maxHealth;
+
+
+        float iterator = 0;
+
+        while(iterator < 1) 
+        {
+            _healthBar.fillAmount = Mathf.Lerp(initValue, percent, iterator);
+            iterator += 0.05f;
+            yield return new WaitForSeconds(_healthBarSpeed);
+        }
+
+        _healthBar.fillAmount = percent;
+    }
+
+
     private void Die()
     {
         Debug.Log("Player has died");
+        _healthBar.enabled = false;
     }
     #endregion
     
     #region Attack 
-    [SerializeField] private int damage = 10; // The player's damage
+    [SerializeField] private int _damage = 10; // The player's damage
     public bool isAttacking = false; // Is the player attacking?
     private void Attacking()
     {

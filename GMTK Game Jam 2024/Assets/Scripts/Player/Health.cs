@@ -19,7 +19,7 @@ public class Health : MonoBehaviour
         {
             if(currentHealth <= 0) 
                 _healthBar.enabled = false;
-            StartCoroutine(TakeDamage(10));
+            StartCoroutine(TakeDamage(80));
         }
         if(Input.GetKeyDown(KeyCode.N))
         {

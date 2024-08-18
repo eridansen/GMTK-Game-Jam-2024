@@ -20,11 +20,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        // Handle player movement functions
+        // Handle player movement functions 
         Grounded();
         Animations();
         if(uninterruptibleAnim) {
             rb.velocity = rb.velocity += Vector2.up * (_fallSpeed * Physics.gravity.y * Time.deltaTime);
+            if(isDashing) rb.velocity -= new Vector2 (rb.velocity.x /2, 0);
             if(isGrounded) rb.velocity = Vector2.zero;
             return;
         }

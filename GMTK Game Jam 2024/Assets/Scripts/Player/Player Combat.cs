@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,14 +11,18 @@ public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
     [SerializeField] private float _maxHealth = 100; // The player's maximum health
 
     private PlayerMovement playerMovement;
+
+
     private void Awake() {
         playerMovement = GetComponent<PlayerMovement>();
     }
     private void Start() {
         _currentHealth = _maxHealth; // Set the player's health to the maximum health
+
     }
     private void Update() {
         Attacking();
+     
         
         if(Input.GetKeyDown(KeyCode.B))
         {
@@ -89,27 +94,28 @@ public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
     #region Attack 
     [Header("Combat Stats")]
     [SerializeField] private int _damage = 10; // The player's damage
+
+    [Header("Attack Detection")]
+    [SerializeField] private AttackHitDetection attackHitDetection;
     public bool isAttacking = false; // Is the player attacking?
     private void Attacking()
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            StartCoroutine(Attack());
+            Attack();
         }
     }
-    private IEnumerator Attack()
+    private void Attack()
     {
         playerMovement.PlayAttackAnim();  // Play the attack animation
         isAttacking = true; // Set the player to attacking
-        while(isAttacking){
-            yield return null;// Wait for the attack animation to finish
-        }
-        // Check for enemies in range
-        // Deal damage to enemies in range
- // Return to idle state
-        yield return null;
     }
 
+
+    public void Hit(IDamageable damageable)
+    {
+        damageable.Damage(_damage); // Deal damage to the damageable - allows for configuring light and heavy attacks - deal damage based on current attack swing
+    }
     private void AttackAnimFinished()
     {
         isAttacking = false;

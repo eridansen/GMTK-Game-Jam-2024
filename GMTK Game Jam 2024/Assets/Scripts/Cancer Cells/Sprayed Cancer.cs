@@ -9,11 +9,13 @@ public class SprayedCancer : MonoBehaviour
     [SerializeField] private float _speed;
 
     private Rigidbody2D rigidbody;
+    private Transform player;
 
 
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        player = FindAnyObjectByType<PlayerMovement>().transform;
     }
 
     private void Start()

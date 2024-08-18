@@ -35,6 +35,14 @@ public class AudioManager : Singleton<AudioManager>
 
         Destroy(audioSource.gameObject, clipLength);
     }
+            
+    public void PlayRandomSoundFXClip(AudioClip[] audioClip, Transform spawntransform, float volume)
+    {
+        int randomIndex = UnityEngine.Random.Range(0, audioClip.Length);
+        
+        PlaySoundFXClip(audioClip[randomIndex], spawntransform, volume);
+        
+    }
 
     public void SetMusicVolume(float volume)
     {

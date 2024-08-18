@@ -19,6 +19,9 @@ public class PlayerMovement : MonoBehaviour
         playerCombat = GetComponent<PlayerCombat>();
         trailRenderer = GetComponentInChildren<TrailRenderer>();
     }
+    private void Start() {
+        LoadSettings();
+    }
     // Update is called once per frame
     private void Update()
     {
@@ -50,8 +53,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float scaleChangeAmount = 0.1f;
 
     private int currentScale = 1;
+    private bool isScaling = false;
+
     private void Scaling()
     {
+        if(isScaling) return;
+        
         if (Input.GetButtonDown("Scale Up"))
         {
             if (currentScale < _arrayOfPlayerScaleSettings.Length - 1)
@@ -103,6 +110,7 @@ public class PlayerMovement : MonoBehaviour
         float iterator = 0;
         while (iterator < 1)
         {
+            isScaling = true;
             Vector2 newScale = new Vector2(Mathf.Lerp(initXValue, targetXValue, iterator), Mathf.Lerp(initYValue, targetYValue, iterator));
             transform.localScale = newScale;
             iterator += scaleChangeAmount;
@@ -110,6 +118,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         ChangeSize();
+        isScaling = false;
 
     }
 
@@ -147,7 +156,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask _groundMask; // The layer mask for ground objects
     [SerializeField] private Transform _groundCheck; // The transform representing the position to check for ground
     [SerializeField] private float _groundCheckRadius = 0.4f; // The radius for ground check
-    private bool isGrounded; // Flag indicating if the player is grounded
+     private bool isGrounded; // Flag indicating if the player is grounded
 
     // Check if the player is grounded
     private void Grounded()
@@ -167,6 +176,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement Speeds")]
     [SerializeField] private float _moveSpeed = 10; // Speed of regular walking
     [SerializeField] private float _sprintSpeed = 13; // Speed of sprinting
+    [SerializeField] AudioClip[] stepSounds;
     private float horizontal; // Horizontal input from player
 
     private bool facingRight = true; // Flag indicating if the player is facing right
@@ -196,6 +206,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void PlayFootstepSound()
+    {
+        AudioManager.Instance.PlayRandomSoundFXClip(stepSounds, transform, 0.5f);
+    }
     private void FlipSprite()
     {
         facingRight = !facingRight;
@@ -216,6 +230,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _jumpSpeed = 12; // Height of the jump
     [SerializeField] private float _fallSpeed = 7; // Speed of falling
     [SerializeField] private float _jumpVelocityFalloff = 8; // Rate of decrease in jump velocity
+    [SerializeField] AudioClip [] _jumpSounds;
 
     private int numberOfJumps = 1; // Number of jumps the player can perform
     private int jumpsRemaining; // Number of jumps remaining
@@ -223,6 +238,8 @@ public class PlayerMovement : MonoBehaviour
     private float coyoteTimeCounter; // Counter for coyote time
 
     private bool hasJumped; // Flag indicating if the player has initiated a jump for animations
+    private bool hasLanded; // Flag indicating if the player has initiated a jump for animations
+    
     // Handle player jumping
     private void Jumping()
     {
@@ -246,10 +263,24 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Coyote time jump (first jump off the ground)
-        if (jumpBufferCounter > 0 && coyoteTimeCounter > 0)
+        if (jumpBufferCounter > 0 && coyoteTimeCounter > 0 && hasJumped == false)
         {
             rb.velocity = new Vector2(rb.velocity.x, _jumpSpeed);
+            hasJumped = true;
+            hasLanded = false;
+            PlayJumpSound();
         }
+
+        if(isGrounded && rb.velocity.y < 0)
+        {
+            hasJumped = false;
+            if(!hasLanded)
+            {
+                hasLanded = true;
+                PlayFootstepSound();
+            }
+        }
+
 
         if (Input.GetButtonUp("Jump"))
         {
@@ -274,7 +305,7 @@ public class PlayerMovement : MonoBehaviour
 
             }
         }
-
+    
 
 
         if (!_playerCanDoubleJump) return;
@@ -283,9 +314,15 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && coyoteTimeCounter < 0 && jumpsRemaining > 0 && !isWallSliding)
         {
             rb.velocity = new Vector2(rb.velocity.x, _jumpSpeed);
+            PlayJumpSound();
             jumpsRemaining--;
         }
 
+    }
+
+    private void PlayJumpSound()
+    {
+        AudioManager.Instance.PlayRandomSoundFXClip(_jumpSounds, transform, 0.5f);
     }
     #endregion
 
@@ -304,6 +341,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _wallJumpingTime = 0.2f;
     [SerializeField] private float _wallJumpingDuration = 0.2f;
     [SerializeField] private Vector2 _wallJumpingPower = new Vector2(8f, 16f);
+    [SerializeField] private AudioClip[] _wallJumpSounds;
     private bool isWallJumping; // Flag indicating if the player is wall jumping
     private float wallJumpingDir;
     private float wallJumpingCounter;
@@ -359,7 +397,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 FlipSprite();
             }
-
+            AudioManager.Instance.PlayRandomSoundFXClip(_wallJumpSounds, transform, 0.5f);
             Invoke("StopWallJumping", _wallJumpingDuration);
         }
     }
@@ -377,6 +415,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _dashPower = 24f; // Power/speed of the dash
     [SerializeField] private float _dashDuration = 0.2f; // How long the dash lasts
     [SerializeField] private float _dashCooldown = 1f; // Cooldown time between dashes
+    [SerializeField] private AudioClip[] _dashSounds;
 
     private bool canDash = true; // Flag indicating if the player can dash
     private bool isDashing = false; // Flag indicating if the player is in the middle of dashing
@@ -393,6 +432,7 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator Dash()
     {
+        AudioManager.Instance.PlayRandomSoundFXClip(_dashSounds, transform, 0.5f);
         canDash = false; // Prevent the player from dashing again until the cooldown is over - is set to true in the grounded function
         isDashing = true; // Sets flag that the player is currently dashing
         float originalGravity = rb.gravityScale; // Store the original gravity scale of the player

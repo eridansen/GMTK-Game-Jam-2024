@@ -10,8 +10,6 @@ public class SprayedCancer : MonoBehaviour
 
     private Rigidbody2D rigidbody;
 
-    public UnityAction OnCollisionWithNormalCell;
-
 
     private void Awake()
     {

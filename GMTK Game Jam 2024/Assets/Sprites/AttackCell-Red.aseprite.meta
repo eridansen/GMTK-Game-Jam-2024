@@ -1,0 +1,735 @@
+fileFormatVersion: 2
+guid: f0624b5e286d82f43994d26775abc280
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 32
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 638595975599926642
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: AttackCell-Red_Frame_0
+    originalName: 
+    pivot: {x: 1.0714287, y: -1.2307693}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 70
+      y: 55
+      width: 14
+      height: 13
+    spriteID: 053924c71909a014c974103c7d79d112
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 70, y: 55}
+  - name: AttackCell-Red_Frame_1
+    originalName: 
+    pivot: {x: 1.0714287, y: -1.2307693}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 92
+      y: 55
+      width: 14
+      height: 13
+    spriteID: eff5fef393f24ef4b9a98929d2498fbd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 92, y: 55}
+  - name: AttackCell-Red_Frame_2
+    originalName: 
+    pivot: {x: 1.0714287, y: -1.1428572}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 55
+      width: 14
+      height: 14
+    spriteID: 6a4917b202476dc45a461395024b92d3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 55}
+  - name: AttackCell-Red_Frame_3
+    originalName: 
+    pivot: {x: 1.0714287, y: -1.3076924}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 77
+      width: 14
+      height: 13
+    spriteID: ec2200f431c16f84399bfe8095e09aaa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 77}
+  - name: AttackCell-Red_Frame_4
+    originalName: 
+    pivot: {x: 1.0714287, y: -1.3076924}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 26
+      y: 77
+      width: 14
+      height: 13
+    spriteID: 5b4210dff4a094848a9b3fe688cbeaf0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 26, y: 77}
+  - name: AttackCell-Red_Frame_5
+    originalName: 
+    pivot: {x: 1.0714287, y: -1.3076924}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 77
+      width: 14
+      height: 13
+    spriteID: b11deec20f3a2394782c7d349f1e6585
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 48, y: 77}
+  - name: AttackCell-Red_Frame_6
+    originalName: 
+    pivot: {x: 1.0714287, y: -1.2307693}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 70
+      y: 77
+      width: 14
+      height: 13
+    spriteID: 2570d7c9216942c43bca8a1bbf289350
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 70, y: 77}
+  - name: AttackCell-Red_Frame_7
+    originalName: 
+    pivot: {x: 1.0714287, y: -1.2307693}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 92
+      y: 77
+      width: 14
+      height: 13
+    spriteID: df04c17fc8072114a9e4def4a03dc320
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 92, y: 77}
+  - name: AttackCell-Red_Frame_8
+    originalName: 
+    pivot: {x: 1.0714287, y: -1.2307693}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 98
+      width: 14
+      height: 13
+    spriteID: d116a9cbfeebb694b8751953af632189
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 98}
+  - name: AttackCell-Red_Frame_9
+    originalName: 
+    pivot: {x: 1.0714287, y: -1.1428572}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 26
+      y: 55
+      width: 14
+      height: 14
+    spriteID: 6e66708325c0e3c459e20d7bd8f1e797
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 26, y: 55}
+  - name: AttackCell-Red_Frame_10
+    originalName: 
+    pivot: {x: 1, y: -1.2142857}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 30
+      y: 31
+      width: 16
+      height: 14
+    spriteID: f9b2d60c08e2c5b4b912d7cc97fb3009
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 30, y: 31}
+  - name: AttackCell-Red_Frame_11
+    originalName: 
+    pivot: {x: 1, y: -1.2142857}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 54
+      y: 31
+      width: 16
+      height: 14
+    spriteID: d5ce560fed278684a958f0325203963d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 54, y: 31}
+  - name: AttackCell-Red_Frame_12
+    originalName: 
+    pivot: {x: 0.7777778, y: -0.8947368}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 27
+      height: 19
+    spriteID: 2929f4731a5877340b3e07d37e3621aa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: AttackCell-Red_Frame_13
+    originalName: 
+    pivot: {x: 0.85714287, y: -1.0625}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 66
+      y: 4
+      width: 21
+      height: 16
+    spriteID: cffa973596b1f8946808d857e819102b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 66, y: 4}
+  - name: AttackCell-Red_Frame_14
+    originalName: 
+    pivot: {x: 1, y: -1.2142857}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 78
+      y: 31
+      width: 16
+      height: 14
+    spriteID: 828aea0a64bcc7949a70c39a08d1b922
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 78, y: 31}
+  - name: AttackCell-Red_Frame_15
+    originalName: 
+    pivot: {x: 1.0714287, y: -1.1428572}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 55
+      width: 14
+      height: 14
+    spriteID: f7a11cc697b0b7046810340b1600c519
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 48, y: 55}
+  - name: AttackCell-Red_Frame_16
+    originalName: 
+    pivot: {x: 1, y: -1.2142857}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 102
+      y: 31
+      width: 16
+      height: 14
+    spriteID: da364b8e07e654d48911333c4041ea51
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 102, y: 31}
+  - name: AttackCell-Red_Frame_17
+    originalName: 
+    pivot: {x: 0.90000004, y: -1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 95
+      y: 4
+      width: 20
+      height: 16
+    spriteID: ec3c71aef916d6b4c8f4ea078404af88
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 95, y: 4}
+  - name: AttackCell-Red_Frame_18
+    originalName: 
+    pivot: {x: 0.9444445, y: -1.0625}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 31
+      width: 18
+      height: 16
+    spriteID: 37e4ea6a66f40bb45be3f8f217e61784
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 31}
+  - name: AttackCell-Red_Frame_19
+    originalName: 
+    pivot: {x: 0.8947368, y: -0.8333333}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 39
+      y: 4
+      width: 19
+      height: 18
+    spriteID: af801e1c1b3e4e040b940089ff8374ad
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 39, y: 4}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -1494939032
+    name: AttackCell-Red
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: AttackCell-Red_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 17
+        y: 16
+        width: 14
+        height: 13
+      spriteId: 053924c71909a014c974103c7d79d112
+    - name: AttackCell-Red_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 17
+        y: 16
+        width: 14
+        height: 13
+      spriteId: eff5fef393f24ef4b9a98929d2498fbd
+    - name: AttackCell-Red_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 17
+        y: 16
+        width: 14
+        height: 14
+      spriteId: 6a4917b202476dc45a461395024b92d3
+    - name: AttackCell-Red_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 17
+        y: 17
+        width: 14
+        height: 13
+      spriteId: ec2200f431c16f84399bfe8095e09aaa
+    - name: AttackCell-Red_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 17
+        y: 17
+        width: 14
+        height: 13
+      spriteId: 5b4210dff4a094848a9b3fe688cbeaf0
+    - name: AttackCell-Red_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 17
+        y: 17
+        width: 14
+        height: 13
+      spriteId: b11deec20f3a2394782c7d349f1e6585
+    - name: AttackCell-Red_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 17
+        y: 16
+        width: 14
+        height: 13
+      spriteId: 2570d7c9216942c43bca8a1bbf289350
+    - name: AttackCell-Red_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 17
+        y: 16
+        width: 14
+        height: 13
+      spriteId: df04c17fc8072114a9e4def4a03dc320
+    - name: AttackCell-Red_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 17
+        y: 16
+        width: 14
+        height: 13
+      spriteId: d116a9cbfeebb694b8751953af632189
+    - name: AttackCell-Red_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 17
+        y: 16
+        width: 14
+        height: 14
+      spriteId: 6e66708325c0e3c459e20d7bd8f1e797
+    - name: AttackCell-Red_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 16
+        y: 17
+        width: 16
+        height: 14
+      spriteId: f9b2d60c08e2c5b4b912d7cc97fb3009
+    - name: AttackCell-Red_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 16
+        y: 17
+        width: 16
+        height: 14
+      spriteId: d5ce560fed278684a958f0325203963d
+    - name: AttackCell-Red_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 11
+        y: 17
+        width: 27
+        height: 19
+      spriteId: 2929f4731a5877340b3e07d37e3621aa
+    - name: AttackCell-Red_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 14
+        y: 17
+        width: 21
+        height: 16
+      spriteId: cffa973596b1f8946808d857e819102b
+    - name: AttackCell-Red_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 16
+        y: 17
+        width: 16
+        height: 14
+      spriteId: 828aea0a64bcc7949a70c39a08d1b922
+    - name: AttackCell-Red_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 17
+        y: 16
+        width: 14
+        height: 14
+      spriteId: f7a11cc697b0b7046810340b1600c519
+    - name: AttackCell-Red_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 16
+        y: 17
+        width: 16
+        height: 14
+      spriteId: da364b8e07e654d48911333c4041ea51
+    - name: AttackCell-Red_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 14
+        y: 16
+        width: 20
+        height: 16
+      spriteId: ec3c71aef916d6b4c8f4ea078404af88
+    - name: AttackCell-Red_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 15
+        y: 17
+        width: 18
+        height: 16
+      spriteId: 37e4ea6a66f40bb45be3f8f217e61784
+    - name: AttackCell-Red_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: 15
+        y: 15
+        width: 19
+        height: 18
+      spriteId: af801e1c1b3e4e040b940089ff8374ad
+    linkedCells: []
+    parentIndex: -1
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 64, y: 64}

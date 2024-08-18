@@ -95,8 +95,6 @@ public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
     [Header("Combat Stats")]
     [SerializeField] private int _damage = 10; // The player's damage
 
-    [Header("Attack Detection")]
-    [SerializeField] private AttackHitDetection attackHitDetection;
     public bool isAttacking = false; // Is the player attacking?
     private void Attacking()
     {

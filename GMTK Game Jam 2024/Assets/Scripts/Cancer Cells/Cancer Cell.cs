@@ -41,7 +41,7 @@ public class CancerCell : MonoBehaviour
         Cell cell = other.gameObject.GetComponent<Cell>();
         if (cell != null)
         {
-            cell.Damage(_healthPoint);
+            //cell.Damage(_healthPoint);
         }
     }
 }

@@ -18,6 +18,7 @@ public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
     }
     private void Start() {
         _currentHealth = _maxHealth; // Set the player's health to the maximum health
+        _healthBar = GameObject.FindGameObjectWithTag("Player Health").GetComponentInChildren<Image>();
 
     }
     private void Update() {

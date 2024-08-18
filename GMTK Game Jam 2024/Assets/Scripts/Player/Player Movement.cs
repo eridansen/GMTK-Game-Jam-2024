@@ -501,7 +501,11 @@ public class PlayerMovement : MonoBehaviour
         if (currentState == newState) return;
 
         //play the animation
-        animator.Play(newState);
+        animator.Play(newState, 0);
+        if (newState == PLAYER_ATTACK)
+        {
+            animator.Play(newState, 1, 0);
+        }
 
         //reassign the current state
         currentState = newState;

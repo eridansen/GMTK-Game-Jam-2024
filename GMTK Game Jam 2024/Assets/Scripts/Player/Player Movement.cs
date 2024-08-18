@@ -105,6 +105,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Jump Settings")]
     [SerializeField] private bool _playerCanDoubleJump = true; // Flag indicating if the player can jump
+    [SerializeField] private bool _fixedJumpHeight = false; // Flag indicating if the player can jump
     [SerializeField] private float _coyoteTime = 0.2f; // Duration of grace period for jumping after leaving ground
     [SerializeField] private float _jumpBufferTime = 0.1f; // Duration of buffer time for jumping
     [SerializeField] private float _jumpSpeed = 12; // Height of the jump
@@ -143,12 +144,22 @@ public class PlayerMovement : MonoBehaviour
             coyoteTimeCounter = 0; // Reset coyote time counter if the player releases the jump button to stop accidental double jumps
         }
         
+        if(_fixedJumpHeight){
         // Apply gravity and falloff to jump velocity
-        if (rb.velocity.y < _jumpVelocityFalloff || rb.velocity.y > 0 && !Input.GetButton("Jump"))
-        {
-            rb.velocity += Vector2.up * (_fallSpeed * Physics.gravity.y * Time.deltaTime);
-        
+            if (rb.velocity.y < _jumpVelocityFalloff || rb.velocity.y > 0)
+            {
+                rb.velocity += Vector2.up * (_fallSpeed * Physics.gravity.y * Time.deltaTime); //FIXED JUMP HEIGHT - gravity is applied to the jump velocity
+            
+            }
+        } else {
+            // Apply gravity and falloff to jump velocity
+            if (rb.velocity.y < _jumpVelocityFalloff || rb.velocity.y > 0 && !Input.GetButton("Jump") )
+            {
+                rb.velocity += Vector2.up * (_fallSpeed * Physics.gravity.y * Time.deltaTime); //VARIABLE JUMP HEIGHT - gravity is applied to the jump velocity
+            
+            }
         }
+
 
 
         if(!_playerCanDoubleJump) return;

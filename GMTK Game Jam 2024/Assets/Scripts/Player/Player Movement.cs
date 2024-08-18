@@ -50,8 +50,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float scaleChangeAmount = 0.1f;
 
     private int currentScale = 1;
+    private bool isScaling = false;
+
     private void Scaling()
     {
+        if(isScaling) return;
+        
         if (Input.GetButtonDown("Scale Up"))
         {
             if (currentScale < _arrayOfPlayerScaleSettings.Length - 1)
@@ -103,6 +107,7 @@ public class PlayerMovement : MonoBehaviour
         float iterator = 0;
         while (iterator < 1)
         {
+            isScaling = true;
             Vector2 newScale = new Vector2(Mathf.Lerp(initXValue, targetXValue, iterator), Mathf.Lerp(initYValue, targetYValue, iterator));
             transform.localScale = newScale;
             iterator += scaleChangeAmount;
@@ -110,6 +115,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         ChangeSize();
+        isScaling = false;
 
     }
 
@@ -147,7 +153,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask _groundMask; // The layer mask for ground objects
     [SerializeField] private Transform _groundCheck; // The transform representing the position to check for ground
     [SerializeField] private float _groundCheckRadius = 0.4f; // The radius for ground check
-    [SerializeField] private bool isGrounded; // Flag indicating if the player is grounded
+     private bool isGrounded; // Flag indicating if the player is grounded
 
     // Check if the player is grounded
     private void Grounded()

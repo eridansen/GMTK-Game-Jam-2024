@@ -168,7 +168,7 @@ Transform:
   m_GameObject: {fileID: 3415928728779746214}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.16, y: 0.028, z: 0}
+  m_LocalPosition: {x: 0.16, y: 0.386, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -200,7 +200,7 @@ Transform:
   m_GameObject: {fileID: 3524943614430313194}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.09, y: -0.17, z: 0}
+  m_LocalPosition: {x: -0.334, y: 0.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -353,7 +353,7 @@ Transform:
   m_GameObject: {fileID: 7458610814134855750}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.498, z: 0}
+  m_LocalPosition: {x: 0, y: -0.002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -590,38 +590,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7fd6895d9a3e3408baecef381ae635, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentPlayerScaleSettings: {fileID: 11400000, guid: 657d82c2294abb840b1461f185289e35, type: 2}
+  _currentPlayerScaleSettings: {fileID: 11400000, guid: ade3fce0983333d4eab3e997c02b7f65, type: 2}
   _arrayOfPlayerScaleSettings:
   - {fileID: 11400000, guid: ade3fce0983333d4eab3e997c02b7f65, type: 2}
   - {fileID: 11400000, guid: 657d82c2294abb840b1461f185289e35, type: 2}
   - {fileID: 11400000, guid: 72392ca75a0740841878286f80c44a2e, type: 2}
-  scaleChangeSpeed: 0.1
-  scaleChangeAmount: 0.1
+  scaleChangeSpeed: 0.05
+  scaleChangeAmount: 0.25
   _groundMask:
     serializedVersion: 2
     m_Bits: 72
   _groundCheck: {fileID: 5146704905538920242}
-  _groundCheckRadius: 0.2
-  _moveSpeed: 13
-  _sprintSpeed: 18
+  _groundCheckRadius: 0.4
+  isGrounded: 0
+  _moveSpeed: 15
+  _sprintSpeed: 20
   _playerCanDoubleJump: 1
   _fixedJumpHeight: 0
   _coyoteTime: 0.2
   _jumpBufferTime: 0.1
   _jumpSpeed: 18
-  _fallSpeed: 10
-  _jumpVelocityFalloff: 16
+  _fallSpeed: 5
+  _jumpVelocityFalloff: 14
   _playerCanWallJump: 1
   _wallMask:
     serializedVersion: 2
     m_Bits: 72
   _wallCheck: {fileID: 4115390743212038093}
-  _wallSlideSpeed: 7
+  _wallSlideSpeed: 5
   _wallJumpingTime: 0.2
   _wallJumpingDuration: 0.2
-  _wallJumpingPower: {x: 3, y: 18}
+  _wallJumpingPower: {x: 5, y: 18}
   _playerCanDash: 1
-  _dashPower: 12
+  _dashPower: 30
   _dashDuration: 0.3
   _dashCooldown: 1
 --- !u!114 &3537338371353559276

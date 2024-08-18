@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private PlayerCombat playerCombat;
     private TrailRenderer trailRenderer;
+
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -23,23 +25,125 @@ public class PlayerMovement : MonoBehaviour
         // Handle player movement functions 
         Grounded();
         Animations();
-        if(uninterruptibleAnim) {
+        if (uninterruptibleAnim)
+        {
             rb.velocity = rb.velocity += Vector2.up * (_fallSpeed * Physics.gravity.y * Time.deltaTime);
-            if(isDashing) rb.velocity -= new Vector2 (rb.velocity.x /2, 0);
-            if(isGrounded) rb.velocity = Vector2.zero;
+            if (isDashing) rb.velocity -= new Vector2(rb.velocity.x / 2, 0);
+            if (isGrounded) rb.velocity = Vector2.zero;
             return;
         }
-        if(isDashing) return;
+        if (isDashing) return;
         WallJumping();
-        if(isWallJumping) return;
+        if (isWallJumping) return;
+        Scaling();
         Jumping();
         Walking();
         Dashing();
     }
 
+    #region Player Scale Settings
+
+    [Header("Player Scale Settings")]
+    [SerializeField] private PlayerScaleSettings _currentPlayerScaleSettings;
+    [SerializeField] private PlayerScaleSettings[] _arrayOfPlayerScaleSettings;
+    [SerializeField] private float scaleChangeSpeed = 0.1f;
+    [SerializeField] private float scaleChangeAmount = 0.1f;
+
+    private int currentScale = 1;
+    private void Scaling()
+    {
+        if (Input.GetButtonDown("Scale Up"))
+        {
+            if (currentScale < _arrayOfPlayerScaleSettings.Length - 1)
+            {
+                currentScale++;
+            }
+        }
+        if (Input.GetButtonDown("Scale Down"))
+        {
+            if (currentScale > 0)
+            {
+                currentScale--;
+            }
+        }
+        if (_currentPlayerScaleSettings != _arrayOfPlayerScaleSettings[currentScale])
+        {
+            _currentPlayerScaleSettings = _arrayOfPlayerScaleSettings[currentScale];
+            LoadSettings();
+        }
+    }
+
+    private void ChangeSize()
+    {
+        if (transform.localScale.x > 0)
+        {
+            transform.localScale = new Vector2(_currentPlayerScaleSettings.playerScale.x, _currentPlayerScaleSettings.playerScale.y);
+        }
+        else
+        {
+            transform.localScale = new Vector2(-_currentPlayerScaleSettings.playerScale.x, _currentPlayerScaleSettings.playerScale.y);
+        }
+    }
+
+
+    public IEnumerator ScaleOverTime()
+    {
+
+        float initYValue = transform.localScale.y;
+        float targetYValue = _currentPlayerScaleSettings.playerScale.y;
+
+        float initXValue = transform.localScale.x;
+        float targetXValue = _currentPlayerScaleSettings.playerScale.x;
+
+        if (transform.localScale.x < 0)
+        {
+            targetXValue = -targetXValue; // if the x value is negative then the player is facing left, so the target x value needs to also be negative
+        }
+
+        float iterator = 0;
+        while (iterator < 1)
+        {
+            Vector2 newScale = new Vector2(Mathf.Lerp(initXValue, targetXValue, iterator), Mathf.Lerp(initYValue, targetYValue, iterator));
+            transform.localScale = newScale;
+            iterator += scaleChangeAmount;
+            yield return new WaitForSeconds(scaleChangeSpeed);
+        }
+
+        ChangeSize();
+
+    }
+
+
+
+    private void LoadSettings()
+    {
+        //size settings
+        StartCoroutine(ScaleOverTime());
+        rb.gravityScale = _currentPlayerScaleSettings.gravityScale;
+
+        //movement settings
+        _moveSpeed = _currentPlayerScaleSettings.walkSpeed;
+        _sprintSpeed = _currentPlayerScaleSettings._sprintSpeed;
+
+        //jump settings
+        _jumpSpeed = _currentPlayerScaleSettings.jumpSpeed;
+        _fallSpeed = _currentPlayerScaleSettings.fallSpeed;
+        _jumpVelocityFalloff = _currentPlayerScaleSettings._jumpVelocityFalloff;
+
+        //wall jump settings
+        _wallSlideSpeed = _currentPlayerScaleSettings.wallSlideSpeed;
+        _wallJumpingPower = _currentPlayerScaleSettings.wallJumpingPower;
+
+        //dash settings
+        _dashPower = _currentPlayerScaleSettings.dashPower;
+        _dashDuration = _currentPlayerScaleSettings.dashDuration;
+        _dashCooldown = _currentPlayerScaleSettings.dashCooldown;
+    }
+    #endregion
+
     #region Ground Check
 
-    [Header ("Ground Check")]
+    [Header("Ground Check")]
     [SerializeField] private LayerMask _groundMask; // The layer mask for ground objects
     [SerializeField] private Transform _groundCheck; // The transform representing the position to check for ground
     [SerializeField] private float _groundCheckRadius = 0.2f; // The radius for ground check
@@ -64,7 +168,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _moveSpeed = 10; // Speed of regular walking
     [SerializeField] private float _sprintSpeed = 13; // Speed of sprinting
     private float horizontal; // Horizontal input from player
-    
+
     private bool facingRight = true; // Flag indicating if the player is facing right
     // Handle player walking
     private void Walking()
@@ -92,7 +196,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void FlipSprite(){
+    private void FlipSprite()
+    {
         facingRight = !facingRight;
         Vector3 scale = transform.localScale;
         scale.x *= -1;
@@ -111,7 +216,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _jumpSpeed = 12; // Height of the jump
     [SerializeField] private float _fallSpeed = 7; // Speed of falling
     [SerializeField] private float _jumpVelocityFalloff = 8; // Rate of decrease in jump velocity
-    
+
     private int numberOfJumps = 1; // Number of jumps the player can perform
     private int jumpsRemaining; // Number of jumps remaining
     private float jumpBufferCounter; // Counter for jump buffer time
@@ -122,55 +227,65 @@ public class PlayerMovement : MonoBehaviour
     private void Jumping()
     {
         // Reset coyote time counter if the player is grounded
-        if(isGrounded){
+        if (isGrounded)
+        {
             coyoteTimeCounter = _coyoteTime;
-        } else {
+        }
+        else
+        {
             coyoteTimeCounter -= Time.deltaTime;
         }
 
-        if(Input.GetButtonDown("Jump")){
+        if (Input.GetButtonDown("Jump"))
+        {
             jumpBufferCounter = _jumpBufferTime;
-        } else {
+        }
+        else
+        {
             jumpBufferCounter -= Time.deltaTime;
         }
-        
+
         // Coyote time jump (first jump off the ground)
         if (jumpBufferCounter > 0 && coyoteTimeCounter > 0)
-        {       
+        {
             rb.velocity = new Vector2(rb.velocity.x, _jumpSpeed);
         }
 
-        if(Input.GetButtonUp("Jump")){
+        if (Input.GetButtonUp("Jump"))
+        {
             coyoteTimeCounter = 0; // Reset coyote time counter if the player releases the jump button to stop accidental double jumps
         }
-        
-        if(_fixedJumpHeight){
-        // Apply gravity and falloff to jump velocity
+
+        if (_fixedJumpHeight)
+        {
+            // Apply gravity and falloff to jump velocity
             if (rb.velocity.y < _jumpVelocityFalloff || rb.velocity.y > 0)
             {
                 rb.velocity += Vector2.up * (_fallSpeed * Physics.gravity.y * Time.deltaTime); //FIXED JUMP HEIGHT - gravity is applied to the jump velocity
-            
+
             }
-        } else {
+        }
+        else
+        {
             // Apply gravity and falloff to jump velocity
-            if (rb.velocity.y < _jumpVelocityFalloff || rb.velocity.y > 0 && !Input.GetButton("Jump") )
+            if (rb.velocity.y < _jumpVelocityFalloff || rb.velocity.y > 0 && !Input.GetButton("Jump"))
             {
                 rb.velocity += Vector2.up * (_fallSpeed * Physics.gravity.y * Time.deltaTime); //VARIABLE JUMP HEIGHT - gravity is applied to the jump velocity
-            
+
             }
         }
 
 
 
-        if(!_playerCanDoubleJump) return;
- 
+        if (!_playerCanDoubleJump) return;
+
         // Mid air jumps - if the player is not grounded and has jumps remaining they can jump again
         if (Input.GetButtonDown("Jump") && coyoteTimeCounter < 0 && jumpsRemaining > 0 && !isWallSliding)
         {
             rb.velocity = new Vector2(rb.velocity.x, _jumpSpeed);
             jumpsRemaining--;
         }
-        
+
     }
     #endregion
 
@@ -188,13 +303,14 @@ public class PlayerMovement : MonoBehaviour
     [Header("Wall Jump Settings")]
     [SerializeField] private float _wallJumpingTime = 0.2f;
     [SerializeField] private float _wallJumpingDuration = 0.2f;
-    [SerializeField] private Vector2 _wallJumpingPower = new Vector2(8f,16f);
+    [SerializeField] private Vector2 _wallJumpingPower = new Vector2(8f, 16f);
     private bool isWallJumping; // Flag indicating if the player is wall jumping
     private float wallJumpingDir;
     private float wallJumpingCounter;
 
-    private void WallJumping(){
-        if(!_playerCanWallJump) return;
+    private void WallJumping()
+    {
+        if (!_playerCanWallJump) return;
 
         isTouchingWall = Physics2D.OverlapCircle(_wallCheck.position, _groundCheckRadius, _wallMask);
 
@@ -204,33 +320,43 @@ public class PlayerMovement : MonoBehaviour
         WallJump();
     }
 
-    private void WallSlide(){
+    private void WallSlide()
+    {
         // If the player is touching a wall and not grounded and moving horizontally into the wall, slide down the wall
-        if(isTouchingWall && !isGrounded && horizontal != 0){
+        if (isTouchingWall && !isGrounded && horizontal != 0)
+        {
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -_wallSlideSpeed, float.MaxValue));
             isWallSliding = true;
-        } else {
+        }
+        else
+        {
             isWallSliding = false;
         }
     }
 
-    private void WallJump(){
-        if(isWallSliding){
+    private void WallJump()
+    {
+        if (isWallSliding)
+        {
             isWallJumping = false;
 
             wallJumpingDir = -transform.localScale.x;
             wallJumpingCounter = _wallJumpingTime; // gives a small buffer time to jump off the wall
 
             CancelInvoke("StopWallJumping");
-        } else {
-            wallJumpingCounter -= Time.deltaTime; 
+        }
+        else
+        {
+            wallJumpingCounter -= Time.deltaTime;
         }
 
-        if(Input.GetButtonDown("Jump") && wallJumpingCounter > 0){
+        if (Input.GetButtonDown("Jump") && wallJumpingCounter > 0)
+        {
             isWallJumping = true;
             rb.velocity = new Vector2(wallJumpingDir * _wallJumpingPower.x, _wallJumpingPower.y);
             wallJumpingCounter = 0;
-            if(transform.localScale.x != wallJumpingDir){
+            if (transform.localScale.x != wallJumpingDir)
+            {
                 FlipSprite();
             }
 
@@ -238,7 +364,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void StopWallJumping(){
+    private void StopWallJumping()
+    {
         isWallJumping = false;
     }
     #endregion
@@ -254,15 +381,16 @@ public class PlayerMovement : MonoBehaviour
     private bool canDash = true; // Flag indicating if the player can dash
     private bool isDashing = false; // Flag indicating if the player is in the middle of dashing
 
-    private void Dashing(){
-        if(!_playerCanDash) return;
+    private void Dashing()
+    {
+        if (!_playerCanDash) return;
         // If the player presses the dash button and can dash, start the dash coroutine
         if (Input.GetButtonDown("Dash") && canDash && !uninterruptibleAnim)
         {
             StartCoroutine(Dash());
         }
     }
-    
+
     private IEnumerator Dash()
     {
         canDash = false; // Prevent the player from dashing again until the cooldown is over - is set to true in the grounded function
@@ -272,7 +400,7 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(transform.localScale.x * _dashPower, 0f); // Apply the dash power to the player
         ChangeAnimationState(PLAYER_DASH);
         trailRenderer.emitting = true; // Enable the trail renderer for the dash
-        
+
         yield return new WaitForSeconds(_dashDuration); // Wait for the dash duration to end
 
         rb.gravityScale = originalGravity; // Reset the gravity scale
@@ -293,52 +421,74 @@ public class PlayerMovement : MonoBehaviour
     const string PLAYER_RISE = "Player Jump Rising";
     const string PLAYER_FALL = "Player Jump Falling";
     const string PLAYER_DASH = "Player Dash";
-    const string PLAYER_ATTACK= "Player Attack";
+    const string PLAYER_ATTACK = "Player Attack";
+    const string PLAYER_WALLSLIDE = "Player WallSlide";
 
 
     private Animator animator;
     private string currentState;
     bool uninterruptibleAnim = false;
 
-    private void Animations(){
-        if(playerCombat.isAttacking){
+    private void Animations()
+    {
+        if (playerCombat.isAttacking)
+        {
             uninterruptibleAnim = true;
             return;
-        } else {
+        }
+        else
+        {
             uninterruptibleAnim = false;
         }
-        GroundAnims();      
+        if (isWallSliding)
+        {
+            ChangeAnimationState(PLAYER_WALLSLIDE);
+            return;
+        }
+        GroundAnims();
         AirAnims();
 
     }
 
-    private void GroundAnims(){
-        if(!isGrounded) return;
-        if(isDashing) return;
+    private void GroundAnims()
+    {
+        if (!isGrounded) return;
+        if (isDashing) return;
 
-        if(horizontal != 0){
-             if(Input.GetButton("Sprint")){
+        if (horizontal != 0)
+        {
+            if (Input.GetButton("Sprint"))
+            {
                 ChangeAnimationState(PLAYER_RUN);
-            } else {
+            }
+            else
+            {
                 ChangeAnimationState(PLAYER_WALK);
             }
-        } else{
+        }
+        else
+        {
             ChangeAnimationState(PLAYER_IDLE);
         }
     }
 
-    private void AirAnims(){
-        if(isGrounded) return;
-        if(isDashing) return;
+    private void AirAnims()
+    {
+        if (isGrounded) return;
+        if (isDashing) return;
 
-        if(rb.velocity.y > 0){
+        if (rb.velocity.y > 0)
+        {
             ChangeAnimationState(PLAYER_RISE);
-        } else {
+        }
+        else
+        {
             ChangeAnimationState(PLAYER_FALL);
         }
     }
 
-    public void PlayAttackAnim(){
+    public void PlayAttackAnim()
+    {
         ChangeAnimationState(PLAYER_ATTACK);
     }
 
@@ -348,11 +498,11 @@ public class PlayerMovement : MonoBehaviour
     void ChangeAnimationState(string newState)
     {
         //stop the same animation from interrupting itself
-        if(currentState == newState) return;
-        
+        if (currentState == newState) return;
+
         //play the animation
         animator.Play(newState);
-        
+
         //reassign the current state
         currentState = newState;
     }

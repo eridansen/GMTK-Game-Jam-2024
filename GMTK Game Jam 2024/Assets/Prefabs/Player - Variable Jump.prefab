@@ -590,6 +590,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7fd6895d9a3e3408baecef381ae635, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentPlayerScaleSettings: {fileID: 11400000, guid: 657d82c2294abb840b1461f185289e35, type: 2}
+  _arrayOfPlayerScaleSettings:
+  - {fileID: 11400000, guid: ade3fce0983333d4eab3e997c02b7f65, type: 2}
+  - {fileID: 11400000, guid: 657d82c2294abb840b1461f185289e35, type: 2}
+  - {fileID: 11400000, guid: 72392ca75a0740841878286f80c44a2e, type: 2}
   _groundMask:
     serializedVersion: 2
     m_Bits: 72
@@ -598,6 +603,7 @@ MonoBehaviour:
   _moveSpeed: 13
   _sprintSpeed: 18
   _playerCanDoubleJump: 1
+  _fixedJumpHeight: 0
   _coyoteTime: 0.2
   _jumpBufferTime: 0.1
   _jumpSpeed: 18
@@ -666,10 +672,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.01683861, y: -0.1311962}
+  m_Offset: {x: -0.01683861, y: 0.36376327}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -677,7 +683,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.36435276, y: 0.7314888}
+  m_Size: {x: 0.36435276, y: 0.73300326}
   m_EdgeRadius: 0
 --- !u!50 &2120291154917334771
 Rigidbody2D:

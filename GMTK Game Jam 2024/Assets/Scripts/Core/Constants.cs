@@ -22,21 +22,6 @@
             public const string Enemy = "Enemy";
         }
 
-        public static class Music
-        {
-            public const string Intro = "Intro";
 
-            public const string Scene1 = "Scene1";
-
-            public const string Scene2 = "Scene2";
-            
-            public const string Scene3 = "Scene3";
-            
-            public const string PCMotif = "PCMotif";
-            
-            public const string BossTheme = "BossTheme";
-            
-            public const string StartPause = "StartPause";
-        }
     }
 }

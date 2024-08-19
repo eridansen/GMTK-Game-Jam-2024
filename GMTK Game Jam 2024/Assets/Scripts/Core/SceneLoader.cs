@@ -1,6 +1,7 @@
 ﻿using UnityEngine.SceneManagement;
 using System.Collections;
 using Helpers;
+using UnityEngine;
 
 namespace Core
 {
@@ -21,7 +22,8 @@ namespace Core
         private IEnumerator LoadSceneWithLoadingScreenCoroutine(string targetSceneName)
         {
             yield return SceneManager.LoadSceneAsync(_loadingScene);
-
+            yield return new WaitForSeconds(1f);
+            
             var asyncLoad = SceneManager.LoadSceneAsync(targetSceneName);
             
             while (!asyncLoad.isDone)

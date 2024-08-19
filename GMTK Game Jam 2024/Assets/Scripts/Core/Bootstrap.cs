@@ -41,7 +41,7 @@ namespace Core
 
         private void LoadInitialScene()
         {
-            _sceneLoader.LoadSceneWithLoadingScreen(Constants.Scenes.Loading);
+            _sceneLoader.LoadSceneWithoutLoadingScreen(Constants.Scenes.MainMenu);
         }
     }
 }

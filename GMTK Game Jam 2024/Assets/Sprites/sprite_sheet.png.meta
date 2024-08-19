@@ -158,7 +158,7 @@ TextureImporter:
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 8, y: 8, z: 8, w: 8}
+      border: {x: 4, y: 4, z: 4, w: 4}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -179,7 +179,7 @@ TextureImporter:
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 8, y: 8, z: 8, w: 8}
+      border: {x: 4, y: 4, z: 4, w: 4}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -200,7 +200,7 @@ TextureImporter:
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 8, y: 8, z: 8, w: 8}
+      border: {x: 4, y: 4, z: 4, w: 4}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -789,18 +789,18 @@ TextureImporter:
       ui_button_back_pressed: 1485864523
       ui_button_normal: 979272501
       ui_menu_button_hover: -1827079387
-      ui_menu_button_pressed: -657594023
-      ui_slider_platform_background: -736023749
-      ui_slider_platform_foreground: 1323826804
-      ui_slider_platform_handle: 1097662156
-      ui_slider_vein_background: 143773244
-      ui_slider_vein_foreground: 2067462385
-      ui_slider_vein_handle: -1899666761
-      veins_01: -754388451
-      veins_02: -128781053
-      veins_03: -1552697425
-      veins_04: -1495840826
-      veins_05: 101441190
+      ui_menu_button_pressed: -736023749
+      ui_slider_platform_background: 1323826804
+      ui_slider_platform_foreground: 1097662156
+      ui_slider_platform_handle: 143773244
+      ui_slider_vein_background: 2067462385
+      ui_slider_vein_foreground: -1899666761
+      ui_slider_vein_handle: -754388451
+      veins_01: -128781053
+      veins_02: -1552697425
+      veins_03: -1495840826
+      veins_04: 101441190
+      veins_05: -657594023
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

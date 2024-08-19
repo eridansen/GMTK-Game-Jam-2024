@@ -25,4 +25,4 @@ MonoBehaviour:
   dashPower: 5
   dashDuration: 0.3
   dashCooldown: 1
-  attackPower: 0
+  attackPower: 100

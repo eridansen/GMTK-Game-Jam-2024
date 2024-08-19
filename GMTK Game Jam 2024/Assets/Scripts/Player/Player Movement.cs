@@ -166,6 +166,9 @@ public class PlayerMovement : MonoBehaviour
         _dashPower = _currentPlayerScaleSettings.dashPower;
         _dashDuration = _currentPlayerScaleSettings.dashDuration;
         _dashCooldown = _currentPlayerScaleSettings.dashCooldown;
+
+        //attack settings
+        playerCombat._damage = _currentPlayerScaleSettings.attackPower;
     }
     #endregion
 

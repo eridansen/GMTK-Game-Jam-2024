@@ -127,7 +127,7 @@ public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
     
     #region Attack 
     [Header("Combat Stats")]
-    [SerializeField] private int _damage = 10; // The player's damage
+    [SerializeField] public float _damage = 10; // The player's damage
     [SerializeField] private AudioClip[] _attackSounds; // The player's attack sounds
 
     public bool isAttacking = false; // Is the player attacking?

@@ -497,7 +497,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d1b30b45f32b9d947a00bf0838ddcb52, type: 3}
   - {fileID: 8300000, guid: fed060b908ee9cb41ad912c808e3960b, type: 3}
   - {fileID: 8300000, guid: 4885c24fb0aea0043a94000a92e89f19, type: 3}
-  invincibilityTime: 0.35
+  invincibilityTime: 1
   knockbackForce: {x: 4, y: 4}
   enemyPosition: {x: 0, y: 0, z: 0}
   _damage: 50

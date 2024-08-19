@@ -6,21 +6,15 @@ public class AudioManager : Singleton<AudioManager>
 {
     [SerializeField] private AudioSource _musicSource;
     [SerializeField] private AudioSource _sfxSource;
-    [SerializeField] private Sound[] _musicSounds;
 
-    public void PlayMusic(string name)
+    public void PlayMusicClip(Sound sound)
     {
-        Sound s = Array.Find(_musicSounds, s => s.name == name);
-        if (s == null)
-        {
-            Debug.Log("Sound does not exist");
-        }
-        else
-        {
-            _musicSource.clip = s.clip;
-            _musicSource.Play();
-        }
+        AudioClip audioClip = sound.clip;
+        _musicSource.clip = audioClip;
+        _musicSource.loop = true;
+        _musicSource.Play();
     }
+
     public void PlaySoundFXClip(AudioClip audioClip, Transform spawntransform, float volume)
     {
         AudioSource audioSource = Instantiate(_sfxSource, spawntransform.position, Quaternion.identity);
@@ -62,5 +56,10 @@ public class AudioManager : Singleton<AudioManager>
     public float GetSfxVolume()
     {
         return _sfxSource.volume;
+    }
+
+    public void StopMusic()
+    {
+        _musicSource.Stop();
     }
 }

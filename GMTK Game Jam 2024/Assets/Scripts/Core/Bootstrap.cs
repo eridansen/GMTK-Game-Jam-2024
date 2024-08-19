@@ -7,6 +7,7 @@ namespace Core
         [SerializeField] private SceneLoader _sceneLoader;
         [SerializeField] private UIModule _uiModule;
         [SerializeField] private AudioManager _audioManager;
+        [SerializeField] private Camera _mainCamera;
 
         private void Awake()
         {
@@ -26,6 +27,7 @@ namespace Core
             DontDestroyOnLoad(_sceneLoader);
             DontDestroyOnLoad(_uiModule);
             DontDestroyOnLoad(_audioManager);
+            DontDestroyOnLoad(_mainCamera);
         }
 
         private void LoadInitialScene()

@@ -421,6 +421,174 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: background_dark
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 736
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f0f8d58219aa9148a68ba5d94e6596d
+      internalID: -951143126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: background_light
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 736
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ed518d866a615440a21eccf7c9dd62d
+      internalID: -124906543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: background_light_outline
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 736
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f58cd56897b6c4d45acf8872e669a26d
+      internalID: -1711731659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: veins_01
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 643
+        width: 93
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dafd83360a329a48a015a213abbf5b6
+      internalID: -754388451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: veins_02
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 647
+        width: 58
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bf01e7c22b45d1489a4be78dd2704d7
+      internalID: -128781053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: veins_03
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 638
+        width: 52
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe9be9f9271826a44a209576a49099a8
+      internalID: -1552697425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: veins_04
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 517
+        width: 117
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc53b265b9e397548bbc4aaec08f37d7
+      internalID: -1495840826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: veins_05
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 502
+        width: 119
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 722e1bebf4dd1164a9292a3708775c04
+      internalID: 101441190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -432,12 +600,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      background_dark: 1528847696
+      background_light: -124906543
+      background_light_outline: -1711731659
       block_for_level: -43978168
       menu_text_credits: 1242782900
       menu_text_exit: 1635701071
       menu_text_play: 1407955336
       menu_text_settings: -1117318164
-      sprite_sheet_0: 1528847696
       tmp1_0: 442132885
       tmp1_1: 6811857
       tmp1_10: 1484031304
@@ -538,6 +708,11 @@ TextureImporter:
       ui_slider_vein_background: 143773244
       ui_slider_vein_foreground: 2067462385
       ui_slider_vein_handle: -1899666761
+      veins_01: -754388451
+      veins_02: -128781053
+      veins_03: -1552697425
+      veins_04: -1495840826
+      veins_05: 101441190
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -7,6 +7,8 @@ namespace Core
     {
         private const string MusicVolumeKey = "MusicVolume";
         private const string SfxVolumeKey = "SfxVolume";
+        private const string BackgroundPositionXKey = "BackgroundPositionX";
+        private const string BackgroundPositionYKey = "BackgroundPositionY";
         
         public void SaveMusicVolume(float volume)
         {
@@ -20,6 +22,18 @@ namespace Core
             PlayerPrefs.Save();
         }
         
+        public void SaveBackgroundPositionX(float volume)
+        {
+            PlayerPrefs.SetFloat(BackgroundPositionXKey, volume);
+            PlayerPrefs.Save();
+        }
+        
+        public void SaveBackgroundPositionY(float volume)
+        {
+            PlayerPrefs.SetFloat(BackgroundPositionYKey, volume);
+            PlayerPrefs.Save();
+        }
+        
         public float LoadMusicVolume()
         {
             return PlayerPrefs.HasKey(MusicVolumeKey) ? PlayerPrefs.GetFloat(MusicVolumeKey) : 1f;
@@ -28,6 +42,16 @@ namespace Core
         public float LoadSfxVolume()
         {
             return PlayerPrefs.HasKey(SfxVolumeKey) ? PlayerPrefs.GetFloat(SfxVolumeKey) : 1f;
+        }
+        
+        public float LoadBackgroundPositionX()
+        {
+            return PlayerPrefs.HasKey(BackgroundPositionXKey) ? PlayerPrefs.GetFloat(BackgroundPositionXKey) : 0f;
+        }
+        
+        public float LoadBackgroundPositionY()
+        {
+            return PlayerPrefs.HasKey(BackgroundPositionYKey) ? PlayerPrefs.GetFloat(BackgroundPositionYKey) : 0f;
         }
     }
 

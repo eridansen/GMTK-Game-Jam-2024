@@ -5,6 +5,7 @@ namespace Core.Levels.Credits
 {
     public class CreditsWindow : MonoBehaviour
     {
+        [SerializeField] private RawImage _background;
         [SerializeField] private Button _mainMenuButton;
         [SerializeField] private Button _mathaeuzButton;
         [SerializeField] private Button _sebastianButton;
@@ -40,10 +41,28 @@ namespace Core.Levels.Credits
             _bevisavaButton.onClick.AddListener(OnBevisavaButtonClicked);
             _minHtetNaingButton.onClick.AddListener(OnMinHtetNaingButtonClicked);
             _reixlenButton.onClick.AddListener(OnReixlenButtonClicked);
+
+            SetBackgroundPosition();
+        }
+        
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                OnMainMenuButtonClicked();
+            }
+        }
+        
+        private void SetBackgroundPosition()
+        {
+            Vector2 position = new Vector2(SaveModule.Instance.LoadBackgroundPositionX(), SaveModule.Instance.LoadBackgroundPositionY());
+            _background.uvRect = new Rect(position, _background.uvRect.size);
         }
 
         private void OnMainMenuButtonClicked()
         {
+            SaveModule.Instance.SaveBackgroundPositionX(_background.uvRect.position.x);
+            SaveModule.Instance.SaveBackgroundPositionY(_background.uvRect.position.y);
             SceneLoader.Instance.LoadSceneWithoutLoadingScreen(Constants.Scenes.MainMenu);
         }
 
@@ -54,7 +73,7 @@ namespace Core.Levels.Credits
 
         private void OnSebastianButtonClicked()
         {
-            Application.OpenURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+            Application.OpenURL("https://zebravibe.itch.io/");
         }
 
         private void OnAndybugsButtonClicked()

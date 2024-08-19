@@ -3,7 +3,12 @@ using UnityEngine;
 
 public class CancerCell : MonoBehaviour
 {
+<<<<<<< HEAD
     [Header ("Cell settings")]
+=======
+    [Header("Cell settings")]
+    [SerializeField] private float _lifeDuration;
+>>>>>>> Player-movement
     [SerializeField] private float _healthPoint;
 
     [Header("Spray settings")]
@@ -24,8 +29,15 @@ public class CancerCell : MonoBehaviour
     private void Spray()
     {
         for (int i = 0; i < _sprayAmount; i++)
+<<<<<<< HEAD
         { 
             var attacker = ObjectPooler.ProvideObject(_sprayedPrefab, transform.position, 
+=======
+        {
+            Vector3 offset = new Vector2(1f * _spawnOffsetMultiplicator, 1f * _spawnOffsetMultiplicator);
+            Vector2 initialPos = this.transform.position + offset;
+            var spr = ObjectPooler.ProvideObject(_sprayedPrefab, initialPos,
+>>>>>>> Player-movement
                 _sprayedPrefab.transform.rotation) as SprayedCancer;
 
             AddListender(attacker);
@@ -50,5 +62,14 @@ public class CancerCell : MonoBehaviour
     {
         listener.OnPlayerSpotted -= HiveAttack;
         _attackersList.Remove(listener);
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        Cell cell = other.gameObject.GetComponent<Cell>();
+        if (cell != null)
+        {
+            //cell.Damage(_healthPoint);
+        }
     }
 }

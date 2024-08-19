@@ -28,14 +28,15 @@ public class PlayerMovement : MonoBehaviour
         // Handle player movement functions 
         Grounded();
         Animations();
-        if (uninterruptibleAnim)
+
+        if (isDashing || isKnockbacked) return;
+        if (uninterruptibleAnim || isDead || isHurt)
         {
             rb.velocity = rb.velocity += Vector2.up * (_fallSpeed * Physics.gravity.y * Time.deltaTime);
             if (isDashing) rb.velocity -= new Vector2(rb.velocity.x / 2, 0);
             if (isGrounded) rb.velocity = Vector2.zero;
             return;
         }
-        if (isDashing) return;
         WallJumping();
         if (isWallJumping) return;
         Scaling();
@@ -43,6 +44,24 @@ public class PlayerMovement : MonoBehaviour
         Walking();
         Dashing();
     }
+
+
+    bool isKnockbacked = false;
+
+    public IEnumerator Knockback(Vector3 direction, Vector2 force, float duration)
+    {  
+        isKnockbacked = true;
+        float timer = 0;
+        while (duration > timer)
+        {
+            timer += Time.deltaTime;
+            rb.velocity = new Vector2(-transform.localScale.x * force.x, force.y);
+            yield return null;
+        }
+        isKnockbacked = false;
+
+    }
+
 
     #region Player Scale Settings
 
@@ -462,10 +481,13 @@ public class PlayerMovement : MonoBehaviour
     const string PLAYER_FALL = "Player Jump Falling";
     const string PLAYER_DASH = "Player Dash";
     const string PLAYER_ATTACK = "Player Attack";
-    const string PLAYER_ATTACK_HITBOX = "Player Attack Hitbox";
     const string PLAYER_WALLSLIDE = "Player WallSlide";
+    const string PLAYER_HURT = "Player Hurt";
+    const string PLAYER_DEATH = "Player Death";
 
 
+    private bool isDead = false;
+    public bool isHurt = false;
     private Animator animator;
     private string currentState;
     bool uninterruptibleAnim = false;
@@ -484,6 +506,10 @@ public class PlayerMovement : MonoBehaviour
         if (isWallSliding)
         {
             ChangeAnimationState(PLAYER_WALLSLIDE);
+            return;
+        }
+        if(isHurt || isDead)
+        {
             return;
         }
         GroundAnims();
@@ -532,7 +558,24 @@ public class PlayerMovement : MonoBehaviour
     {
         ChangeAnimationState(PLAYER_ATTACK);
     }
-
+    public void PlayHurtAnim()
+    {
+        ChangeAnimationState(PLAYER_HURT);
+        isHurt = true;
+    }
+    public void PlayDeathAnim()
+    {
+        ChangeAnimationState(PLAYER_DEATH);
+        isDead = true;
+    }
+    private void HurtAnimFinished()
+    {
+        isHurt = false;
+    }
+    private void DeathAnimFinished()
+    {
+        gameObject.SetActive(false);
+    }
 
 
 

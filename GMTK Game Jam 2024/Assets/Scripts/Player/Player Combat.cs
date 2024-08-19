@@ -23,7 +23,7 @@ public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
     }
     private void Update() {
         Attacking();
-     
+
         
         if(Input.GetKeyDown(KeyCode.B))
         {
@@ -33,6 +33,9 @@ public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
         {
             Heal(30);
         }
+        if (invincibilityCounter > 0){            
+            invincibilityCounter -= Time.deltaTime; // Decrease the invincibility counter
+        }
     }
 
     #region Health
@@ -41,8 +44,26 @@ public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
     [SerializeField] private Image _healthBar;
     [SerializeField] private float _healthBarSpeed = 0.05f;
 
+
+    [Header("Hurt Settings")]
+    [SerializeField] private AudioClip[] _hurtSounds; // The player's hurt sounds
+    [SerializeField] private float invincibilityTime = 1f; // The time the player is invincible after being hit
+    [SerializeField] private Vector2 knockbackForce = new Vector2(15f, 5f); // The force of the knockback
+
+    [HideInInspector] public Vector3 enemyPosition = Vector3.zero; // The position of the enemy that hit the player 
+
+    private float invincibilityCounter = 0; // The counter for the invincibility time
+
+
     public void Damage(float damageAmount)
     {
+        if (invincibilityCounter > 0) return; // If the player is invincible, return
+
+        invincibilityCounter = invincibilityTime; // Set the invincibility counter to the invincibility time
+        playerMovement.PlayHurtAnim(); // Play the hit animation
+        AudioManager.Instance.PlayRandomSoundFXClip(_hurtSounds, transform, 0.5f); // Play a random hurt sound
+
+        ApplyKnockback(); // Apply the knockback
         _currentHealth -= damageAmount;
         StartCoroutine(UpdateHealthBarUI());
         if (_currentHealth <= 0)
@@ -50,6 +71,18 @@ public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
             _currentHealth = 0;
             Die();
         }
+    }
+
+    public void SetEnemyPosition(Vector3 enemyPos)
+    {
+        enemyPosition = enemyPos;
+    }
+    void ApplyKnockback()
+    {
+        Vector3 direction = transform.position - enemyPosition; // Get the direction of the knockback
+        direction.Normalize(); // Normalize the direction
+        direction = -direction; // Invert the direction
+        StartCoroutine(playerMovement.Knockback(direction, knockbackForce, 0.1f)); // Apply the knockback
     }
 
     public void Heal(float healAmount)
@@ -87,7 +120,7 @@ public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
 
     private void Die()
     {
-        Debug.Log("Player has died");
+        playerMovement.PlayDeathAnim();
         _healthBar.enabled = false;
     }
     #endregion

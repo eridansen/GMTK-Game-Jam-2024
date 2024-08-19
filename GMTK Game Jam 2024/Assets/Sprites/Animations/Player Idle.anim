@@ -21,7 +21,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -8871708444036994225, guid: 56d146e54be9c114cb49a4110b774f95, type: 3}
+      value: {fileID: 1271808992367398623, guid: 56d146e54be9c114cb49a4110b774f95, type: 3}
     - time: 0.66
       value: {fileID: 4182085926624698601, guid: 56d146e54be9c114cb49a4110b774f95, type: 3}
     - time: 0.726

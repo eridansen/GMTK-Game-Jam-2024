@@ -93,4 +93,17 @@ public class CombatDummy : MonoBehaviour, IDamageable, IHealable
         _healthBar.fillAmount = percent;
     }
 
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        IDamageable damageable = other.GetComponent<IDamageable>();
+        if (damageable == null)  return;
+
+        damageable.Damage(10);
+
+        PlayerCombat playerCombat = other.GetComponent<PlayerCombat>();
+        if(playerCombat == null) return;
+
+        playerCombat.SetEnemyPosition(transform.position);
+        
+    }
 }

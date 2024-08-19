@@ -30,9 +30,7 @@ public class PlayerMovement : MonoBehaviour
         Grounded();
         Animations();
 
-        Debug.Log(isKnockbacked + " knockbacked");
-        Debug.Log(uninterruptibleAnim + " uninterruptible");
-        Debug.Log(isHurt + " hurt");
+
         if (isDashing || isKnockbacked) return;
         if (uninterruptibleAnim || isDead || isHurt)
         {

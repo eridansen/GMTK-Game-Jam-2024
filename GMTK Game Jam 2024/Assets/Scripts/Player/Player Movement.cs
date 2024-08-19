@@ -52,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
     public IEnumerator Knockback(Vector3 direction, Vector2 force, float duration)
     {
+        playerCombat.isAttacking = false;
         isKnockbacked = true;
         float timer = 0;
         while (duration > timer)

@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -149,11 +149,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ui_button_normal
+      name: platform
       rect:
         serializedVersion: 2
-        x: 16
-        y: 208
+        x: 335
+        y: 625
         width: 64
         height: 64
       alignment: 0
@@ -688,6 +688,7 @@ TextureImporter:
       background_light: -124906543
       background_light_outline: -1711731659
       block_for_level: -43978168
+      platform: 979272501
       text_back: -192252261
       text_credits: 1242782900
       text_exit: 1635701071
@@ -787,7 +788,6 @@ TextureImporter:
       ui_button_back_hover: -1294123705
       ui_button_back_normal: -1423210038
       ui_button_back_pressed: 1485864523
-      ui_button_normal: 979272501
       ui_menu_button_hover: -1827079387
       ui_menu_button_pressed: -736023749
       ui_slider_platform_background: 1323826804

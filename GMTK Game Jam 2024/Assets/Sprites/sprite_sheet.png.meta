@@ -212,7 +212,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: menu_text_play
+      name: text_play
       rect:
         serializedVersion: 2
         x: 16
@@ -233,7 +233,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: menu_text_settings
+      name: text_settings
       rect:
         serializedVersion: 2
         x: 48
@@ -254,7 +254,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: menu_text_exit
+      name: text_exit
       rect:
         serializedVersion: 2
         x: 96
@@ -275,7 +275,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: menu_text_credits
+      name: text_credits
       rect:
         serializedVersion: 2
         x: 128
@@ -535,7 +535,7 @@ TextureImporter:
         width: 52
         height: 67
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -556,7 +556,7 @@ TextureImporter:
         width: 117
         height: 88
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -577,7 +577,7 @@ TextureImporter:
         width: 119
         height: 104
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -585,6 +585,90 @@ TextureImporter:
       bones: []
       spriteID: 722e1bebf4dd1164a9292a3708775c04
       internalID: 101441190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_button_back_normal
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 180
+        width: 30
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 010640044ffc2594a86a52fdc0ce9772
+      internalID: -1423210038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_button_back_hover
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 165
+        width: 30
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a705fdb4fc810f943956a6ff508f5fca
+      internalID: -1294123705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_button_back_pressed
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 151
+        width: 30
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 508fb61e810f3684a8c963f2804c5fec
+      internalID: 1485864523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: text_back
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 194
+        width: 15
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26b59ed474e63a34f91df58855d5d12c
+      internalID: -192252261
       vertices: []
       indices: 
       edges: []
@@ -604,10 +688,11 @@ TextureImporter:
       background_light: -124906543
       background_light_outline: -1711731659
       block_for_level: -43978168
-      menu_text_credits: 1242782900
-      menu_text_exit: 1635701071
-      menu_text_play: 1407955336
-      menu_text_settings: -1117318164
+      text_back: -192252261
+      text_credits: 1242782900
+      text_exit: 1635701071
+      text_play: 1407955336
+      text_settings: -1117318164
       tmp1_0: 442132885
       tmp1_1: 6811857
       tmp1_10: 1484031304
@@ -699,6 +784,9 @@ TextureImporter:
       tmp1_91: -1547911353
       tmp1_92: -1949249757
       tmp1_97: -259477833
+      ui_button_back_hover: -1294123705
+      ui_button_back_normal: -1423210038
+      ui_button_back_pressed: 1485864523
       ui_button_normal: 979272501
       ui_menu_button_hover: -1827079387
       ui_menu_button_pressed: -657594023

@@ -20,7 +20,7 @@ namespace Core.Levels.Credits
         
         private void OnMainMenuButtonClicked()
         {
-            SceneLoader.Instance.LoadSceneWithLoadingScreen(Constants.Scenes.MainMenu);
+            SceneLoader.Instance.LoadSceneWithoutLoadingScreen(Constants.Scenes.MainMenu);
         }
     }
 }

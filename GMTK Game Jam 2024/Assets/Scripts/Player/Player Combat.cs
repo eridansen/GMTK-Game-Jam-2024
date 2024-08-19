@@ -9,6 +9,7 @@ public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
     [Header("Health Stats")]
     [SerializeField] private float _currentHealth = 100; // The player's health
     [SerializeField] private float _maxHealth = 100; // The player's maximum health
+    [SerializeField] private float _healAmount = 30; // The player's maximum health
 
     private PlayerMovement playerMovement;
 
@@ -25,13 +26,9 @@ public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
         Attacking();
 
         
-        if(Input.GetKeyDown(KeyCode.B))
+        if(Input.GetKeyDown(KeyCode.H))
         {
-            Damage(30);
-        }
-        if(Input.GetKeyDown(KeyCode.N))
-        {
-            Heal(30);
+            Heal(_healAmount);
         }
         if (invincibilityCounter > 0){            
             invincibilityCounter -= Time.deltaTime; // Decrease the invincibility counter
@@ -54,6 +51,9 @@ public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
 
     private float invincibilityCounter = 0; // The counter for the invincibility time
 
+    [Header("Healing Particles")]
+    [SerializeField] private ParticleSystem _healParticles; // The player's healing particles
+    [SerializeField] private Transform healParticlePosition; // The position of the healing particles
 
     public void Damage(float damageAmount)
     {
@@ -88,7 +88,11 @@ public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
     public void Heal(float healAmount)
     {
         if(_currentHealth == _maxHealth) return;
-        
+
+        //RESOURCE GOES HERE -if player doesnt have enough resource, return out of function
+
+
+        playerMovement.PlayParticleEffectInstance(healParticlePosition.position,_healParticles);
         _currentHealth += healAmount;
         if (_currentHealth > _maxHealth)
         {
@@ -135,7 +139,7 @@ public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            if(isAttacking) return;
+            if(isAttacking || playerMovement.isHurt || playerMovement.isDashing) return;
             Attack();
             AudioManager.Instance.PlayRandomSoundFXClip(_attackSounds, transform, 0.5f);
         }

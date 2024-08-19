@@ -22,7 +22,7 @@ public class CancerCell : MonoBehaviour
 
 
     private void Spray()
-    { 
+    {
         for (int i = 0; i < _sprayAmount; i++)
         { 
             var attacker = ObjectPooler.ProvideObject(_sprayedPrefab, transform.position, 

@@ -21,42 +21,34 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -504567879, guid: 3d0a16ee76d4c2c46aef229156b844f2, type: 3}
-    - time: 0.33333334
-      value: {fileID: -73614230, guid: 3d0a16ee76d4c2c46aef229156b844f2, type: 3}
-    - time: 0.6666667
-      value: {fileID: 1583759846, guid: 3d0a16ee76d4c2c46aef229156b844f2, type: 3}
+      value: {fileID: -8871708444036994225, guid: 56d146e54be9c114cb49a4110b774f95, type: 3}
+    - time: 0.66
+      value: {fileID: 4182085926624698601, guid: 56d146e54be9c114cb49a4110b774f95, type: 3}
+    - time: 0.726
+      value: {fileID: 4990198691979148750, guid: 56d146e54be9c114cb49a4110b774f95, type: 3}
+    - time: 1.3859999
+      value: {fileID: 60396420760582608, guid: 56d146e54be9c114cb49a4110b774f95, type: 3}
+    - time: 1.4519999
+      value: {fileID: 60396420760582608, guid: 56d146e54be9c114cb49a4110b774f95, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
-  m_SampleRate: 3
+  m_SampleRate: 100
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
-    genericBindings:
-    - serializedVersion: 2
-      path: 0
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
-      isIntCurve: 0
-      isSerializeReferenceCurve: 0
-    pptrCurveMapping:
-    - {fileID: -504567879, guid: 3d0a16ee76d4c2c46aef229156b844f2, type: 3}
-    - {fileID: -73614230, guid: 3d0a16ee76d4c2c46aef229156b844f2, type: 3}
-    - {fileID: 1583759846, guid: 3d0a16ee76d4c2c46aef229156b844f2, type: 3}
+    genericBindings: []
+    pptrCurveMapping: []
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1
+    m_StopTime: 1.4619999
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -67,7 +59,7 @@ AnimationClip:
     m_LoopBlendPositionY: 0
     m_LoopBlendPositionXZ: 0
     m_KeepOriginalOrientation: 0
-    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionY: 0
     m_KeepOriginalPositionXZ: 0
     m_HeightFromFeet: 0
     m_Mirror: 0

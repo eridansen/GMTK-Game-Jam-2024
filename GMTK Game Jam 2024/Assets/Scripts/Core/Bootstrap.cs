@@ -7,6 +7,8 @@ namespace Core
         [SerializeField] private SceneLoader _sceneLoader;
         [SerializeField] private UIModule _uiModule;
         [SerializeField] private AudioManager _audioManager;
+        [SerializeField] private SaveModule _saveModule;
+        [SerializeField] private Camera _mainCamera;
 
         private void Awake()
         {
@@ -17,6 +19,7 @@ namespace Core
         {
             Application.targetFrameRate = 60;
             InitializeSystems();
+            LoadSoundValues();
             LoadInitialScene();
         }
 
@@ -26,11 +29,19 @@ namespace Core
             DontDestroyOnLoad(_sceneLoader);
             DontDestroyOnLoad(_uiModule);
             DontDestroyOnLoad(_audioManager);
+            DontDestroyOnLoad(_saveModule);
+            DontDestroyOnLoad(_mainCamera);
+        }
+        
+        private void LoadSoundValues()
+        {
+            _audioManager.SetMusicVolume(_saveModule.LoadMusicVolume());
+            _audioManager.SetSfxVolume(_saveModule.LoadSfxVolume());
         }
 
         private void LoadInitialScene()
         {
-            _sceneLoader.LoadSceneWithLoadingScreen(Constants.Scenes.MainMenu);
+            _sceneLoader.LoadSceneWithLoadingScreen(Constants.Scenes.Loading);
         }
     }
 }

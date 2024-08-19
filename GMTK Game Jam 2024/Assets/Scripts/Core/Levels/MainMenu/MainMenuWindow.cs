@@ -32,7 +32,7 @@ namespace Core.Levels.MainMenu
         
         private void OnSettingsButtonClicked()
         {
-            SceneLoader.Instance.LoadSceneWithLoadingScreen(Constants.Scenes.Settings);
+            SceneLoader.Instance.LoadSceneWithoutLoadingScreen(Constants.Scenes.Settings);
         }
         
         private void OnExitButtonClicked()
@@ -42,7 +42,7 @@ namespace Core.Levels.MainMenu
         
         private void OnCreditsButtonClicked()
         {
-            SceneLoader.Instance.LoadSceneWithLoadingScreen(Constants.Scenes.Credits);
+            SceneLoader.Instance.LoadSceneWithoutLoadingScreen(Constants.Scenes.Credits);
         }
     }
 }

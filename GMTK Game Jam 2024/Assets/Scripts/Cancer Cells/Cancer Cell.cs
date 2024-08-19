@@ -1,11 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class CancerCell : MonoBehaviour
 {
     [Header ("Cell settings")]
-    [SerializeField] private float _lifeDuration;
     [SerializeField] private float _healthPoint;
 
     [Header("Spray settings")]
@@ -16,16 +14,12 @@ public class CancerCell : MonoBehaviour
 
     private List<SprayedCancer> _attackersList = new List<SprayedCancer>();
 
+
     private void Start()
     {
         InvokeRepeating(nameof(Spray), 0, _sprayInterval);
     }
 
-    private void HiveAttack(Transform attackTarget)
-    {
-        foreach (var attacker in _attackersList)
-            attacker.Attack();
-    }
 
     private void Spray()
     { 
@@ -34,11 +28,27 @@ public class CancerCell : MonoBehaviour
             var attacker = ObjectPooler.ProvideObject(_sprayedPrefab, transform.position, 
                 _sprayedPrefab.transform.rotation) as SprayedCancer;
 
-            _attackersList.Add(attacker);
-
-            attacker.OnPlayerSpotted += HiveAttack;
+            AddListender(attacker);
         }
     }
+    private void AddListender(SprayedCancer sprayedCancer)
+    {
+        _attackersList.Add(sprayedCancer);
+        sprayedCancer.OnPlayerSpotted += HiveAttack;
+        sprayedCancer.OnDie += RemoveListener;
+    }
 
-    
+
+    private void HiveAttack(Transform attackTarget)
+    {
+        foreach (var attacker in _attackersList)
+            attacker.StartAttacking(attackTarget);
+    }
+
+
+    public void RemoveListener(SprayedCancer listener)
+    {
+        listener.OnPlayerSpotted -= HiveAttack;
+        _attackersList.Remove(listener);
+    }
 }

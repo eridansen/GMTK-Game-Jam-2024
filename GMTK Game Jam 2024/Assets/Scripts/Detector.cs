@@ -16,7 +16,7 @@ public class Detector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.TryGetComponent<PlayerMovement>(out PlayerMovement player))
             OnPlayerDetected?.Invoke(collision.transform);
     }
 

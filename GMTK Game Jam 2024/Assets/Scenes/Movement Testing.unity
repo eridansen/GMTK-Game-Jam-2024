@@ -983,10 +983,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3537338371353559276, guid: 6504b0a10bcd3174f96f04ab30c88a8c, type: 3}
-      propertyPath: invincibilityTime
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9154553186477426927, guid: 6504b0a10bcd3174f96f04ab30c88a8c, type: 3}
       propertyPath: m_Name
       value: Player - Variable Jump

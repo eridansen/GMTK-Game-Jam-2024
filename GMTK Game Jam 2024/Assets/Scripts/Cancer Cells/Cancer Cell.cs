@@ -1,17 +1,23 @@
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class CancerCell : MonoBehaviour
+public class CancerCell : MonoBehaviour, IDamageable
 {
-    [Header("Cell settings")]
-    [SerializeField] private float _lifeDuration;
     [SerializeField] private float _healthPoint;
 
     [Header("Spray settings")]
     [SerializeField] private SprayedCancer _sprayedPrefab;
     [SerializeField] private float _sprayInterval;
     [SerializeField] private float _sprayAmount;
-    [SerializeField] private float _spawnOffsetMultiplicator;
+
+
+    private List<SprayedCancer> _attackersList = new List<SprayedCancer>();
+    private Health health;
+
+    private void Awake()
+    {
+        health = GetComponent<Health>();    
+    }
 
 
     private void Start()
@@ -19,29 +25,45 @@ public class CancerCell : MonoBehaviour
         InvokeRepeating(nameof(Spray), 0, _sprayInterval);
     }
 
+
     private void Spray()
     {
         for (int i = 0; i < _sprayAmount; i++)
-        {
-            Vector3 offset = new Vector2(1f * _spawnOffsetMultiplicator, 1f * _spawnOffsetMultiplicator);
-            Vector2 initialPos = this.transform.position + offset;
-            var spr = ObjectPooler.ProvideObject(_sprayedPrefab, initialPos,
+        { 
+            var attacker = ObjectPooler.ProvideObject(_sprayedPrefab, transform.position, 
                 _sprayedPrefab.transform.rotation) as SprayedCancer;
-            spr.OnCollisionWithNormalCell += OnCellInfected;
+
+            AddListender(attacker);
         }
     }
-
-    private void OnCellInfected()
+    private void AddListender(SprayedCancer sprayedCancer)
     {
+        _attackersList.Add(sprayedCancer);
+        sprayedCancer.OnPlayerSpotted += HiveAttack;
+        sprayedCancer.OnDie += RemoveListener;
+    }
 
+
+    private void HiveAttack(Transform attackTarget)
+    {
+        foreach (var attacker in _attackersList)
+            attacker.StartAttacking(attackTarget);
+    }
+
+
+    public void RemoveListener(SprayedCancer listener)
+    {
+        listener.OnPlayerSpotted -= HiveAttack;
+        _attackersList.Remove(listener);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Cell cell = other.gameObject.GetComponent<Cell>();
-        if (cell != null)
-        {
-            //cell.Damage(_healthPoint);
-        }
+        
+    }
+
+    public void Damage(float damageAmount)
+    {
+        health.TakeDamage(damageAmount);
     }
 }

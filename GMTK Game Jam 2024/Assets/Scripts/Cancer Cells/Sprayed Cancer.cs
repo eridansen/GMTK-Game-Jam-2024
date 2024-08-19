@@ -1,40 +1,67 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+
 [RequireComponent (typeof(Rigidbody2D), typeof(Collider2D))]
-public class SprayedCancer : MonoBehaviour
+public class SprayedCancer : MonoBehaviour, IDamageable
 {
-    [SerializeField] private float _damage;
     [SerializeField] private float _lifeDuration;
-    [SerializeField] private float _speed;
 
-    private Rigidbody2D rigidbody;
+    public UnityAction<Transform> OnPlayerSpotted;
+    public UnityAction<SprayedCancer> OnDie;
 
-    public UnityAction OnCollisionWithNormalCell;
+    private Transform player;
+    private Detector detector;
+
+    private AttackingCancerAnimator animator;
+    private AttackingCellBattleBehaviour battleBehaviour;
+    private Health health;
 
 
     private void Awake()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        detector = GetComponentInChildren<Detector>();
+        animator = GetComponent<AttackingCancerAnimator>();
+        battleBehaviour = GetComponent<AttackingCellBattleBehaviour>();
+        health = GetComponent<Health>();
+
+        detector.OnPlayerDetected += SpotPlayer;
     }
+
+    private void OnEnable()
+    {
+        Invoke(nameof(Die), _lifeDuration);
+    }
+
 
     private void Start()
     {
-        Vector3 direction = new Vector3 (
-            Random.Range(-1,1f),
-            Random.Range(-1, 1f),
-            0f);
-
-        rigidbody.AddForce(direction * _speed);
+        Vector2 forceDir = new Vector2(Random.Range(-1f,1f),Random.Range(-1f,1f));
+        float forceMultiplier = 5f;
+        GetComponent<Rigidbody2D>().AddForce(forceDir * forceMultiplier);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void SpotPlayer(Transform player)
     {
-        if(collision.gameObject.CompareTag("NormalCell"))
-        {
-            //Get component and infect
-            OnCollisionWithNormalCell?.Invoke();
-        }
-        // else just bounce
+        OnPlayerSpotted?.Invoke(player);
+    }
+
+
+    public void StartAttacking(Transform target)
+    {
+        battleBehaviour.StartFighting(target);
+    }
+
+
+    private void Die()
+    {
+        animator.PlayDeathAnim();
+        OnDie?.Invoke(this);
+        ObjectPooler.ReturnGameObject(this);
+    }
+
+    public void Damage(float damageAmount)
+    {
+        health.TakeDamage(damageAmount);
     }
 }

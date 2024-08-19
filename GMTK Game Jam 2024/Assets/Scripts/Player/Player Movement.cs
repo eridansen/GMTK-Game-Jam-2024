@@ -19,7 +19,8 @@ public class PlayerMovement : MonoBehaviour
         playerCombat = GetComponent<PlayerCombat>();
         trailRenderer = GetComponentInChildren<TrailRenderer>();
     }
-    private void Start() {
+    private void Start()
+    {
         LoadSettings();
     }
     // Update is called once per frame
@@ -29,6 +30,9 @@ public class PlayerMovement : MonoBehaviour
         Grounded();
         Animations();
 
+        Debug.Log(isKnockbacked + " knockbacked");
+        Debug.Log(uninterruptibleAnim + " uninterruptible");
+        Debug.Log(isHurt + " hurt");
         if (isDashing || isKnockbacked) return;
         if (uninterruptibleAnim || isDead || isHurt)
         {
@@ -49,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
     bool isKnockbacked = false;
 
     public IEnumerator Knockback(Vector3 direction, Vector2 force, float duration)
-    {  
+    {
         isKnockbacked = true;
         float timer = 0;
         while (duration > timer)
@@ -76,8 +80,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Scaling()
     {
-        if(isScaling) return;
-        
+        if (isScaling) return;
+
         if (Input.GetButtonDown("Scale Up"))
         {
             if (currentScale < _arrayOfPlayerScaleSettings.Length - 1)
@@ -178,7 +182,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask _groundMask; // The layer mask for ground objects
     [SerializeField] private Transform _groundCheck; // The transform representing the position to check for ground
     [SerializeField] private float _groundCheckRadius = 0.4f; // The radius for ground check
-     private bool isGrounded; // Flag indicating if the player is grounded
+    private bool isGrounded; // Flag indicating if the player is grounded
 
     // Check if the player is grounded
     private void Grounded()
@@ -252,7 +256,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _jumpSpeed = 12; // Height of the jump
     [SerializeField] private float _fallSpeed = 7; // Speed of falling
     [SerializeField] private float _jumpVelocityFalloff = 8; // Rate of decrease in jump velocity
-    [SerializeField] AudioClip [] _jumpSounds;
+    [SerializeField] AudioClip[] _jumpSounds;
 
     private int numberOfJumps = 1; // Number of jumps the player can perform
     private int jumpsRemaining; // Number of jumps remaining
@@ -261,7 +265,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool hasJumped; // Flag indicating if the player has initiated a jump for animations
     private bool hasLanded; // Flag indicating if the player has initiated a jump for animations
-    
+
     // Handle player jumping
     private void Jumping()
     {
@@ -288,18 +292,20 @@ public class PlayerMovement : MonoBehaviour
         if (jumpBufferCounter > 0 && coyoteTimeCounter > 0 && hasJumped == false)
         {
             rb.velocity = new Vector2(rb.velocity.x, _jumpSpeed);
+            PlayParticleEffectInstance(_groundCheck.position, _jumpParticles);
             hasJumped = true;
             hasLanded = false;
             PlayJumpSound();
         }
 
-        if(isGrounded && rb.velocity.y < 0)
+        if (isGrounded && rb.velocity.y < 0)
         {
             hasJumped = false;
-            if(!hasLanded)
+            if (!hasLanded)
             {
                 hasLanded = true;
                 PlayFootstepSound();
+                PlayParticleEffectInstance(_groundCheck.position, _jumpParticles);
             }
         }
 
@@ -327,7 +333,7 @@ public class PlayerMovement : MonoBehaviour
 
             }
         }
-    
+
 
 
         if (!_playerCanDoubleJump) return;
@@ -412,6 +418,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && wallJumpingCounter > 0)
         {
+            StopParticleEffect(_wallSlideParticles);
             isWallJumping = true;
             rb.velocity = new Vector2(wallJumpingDir * _wallJumpingPower.x, _wallJumpingPower.y);
             wallJumpingCounter = 0;
@@ -440,7 +447,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioClip[] _dashSounds;
 
     private bool canDash = true; // Flag indicating if the player can dash
-    private bool isDashing = false; // Flag indicating if the player is in the middle of dashing
+    public bool isDashing = false; // Flag indicating if the player is in the middle of dashing
 
     private void Dashing()
     {
@@ -477,8 +484,12 @@ public class PlayerMovement : MonoBehaviour
     #region Animation
 
     //animation states    
+    const string PLAYER_WALK_SMALL = "Player Walk Small";
+    const string PLAYER_RUN_SMALL = "Player Run Small";
     const string PLAYER_WALK = "Player Walk";
     const string PLAYER_RUN = "Player Run";
+    const string PLAYER_WALK_LARGE = "Player Walk Large";
+    const string PLAYER_RUN_LARGE = "Player Run Large";
     const string PLAYER_IDLE = "Player Idle";
     const string PLAYER_RISE = "Player Jump Rising";
     const string PLAYER_FALL = "Player Jump Falling";
@@ -509,9 +520,14 @@ public class PlayerMovement : MonoBehaviour
         if (isWallSliding)
         {
             ChangeAnimationState(PLAYER_WALLSLIDE);
+            PlayParticleEffect(_wallSlideParticles);
             return;
         }
-        if(isHurt || isDead)
+        else
+        {
+            StopParticleEffect(_wallSlideParticles);
+        }
+        if (isHurt || isDead)
         {
             return;
         }
@@ -529,18 +545,47 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetButton("Sprint"))
             {
-                ChangeAnimationState(PLAYER_RUN);
+                if (_currentPlayerScaleSettings.name == "Small")
+                {
+                    ChangeAnimationState(PLAYER_RUN_SMALL);
+                }
+                else if (_currentPlayerScaleSettings.name == "Large")
+                {
+                    ChangeAnimationState(PLAYER_RUN_LARGE);
+                }
+                else
+                {
+                    ChangeAnimationState(PLAYER_RUN);
+                }
+                PlayParticleEffect(runParticles);
             }
             else
             {
-                ChangeAnimationState(PLAYER_WALK);
+                if (_currentPlayerScaleSettings.name == "Small")
+                {
+                    ChangeAnimationState(PLAYER_WALK_SMALL);
+                }
+                else if (_currentPlayerScaleSettings.name == "Large")
+                {
+                    ChangeAnimationState(PLAYER_WALK_LARGE);
+                }
+                else
+                {
+                    ChangeAnimationState(PLAYER_WALK);
+                }
+                PlayParticleEffect(walkParticles);
+                StopParticleEffect(runParticles);
             }
         }
         else
         {
             ChangeAnimationState(PLAYER_IDLE);
+            StopParticleEffect(runParticles);
+            StopParticleEffect(walkParticles);
         }
     }
+
+
 
     private void AirAnims()
     {
@@ -550,10 +595,14 @@ public class PlayerMovement : MonoBehaviour
         if (rb.velocity.y > 0)
         {
             ChangeAnimationState(PLAYER_RISE);
+            StopParticleEffect(runParticles);
+            StopParticleEffect(walkParticles);
         }
         else
         {
             ChangeAnimationState(PLAYER_FALL);
+            StopParticleEffect(runParticles);
+            StopParticleEffect(walkParticles);
         }
     }
 
@@ -573,6 +622,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void HurtAnimFinished()
     {
+        Debug.Log("Hurt anim finished");
         isHurt = false;
     }
     private void DeathAnimFinished()
@@ -594,5 +644,40 @@ public class PlayerMovement : MonoBehaviour
         currentState = newState;
     }
 
+    #endregion
+
+    #region Particles
+
+    [Header("Particle Effects")]
+    [SerializeField] private ParticleSystem _jumpParticles; // The particle system for jumping
+    [SerializeField] private ParticleSystem _wallSlideParticles; // The particle system for wall slide
+    [SerializeField] private ParticleSystem walkParticles; // The particle system for walking
+    [SerializeField] private ParticleSystem runParticles; // The particle system for running
+
+
+    public void PlayParticleEffectInstance(Vector2 position, ParticleSystem particleEffectPrefab)
+    {
+        ParticleSystem particleEffect = Instantiate(particleEffectPrefab, position, Quaternion.identity);
+
+        particleEffect.Play();
+
+    }
+    void PlayParticleEffect(ParticleSystem particleEffect)
+    {
+        if (!particleEffect.isPlaying)
+        {
+            particleEffect.gameObject.SetActive(true);
+            particleEffect.Play();
+        }
+    }
+
+    private void StopParticleEffect(ParticleSystem particleEffect)
+    {
+        if (particleEffect.isPlaying)
+        {
+            particleEffect.gameObject.SetActive(false);
+            particleEffect.Stop();
+        }
+    }
     #endregion
 }

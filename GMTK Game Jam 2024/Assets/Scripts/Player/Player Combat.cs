@@ -54,6 +54,9 @@ public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
 
     private float invincibilityCounter = 0; // The counter for the invincibility time
 
+    [Header("Healing Particles")]
+    [SerializeField] private ParticleSystem _healParticles; // The player's healing particles
+    [SerializeField] private Transform healParticlePosition; // The position of the healing particles
 
     public void Damage(float damageAmount)
     {
@@ -88,7 +91,7 @@ public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
     public void Heal(float healAmount)
     {
         if(_currentHealth == _maxHealth) return;
-        
+        playerMovement.PlayParticleEffectInstance(healParticlePosition.position,_healParticles);
         _currentHealth += healAmount;
         if (_currentHealth > _maxHealth)
         {
@@ -135,7 +138,7 @@ public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            if(isAttacking) return;
+            if(isAttacking || playerMovement.isHurt || playerMovement.isDashing) return;
             Attack();
             AudioManager.Instance.PlayRandomSoundFXClip(_attackSounds, transform, 0.5f);
         }

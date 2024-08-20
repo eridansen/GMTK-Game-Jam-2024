@@ -24758,7 +24758,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 72
   _groundCheck: {fileID: 5146704905538920242}
-  _groundCheckRadius: 0.8
+  _groundCheckRadius: 0.2
   isGrounded: 0
   _moveSpeed: 15
   _sprintSpeed: 20

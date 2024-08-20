@@ -19,7 +19,6 @@ namespace Cancer_Cells
         {
             _initialChildCount = transform.childCount;
             _currentChildCount = _initialChildCount;
-            Debug.Log(_initialChildCount);
         }
 
         private void Update()
@@ -30,7 +29,6 @@ namespace Cancer_Cells
                 if (currentChildCount < _initialChildCount)
                 {
                     childCountChanged?.Invoke(currentChildCount);
-                    Debug.Log(currentChildCount);
                 }
                 
                 _currentChildCount = currentChildCount;

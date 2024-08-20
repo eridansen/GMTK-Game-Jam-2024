@@ -45,19 +45,16 @@ public class SprayedCancer : MonoBehaviour, IDamageable
     {
         OnPlayerSpotted?.Invoke(player);
     }
-
-
+    
     public void StartAttacking(Transform target)
     {
         battleBehaviour.StartFighting(target);
     }
-
-
+    
     private void Die()
     {
         animator.PlayDeathAnim();
         OnDie?.Invoke(this);
-        ObjectPooler.ReturnGameObject(this);
     }
 
     public void Damage(float damageAmount)

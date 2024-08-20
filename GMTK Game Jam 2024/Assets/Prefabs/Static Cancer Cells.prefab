@@ -374,8 +374,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprayedPrefab: {fileID: 5659396308683569548, guid: fdf343ed1f4a12242adf16769e30aa8c, type: 3}
-  _sprayInterval: 1
+  _sprayInterval: 5
   _sprayAmount: 2
+  _spawnLimit: 5
 --- !u!114 &3832330970407602855
 MonoBehaviour:
   m_ObjectHideFlags: 0

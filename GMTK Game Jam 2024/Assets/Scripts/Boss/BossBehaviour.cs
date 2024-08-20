@@ -250,16 +250,18 @@ public class BossBehaviour : MonoBehaviour, IDamageable
     {
         for (int i = 0; i < sprayAmount; i++)
         {
-            var attacker = ObjectPooler.ProvideObject(sprayedPrefab, transform.position,
-                sprayedPrefab.transform.rotation) as SprayedCancer;
+            var attacker = Instantiate(sprayedPrefab, transform.position,
+                sprayedPrefab.transform.rotation);
 
-            if (attacker==null){
+            if (attacker == null)
+            {
                 return;
             }
-            
+
             AddListender(attacker);
         }
     }
+
     private void AddListender(SprayedCancer sprayedCancer)
     {
         _attackersList.Add(sprayedCancer);
@@ -312,15 +314,13 @@ public class BossBehaviour : MonoBehaviour, IDamageable
     private string currentState = "";
     void ChangeAnimationState(string newState)
     {
-        //stop the same animation from interrupting itself
         if (currentState == newState) return;
-
-        //play the animation
+        
         animator.Play(newState);
-
-        //reassign the current state
+        
         currentState = newState;
     }
+    
     void BossHurtEnd()
     {
         ChangeAnimationState(BOSS_IDLE);

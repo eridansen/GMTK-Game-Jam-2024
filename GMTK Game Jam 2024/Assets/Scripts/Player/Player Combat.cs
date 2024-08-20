@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
@@ -118,11 +119,23 @@ public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
             AudioManager.Instance.PlayRandomSoundFXClip(_attackSounds, transform, 0.5f);
         }
     }
+    
+    int attackCounter = 0;
     private void Attack()
     {
         playerMovement.PlayAttackAnim();  // Play the attack animation
-        
+
         isAttacking = true; // Set the player to attacking
+        StartCoroutine(AttackSafeQuit(++attackCounter));
+    }
+
+    private IEnumerator AttackSafeQuit(int attackLock)
+    {
+        yield return new WaitForSeconds(0.5f);
+        if (attackCounter == attackLock)
+        {
+            isAttacking = false;
+        }
     }
 
 

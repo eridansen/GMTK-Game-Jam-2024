@@ -153,9 +153,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 432
-        y: 532
+        y: 528
         width: 64
-        height: 62
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 4, y: 4, z: 4, w: 4}
@@ -673,6 +673,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ui_menu_button_normal
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 208
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 4, y: 4, z: 4, w: 4}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8767321b2a012d548aad4f6777f04546
+      internalID: -1372122267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -789,6 +810,7 @@ TextureImporter:
       ui_button_back_normal: -1423210038
       ui_button_back_pressed: 1485864523
       ui_menu_button_hover: -1827079387
+      ui_menu_button_normal: -1372122267
       ui_menu_button_pressed: -736023749
       ui_slider_platform_background: 1323826804
       ui_slider_platform_foreground: 1097662156

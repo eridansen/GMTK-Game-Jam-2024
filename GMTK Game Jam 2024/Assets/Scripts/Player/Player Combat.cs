@@ -1,11 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
 {
+    public event Action<float> healed;
+    public event Action<float> damaged;
+    public event Action died;
+    
     [Header("Health Stats")]
     [SerializeField] private float _currentHealth = 100; // The player's health
     [SerializeField] private float _maxHealth = 100; // The player's maximum health
@@ -19,8 +20,6 @@ public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
     }
     private void Start() {
         _currentHealth = _maxHealth; // Set the player's health to the maximum health
-        _healthBar = GameObject.FindGameObjectWithTag("Player Health").GetComponentInChildren<Image>();
-
     }
     private void Update() {
         Attacking();
@@ -36,12 +35,6 @@ public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
     }
 
     #region Health
-
-    [Header("Health Bar Settings")]
-    [SerializeField] private Image _healthBar;
-    [SerializeField] private float _healthBarSpeed = 0.05f;
-
-
     [Header("Hurt Settings")]
     [SerializeField] private AudioClip[] _hurtSounds; // The player's hurt sounds
     [SerializeField] private float invincibilityTime = 1f; // The time the player is invincible after being hit
@@ -65,7 +58,7 @@ public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
 
         ApplyKnockback(); // Apply the knockback
         _currentHealth -= damageAmount;
-        StartCoroutine(UpdateHealthBarUI());
+        damaged?.Invoke(damageAmount);
         if (_currentHealth <= 0)
         {
             _currentHealth = 0;
@@ -98,34 +91,14 @@ public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
         {
             _currentHealth = _maxHealth;
         }
-        StartCoroutine(UpdateHealthBarUI());
+        
+        healed?.Invoke(healAmount);
     }
-
-
-    public IEnumerator UpdateHealthBarUI()
-    {
-
-        float initValue = _healthBar.fillAmount;
-        float percent = _currentHealth / _maxHealth;
-
-
-        float iterator = 0;
-
-        while(iterator < 1) 
-        {
-            _healthBar.fillAmount = Mathf.Lerp(initValue, percent, iterator);
-            iterator += 0.05f;
-            yield return new WaitForSeconds(_healthBarSpeed);
-        }
-
-        _healthBar.fillAmount = percent;
-    }
-
 
     private void Die()
     {
         playerMovement.PlayDeathAnim();
-        _healthBar.enabled = false;
+        died?.Invoke();
     }
     #endregion
     

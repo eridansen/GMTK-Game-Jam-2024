@@ -1,0 +1,1951 @@
+fileFormatVersion: 2
+guid: ca1ec8db164f02c42ae8be5129494cf2
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 32
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 638597420861023807
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: TumorMiniboss_Frame_0
+    originalName: 
+    pivot: {x: 0.5, y: -1.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 360
+      width: 32
+      height: 32
+    spriteID: 1e467de644aad2d4280b0eeadb2b4dd4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 360}
+  - name: TumorMiniboss_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -1.051282}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 313
+      width: 32
+      height: 39
+    spriteID: afc8aa33f3f5c054292bfbf1b4877f87
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 313}
+  - name: TumorMiniboss_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: -0.70212764}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 218
+      width: 32
+      height: 47
+    spriteID: c512e85fa71ea5544b9101facd26dd98
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 218}
+  - name: TumorMiniboss_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: -0.26984128}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 147
+      width: 32
+      height: 63
+    spriteID: f0b3fe8548bed0542b9ab37e10caf973
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 147}
+  - name: TumorMiniboss_Frame_5
+    originalName: 
+    pivot: {x: 0.5, y: -1.962963}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 480
+      width: 32
+      height: 27
+    spriteID: ce155e8906510f64b9fc1ebe6e439533
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 480}
+  - name: TumorMiniboss_Frame_6
+    originalName: 
+    pivot: {x: 0.5, y: -1.962963}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 116
+      y: 4
+      width: 32
+      height: 27
+    spriteID: faeb97898e162474a99d34a85eb9b4f8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 116, y: 4}
+  - name: TumorMiniboss_Frame_7
+    originalName: 
+    pivot: {x: 0.55, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 218
+      width: 20
+      height: 38
+    spriteID: d0122dc40fef18f4ea8c1f9d3576ef54
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 218}
+  - name: TumorMiniboss_Frame_8
+    originalName: 
+    pivot: {x: 0.53846157, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 159
+      width: 26
+      height: 29
+    spriteID: f6e40679855985a45a11390e8552bbc7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 159}
+  - name: TumorMiniboss_Frame_10
+    originalName: 
+    pivot: {x: 0.51724136, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 392
+      width: 29
+      height: 20
+    spriteID: 7c66d00c63c09764e8d3908ca7109af6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 392}
+  - name: TumorMiniboss_Frame_11
+    originalName: 
+    pivot: {x: 0.5185185, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 116
+      y: 163
+      width: 27
+      height: 18
+    spriteID: 38b5f159d5273db46b60d9b4882ee159
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 116, y: 163}
+  - name: TumorMiniboss_Frame_12
+    originalName: 
+    pivot: {x: 0.5185185, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 116
+      y: 189
+      width: 27
+      height: 18
+    spriteID: e6954d2964eb2b14cbc9de42d13e41fb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 116, y: 189}
+  - name: TumorMiniboss_Frame_13
+    originalName: 
+    pivot: {x: 0.5185185, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 116
+      y: 215
+      width: 27
+      height: 18
+    spriteID: 42e936b4233c9c344916d0a61a05d8de
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 116, y: 215}
+  - name: TumorMiniboss_Frame_14
+    originalName: 
+    pivot: {x: 0.5185185, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 191
+      y: 76
+      width: 27
+      height: 17
+    spriteID: 9fe9c48255f2d6a4e9b217a5d34c98bc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 191, y: 76}
+  - name: TumorMiniboss_Frame_16
+    originalName: 
+    pivot: {x: 0.5185185, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 116
+      y: 241
+      width: 27
+      height: 18
+    spriteID: b5b0a0aa0204d254eae6a0db7f6cf4fd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 116, y: 241}
+  - name: TumorMiniboss_Frame_17
+    originalName: 
+    pivot: {x: 0.5185185, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 116
+      y: 267
+      width: 27
+      height: 18
+    spriteID: 95864acaf2e837748b6cc237c625eeb7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 116, y: 267}
+  - name: TumorMiniboss_Frame_18
+    originalName: 
+    pivot: {x: 0.5185185, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 116
+      y: 293
+      width: 27
+      height: 18
+    spriteID: 202d97ce0e2169941b065a1eae49c4af
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 116, y: 293}
+  - name: TumorMiniboss_Frame_19
+    originalName: 
+    pivot: {x: 0.5185185, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 116
+      y: 319
+      width: 27
+      height: 18
+    spriteID: f785fed824e1bdc4ba049953086ea118
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 116, y: 319}
+  - name: TumorMiniboss_Frame_20
+    originalName: 
+    pivot: {x: 0.5185185, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 297
+      width: 27
+      height: 25
+    spriteID: c951eae525fcf924595c95e84cc9e7d7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 297}
+  - name: TumorMiniboss_Frame_21
+    originalName: 
+    pivot: {x: 0.5185185, y: -0.037037037}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 196
+      width: 27
+      height: 27
+    spriteID: 292ea31f42862dc4cb166d4bf379c981
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 196}
+  - name: TumorMiniboss_Frame_22
+    originalName: 
+    pivot: {x: 0.50769234, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 53
+      width: 65
+      height: 39
+    spriteID: 061f77a21902f7348af5d6ff2c419b4e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 53}
+  - name: TumorMiniboss_Frame_24
+    originalName: 
+    pivot: {x: 0.50769234, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 65
+      height: 41
+    spriteID: 4014245fc87da2d469ed3c8a212a1533
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: TumorMiniboss_Frame_25
+    originalName: 
+    pivot: {x: 0.5081967, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 100
+      width: 61
+      height: 39
+    spriteID: 7a089c4bea4a4f34eb6decfdd33b47e2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 100}
+  - name: TumorMiniboss_Frame_26
+    originalName: 
+    pivot: {x: 0.5106383, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 273
+      width: 47
+      height: 32
+    spriteID: dc09b2a921098b0458319f1971cf4ce0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 273}
+  - name: TumorMiniboss_Frame_27
+    originalName: 
+    pivot: {x: 0.51724136, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 420
+      width: 29
+      height: 20
+    spriteID: 2f8832a5ada419744a221431c59992f2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 420}
+  - name: TumorMiniboss_Frame_28
+    originalName: 
+    pivot: {x: 0.5185185, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 116
+      y: 345
+      width: 27
+      height: 18
+    spriteID: 8115cb20982605041b2a06f1345f4753
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 116, y: 345}
+  - name: TumorMiniboss_Frame_29
+    originalName: 
+    pivot: {x: 0.51724136, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 191
+      y: 4
+      width: 29
+      height: 16
+    spriteID: fdbfa38559cfaf944b71c01501a61464
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 191, y: 4}
+  - name: TumorMiniboss_Frame_30
+    originalName: 
+    pivot: {x: 0.516129, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 116
+      y: 91
+      width: 31
+      height: 16
+    spriteID: f17ab9926d6d52c4392c53885034f751
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 116, y: 91}
+  - name: TumorMiniboss_Frame_32
+    originalName: 
+    pivot: {x: 0.51724136, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 448
+      width: 29
+      height: 18
+    spriteID: 692c7a0fa4903684b92347244e829fe9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 448}
+  - name: TumorMiniboss_Frame_33
+    originalName: 
+    pivot: {x: 0.5555556, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 123
+      width: 27
+      height: 28
+    spriteID: ddf3a47ee2976f94bb1e5ae97a5cbaeb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 123}
+  - name: TumorMiniboss_Frame_34
+    originalName: 
+    pivot: {x: 0.5, y: -0.033333335}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 85
+      width: 30
+      height: 30
+    spriteID: d4e067e1e0eaa8e4d9c60013e229c4a3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 85}
+  - name: TumorMiniboss_Frame_40
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 400
+      width: 32
+      height: 32
+    spriteID: 06604edc163405c4c80ccae7fec54f03
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 400}
+  - name: TumorMiniboss_Frame_46
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 440
+      width: 32
+      height: 32
+    spriteID: a7b887c096d1cfd449a43fe103bd3f8f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 440}
+  - name: TumorMiniboss_Frame_47
+    originalName: 
+    pivot: {x: 0.5185185, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 116
+      y: 371
+      width: 27
+      height: 18
+    spriteID: 34c89a17d15562b4db6112f3f118900a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 116, y: 371}
+  - name: TumorMiniboss_Frame_48
+    originalName: 
+    pivot: {x: 0.516129, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 266
+      width: 31
+      height: 23
+    spriteID: 228c9b21e018120468c164fb69c66df6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 266}
+  - name: TumorMiniboss_Frame_49
+    originalName: 
+    pivot: {x: 0.5666667, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 363
+      width: 30
+      height: 21
+    spriteID: d9d9bd1a06f51fa49bfaecf459ca5253
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 363}
+  - name: TumorMiniboss_Frame_50
+    originalName: 
+    pivot: {x: 0.55172414, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 474
+      width: 29
+      height: 18
+    spriteID: 09ddea64f74617748b7463dc089e207e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 474}
+  - name: TumorMiniboss_Frame_51
+    originalName: 
+    pivot: {x: 0.5185185, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 116
+      y: 397
+      width: 27
+      height: 18
+    spriteID: 4cd7f38ada0cff64b9996059d9f2ab5b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 116, y: 397}
+  - name: TumorMiniboss_Frame_52
+    originalName: 
+    pivot: {x: 0.5185185, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 116
+      y: 423
+      width: 27
+      height: 18
+    spriteID: c0ce6a4ffad185745911565db3982b71
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 116, y: 423}
+  - name: TumorMiniboss_Frame_53
+    originalName: 
+    pivot: {x: 0.5185185, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 116
+      y: 449
+      width: 27
+      height: 18
+    spriteID: 5397f098ca7868d46977017643e5d9cc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 116, y: 449}
+  - name: TumorMiniboss_Frame_54
+    originalName: 
+    pivot: {x: 0.5185185, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 116
+      y: 475
+      width: 27
+      height: 18
+    spriteID: b62876b2dc9b183459f992d7048c740e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 116, y: 475}
+  - name: TumorMiniboss_Frame_55
+    originalName: 
+    pivot: {x: 0.5185185, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 330
+      width: 27
+      height: 25
+    spriteID: 67cae0c34aab7ab4b8315742e760501a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 330}
+  - name: TumorMiniboss_Frame_56
+    originalName: 
+    pivot: {x: 0.5185185, y: -0.037037037}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 231
+      width: 27
+      height: 27
+    spriteID: 429acf18f7e5bd24ab55b116d1102eae
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 231}
+  - name: TumorMiniboss_Frame_57
+    originalName: 
+    pivot: {x: 0.5, y: -0.23333335}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 360
+      width: 18
+      height: 30
+    spriteID: b8e0b049947009e46a833fd3cfb025dc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 360}
+  - name: TumorMiniboss_Frame_58
+    originalName: 
+    pivot: {x: 0.52, y: -0.2857143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 313
+      width: 25
+      height: 35
+    spriteID: e5a844e11b8e0d240ae4d4b79d85bf28
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 313}
+  - name: TumorMiniboss_Frame_59
+    originalName: 
+    pivot: {x: 0.5185185, y: -0.29411766}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 43
+      width: 27
+      height: 34
+    spriteID: f6175297d301965419daf4d50488a41a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 43}
+  - name: TumorMiniboss_Frame_60
+    originalName: 
+    pivot: {x: 0.516129, y: -0.38709676}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 4
+      width: 31
+      height: 31
+    spriteID: 8cc7ae88b8cff6041b7e08749ca99fdc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 4}
+  - name: TumorMiniboss_Frame_61
+    originalName: 
+    pivot: {x: 0.5714286, y: -1.375}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 228
+      y: 28
+      width: 7
+      height: 8
+    spriteID: 8adc29a073ba55645804a4f66f5b2fab
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 228, y: 28}
+  - name: TumorMiniboss_Frame_1
+    originalName: 
+    pivot: {x: 0.5714286, y: -1.5714287}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 77
+      y: 500
+      width: 7
+      height: 7
+    spriteID: b7cdd83f185835d43ba40b6fe8846f47
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 77, y: 500}
+  - name: TumorMiniboss_Frame_9
+    originalName: 
+    pivot: {x: 0.5714286, y: -1.5714287}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 92
+      y: 500
+      width: 7
+      height: 7
+    spriteID: 417d92ae0a095374da97b144a75570c0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 92, y: 500}
+  - name: TumorMiniboss_Frame_15
+    originalName: 
+    pivot: {x: 0.5714286, y: -1.375}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 243
+      y: 28
+      width: 7
+      height: 8
+    spriteID: a4ea1964da60ae34dafe21a87ef6ddec
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 243, y: 28}
+  - name: TumorMiniboss_Frame_23
+    originalName: 
+    pivot: {x: 0.5714286, y: -1.7142859}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 116
+      y: 501
+      width: 7
+      height: 7
+    spriteID: 1f2ab3bed0f357f468e46d3a1d24ad8d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 116, y: 501}
+  - name: TumorMiniboss_Frame_31
+    originalName: 
+    pivot: {x: 0.5714286, y: -1.7142859}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 131
+      y: 501
+      width: 7
+      height: 7
+    spriteID: 084389a4964ded040a6e9369a889c46f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 131, y: 501}
+  - name: TumorMiniboss_Frame_35
+    originalName: 
+    pivot: {x: 0.5714286, y: -1.25}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 228
+      y: 52
+      width: 7
+      height: 8
+    spriteID: 5ae88aae65972a64b9b90640d8835def
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 228, y: 52}
+  - name: TumorMiniboss_Frame_36
+    originalName: 
+    pivot: {x: 0.5714286, y: -0.30769232}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 243
+      y: 4
+      width: 7
+      height: 13
+    spriteID: bffa55e6a472f344db987e38871ee264
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 243, y: 4}
+  - name: TumorMiniboss_Frame_37
+    originalName: 
+    pivot: {x: 0.5714286, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 228
+      y: 4
+      width: 7
+      height: 15
+    spriteID: af9e3e52cfede654aabb7ab315cca886
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 228, y: 4}
+  - name: TumorMiniboss_Frame_38
+    originalName: 
+    pivot: {x: 0.5714286, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 243
+      y: 52
+      width: 7
+      height: 8
+    spriteID: afca179ed44826a448061101c7dbe0d8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 243, y: 52}
+  - name: TumorMiniboss_Frame_39
+    originalName: 
+    pivot: {x: 0.51724136, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 191
+      y: 28
+      width: 29
+      height: 16
+    spriteID: 2e014f89bf0ed84428a2afee01ec961b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 191, y: 28}
+  - name: TumorMiniboss_Frame_41
+    originalName: 
+    pivot: {x: 0.516129, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 116
+      y: 115
+      width: 31
+      height: 16
+    spriteID: 6f8d7a7787a0f344d84c8558879aa7de
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 116, y: 115}
+  - name: TumorMiniboss_Frame_42
+    originalName: 
+    pivot: {x: 0.51724136, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 116
+      y: 39
+      width: 29
+      height: 18
+    spriteID: 84529e2ef0d7fea4195fe76e1ad9ce00
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 116, y: 39}
+  - name: TumorMiniboss_Frame_43
+    originalName: 
+    pivot: {x: 0.51724136, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 191
+      y: 52
+      width: 29
+      height: 16
+    spriteID: e70cd86d4c5c1c34a955fa1c34d2b358
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 191, y: 52}
+  - name: TumorMiniboss_Frame_44
+    originalName: 
+    pivot: {x: 0.516129, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 116
+      y: 139
+      width: 31
+      height: 16
+    spriteID: acacce9fd54574a47bf2a108ae868174
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 116, y: 139}
+  - name: TumorMiniboss_Frame_45
+    originalName: 
+    pivot: {x: 0.51724136, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 116
+      y: 65
+      width: 29
+      height: 18
+    spriteID: 92f428322c271c64ea38d3304957928b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 116, y: 65}
+  - name: TumorMiniboss_Frame_46
+    originalName: 
+    pivot: {x: 0.5185185, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 156
+      y: 4
+      width: 27
+      height: 18
+    spriteID: c351050d13cf2e642a35712a1b699cba
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 156, y: 4}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 574454839
+    name: TumorMiniboss
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: TumorMiniboss_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 48
+        y: 48
+        width: 32
+        height: 32
+      spriteId: 1e467de644aad2d4280b0eeadb2b4dd4
+    - name: TumorMiniboss_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 48
+        y: 41
+        width: 32
+        height: 39
+      spriteId: afc8aa33f3f5c054292bfbf1b4877f87
+    - name: TumorMiniboss_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 48
+        y: 33
+        width: 32
+        height: 47
+      spriteId: c512e85fa71ea5544b9101facd26dd98
+    - name: TumorMiniboss_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 48
+        y: 17
+        width: 32
+        height: 63
+      spriteId: f0b3fe8548bed0542b9ab37e10caf973
+    - name: TumorMiniboss_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 48
+        y: 53
+        width: 32
+        height: 27
+      spriteId: ce155e8906510f64b9fc1ebe6e439533
+    - name: TumorMiniboss_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 48
+        y: 53
+        width: 32
+        height: 27
+      spriteId: faeb97898e162474a99d34a85eb9b4f8
+    - name: TumorMiniboss_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 53
+        y: 0
+        width: 20
+        height: 38
+      spriteId: d0122dc40fef18f4ea8c1f9d3576ef54
+    - name: TumorMiniboss_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 50
+        y: 0
+        width: 26
+        height: 29
+      spriteId: f6e40679855985a45a11390e8552bbc7
+    - name: TumorMiniboss_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 49
+        y: 0
+        width: 29
+        height: 20
+      spriteId: 7c66d00c63c09764e8d3908ca7109af6
+    - name: TumorMiniboss_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 50
+        y: 0
+        width: 27
+        height: 18
+      spriteId: 38b5f159d5273db46b60d9b4882ee159
+    - name: TumorMiniboss_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 50
+        y: 0
+        width: 27
+        height: 18
+      spriteId: e6954d2964eb2b14cbc9de42d13e41fb
+    - name: TumorMiniboss_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 50
+        y: 0
+        width: 27
+        height: 18
+      spriteId: 42e936b4233c9c344916d0a61a05d8de
+    - name: TumorMiniboss_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 50
+        y: 0
+        width: 27
+        height: 17
+      spriteId: 9fe9c48255f2d6a4e9b217a5d34c98bc
+    - name: TumorMiniboss_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 50
+        y: 0
+        width: 27
+        height: 18
+      spriteId: b5b0a0aa0204d254eae6a0db7f6cf4fd
+    - name: TumorMiniboss_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 50
+        y: 0
+        width: 27
+        height: 18
+      spriteId: 95864acaf2e837748b6cc237c625eeb7
+    - name: TumorMiniboss_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 50
+        y: 0
+        width: 27
+        height: 18
+      spriteId: 202d97ce0e2169941b065a1eae49c4af
+    - name: TumorMiniboss_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 50
+        y: 0
+        width: 27
+        height: 18
+      spriteId: f785fed824e1bdc4ba049953086ea118
+    - name: TumorMiniboss_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 50
+        y: 0
+        width: 27
+        height: 25
+      spriteId: c951eae525fcf924595c95e84cc9e7d7
+    - name: TumorMiniboss_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 50
+        y: 1
+        width: 27
+        height: 27
+      spriteId: 292ea31f42862dc4cb166d4bf379c981
+    - name: TumorMiniboss_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: 31
+        y: 0
+        width: 65
+        height: 39
+      spriteId: 061f77a21902f7348af5d6ff2c419b4e
+    - name: TumorMiniboss_Frame_20
+      frameIndex: 20
+      cellRect:
+        x: 31
+        y: 0
+        width: 65
+        height: 41
+      spriteId: 4014245fc87da2d469ed3c8a212a1533
+    - name: TumorMiniboss_Frame_21
+      frameIndex: 21
+      cellRect:
+        x: 33
+        y: 0
+        width: 61
+        height: 39
+      spriteId: 7a089c4bea4a4f34eb6decfdd33b47e2
+    - name: TumorMiniboss_Frame_22
+      frameIndex: 22
+      cellRect:
+        x: 40
+        y: 0
+        width: 47
+        height: 32
+      spriteId: dc09b2a921098b0458319f1971cf4ce0
+    - name: TumorMiniboss_Frame_23
+      frameIndex: 23
+      cellRect:
+        x: 49
+        y: 0
+        width: 29
+        height: 20
+      spriteId: 2f8832a5ada419744a221431c59992f2
+    - name: TumorMiniboss_Frame_24
+      frameIndex: 24
+      cellRect:
+        x: 50
+        y: 0
+        width: 27
+        height: 18
+      spriteId: 8115cb20982605041b2a06f1345f4753
+    - name: TumorMiniboss_Frame_25
+      frameIndex: 25
+      cellRect:
+        x: 49
+        y: 0
+        width: 29
+        height: 16
+      spriteId: fdbfa38559cfaf944b71c01501a61464
+    - name: TumorMiniboss_Frame_26
+      frameIndex: 26
+      cellRect:
+        x: 48
+        y: 0
+        width: 31
+        height: 16
+      spriteId: f17ab9926d6d52c4392c53885034f751
+    - name: TumorMiniboss_Frame_27
+      frameIndex: 27
+      cellRect:
+        x: 49
+        y: 0
+        width: 29
+        height: 18
+      spriteId: 692c7a0fa4903684b92347244e829fe9
+    - name: TumorMiniboss_Frame_28
+      frameIndex: 28
+      cellRect:
+        x: 49
+        y: 0
+        width: 27
+        height: 28
+      spriteId: ddf3a47ee2976f94bb1e5ae97a5cbaeb
+    - name: TumorMiniboss_Frame_29
+      frameIndex: 29
+      cellRect:
+        x: 49
+        y: 1
+        width: 30
+        height: 30
+      spriteId: d4e067e1e0eaa8e4d9c60013e229c4a3
+    - name: TumorMiniboss_Frame_30
+      frameIndex: 30
+      cellRect:
+        x: 48
+        y: 0
+        width: 32
+        height: 32
+      spriteId: 06604edc163405c4c80ccae7fec54f03
+    - name: TumorMiniboss_Frame_31
+      frameIndex: 31
+      cellRect:
+        x: 48
+        y: 0
+        width: 32
+        height: 32
+      spriteId: a7b887c096d1cfd449a43fe103bd3f8f
+    - name: TumorMiniboss_Frame_32
+      frameIndex: 32
+      cellRect:
+        x: 50
+        y: 0
+        width: 27
+        height: 18
+      spriteId: 34c89a17d15562b4db6112f3f118900a
+    - name: TumorMiniboss_Frame_33
+      frameIndex: 33
+      cellRect:
+        x: 48
+        y: 0
+        width: 31
+        height: 23
+      spriteId: 228c9b21e018120468c164fb69c66df6
+    - name: TumorMiniboss_Frame_34
+      frameIndex: 34
+      cellRect:
+        x: 47
+        y: 0
+        width: 30
+        height: 21
+      spriteId: d9d9bd1a06f51fa49bfaecf459ca5253
+    - name: TumorMiniboss_Frame_35
+      frameIndex: 35
+      cellRect:
+        x: 48
+        y: 0
+        width: 29
+        height: 18
+      spriteId: 09ddea64f74617748b7463dc089e207e
+    - name: TumorMiniboss_Frame_36
+      frameIndex: 36
+      cellRect:
+        x: 50
+        y: 0
+        width: 27
+        height: 18
+      spriteId: 4cd7f38ada0cff64b9996059d9f2ab5b
+    - name: TumorMiniboss_Frame_37
+      frameIndex: 37
+      cellRect:
+        x: 50
+        y: 0
+        width: 27
+        height: 18
+      spriteId: c0ce6a4ffad185745911565db3982b71
+    - name: TumorMiniboss_Frame_41
+      frameIndex: 41
+      cellRect:
+        x: 50
+        y: 0
+        width: 27
+        height: 18
+      spriteId: 5397f098ca7868d46977017643e5d9cc
+    - name: TumorMiniboss_Frame_42
+      frameIndex: 42
+      cellRect:
+        x: 50
+        y: 0
+        width: 27
+        height: 18
+      spriteId: b62876b2dc9b183459f992d7048c740e
+    - name: TumorMiniboss_Frame_47
+      frameIndex: 47
+      cellRect:
+        x: 50
+        y: 0
+        width: 27
+        height: 25
+      spriteId: 67cae0c34aab7ab4b8315742e760501a
+    - name: TumorMiniboss_Frame_48
+      frameIndex: 48
+      cellRect:
+        x: 50
+        y: 1
+        width: 27
+        height: 27
+      spriteId: 429acf18f7e5bd24ab55b116d1102eae
+    - name: TumorMiniboss_Frame_49
+      frameIndex: 49
+      cellRect:
+        x: 55
+        y: 7
+        width: 18
+        height: 30
+      spriteId: b8e0b049947009e46a833fd3cfb025dc
+    - name: TumorMiniboss_Frame_50
+      frameIndex: 50
+      cellRect:
+        x: 51
+        y: 10
+        width: 25
+        height: 35
+      spriteId: e5a844e11b8e0d240ae4d4b79d85bf28
+    - name: TumorMiniboss_Frame_51
+      frameIndex: 51
+      cellRect:
+        x: 50
+        y: 10
+        width: 27
+        height: 34
+      spriteId: f6175297d301965419daf4d50488a41a
+    - name: TumorMiniboss_Frame_52
+      frameIndex: 52
+      cellRect:
+        x: 48
+        y: 12
+        width: 31
+        height: 31
+      spriteId: 8cc7ae88b8cff6041b7e08749ca99fdc
+    - name: TumorMiniboss_Frame_53
+      frameIndex: 53
+      cellRect:
+        x: 60
+        y: 11
+        width: 7
+        height: 8
+      spriteId: 8adc29a073ba55645804a4f66f5b2fab
+    - name: TumorMiniboss_Frame_54
+      frameIndex: 54
+      cellRect:
+        x: 60
+        y: 11
+        width: 7
+        height: 7
+      spriteId: b7cdd83f185835d43ba40b6fe8846f47
+    - name: TumorMiniboss_Frame_55
+      frameIndex: 55
+      cellRect:
+        x: 60
+        y: 11
+        width: 7
+        height: 7
+      spriteId: 417d92ae0a095374da97b144a75570c0
+    - name: TumorMiniboss_Frame_56
+      frameIndex: 56
+      cellRect:
+        x: 60
+        y: 11
+        width: 7
+        height: 8
+      spriteId: a4ea1964da60ae34dafe21a87ef6ddec
+    - name: TumorMiniboss_Frame_57
+      frameIndex: 57
+      cellRect:
+        x: 60
+        y: 12
+        width: 7
+        height: 7
+      spriteId: 1f2ab3bed0f357f468e46d3a1d24ad8d
+    - name: TumorMiniboss_Frame_58
+      frameIndex: 58
+      cellRect:
+        x: 60
+        y: 12
+        width: 7
+        height: 7
+      spriteId: 084389a4964ded040a6e9369a889c46f
+    - name: TumorMiniboss_Frame_59
+      frameIndex: 59
+      cellRect:
+        x: 60
+        y: 10
+        width: 7
+        height: 8
+      spriteId: 5ae88aae65972a64b9b90640d8835def
+    - name: TumorMiniboss_Frame_60
+      frameIndex: 60
+      cellRect:
+        x: 60
+        y: 4
+        width: 7
+        height: 13
+      spriteId: bffa55e6a472f344db987e38871ee264
+    - name: TumorMiniboss_Frame_61
+      frameIndex: 61
+      cellRect:
+        x: 60
+        y: 0
+        width: 7
+        height: 15
+      spriteId: af9e3e52cfede654aabb7ab315cca886
+    - name: TumorMiniboss_Frame_62
+      frameIndex: 62
+      cellRect:
+        x: 60
+        y: 0
+        width: 7
+        height: 8
+      spriteId: afca179ed44826a448061101c7dbe0d8
+    - name: TumorMiniboss_Frame_38
+      frameIndex: 38
+      cellRect:
+        x: 49
+        y: 0
+        width: 29
+        height: 16
+      spriteId: 2e014f89bf0ed84428a2afee01ec961b
+    - name: TumorMiniboss_Frame_39
+      frameIndex: 39
+      cellRect:
+        x: 48
+        y: 0
+        width: 31
+        height: 16
+      spriteId: 6f8d7a7787a0f344d84c8558879aa7de
+    - name: TumorMiniboss_Frame_40
+      frameIndex: 40
+      cellRect:
+        x: 49
+        y: 0
+        width: 29
+        height: 18
+      spriteId: 84529e2ef0d7fea4195fe76e1ad9ce00
+    - name: TumorMiniboss_Frame_43
+      frameIndex: 43
+      cellRect:
+        x: 49
+        y: 0
+        width: 29
+        height: 16
+      spriteId: e70cd86d4c5c1c34a955fa1c34d2b358
+    - name: TumorMiniboss_Frame_44
+      frameIndex: 44
+      cellRect:
+        x: 48
+        y: 0
+        width: 31
+        height: 16
+      spriteId: acacce9fd54574a47bf2a108ae868174
+    - name: TumorMiniboss_Frame_45
+      frameIndex: 45
+      cellRect:
+        x: 49
+        y: 0
+        width: 29
+        height: 18
+      spriteId: 92f428322c271c64ea38d3304957928b
+    - name: TumorMiniboss_Frame_46
+      frameIndex: 46
+      cellRect:
+        x: 50
+        y: 0
+        width: 27
+        height: 18
+      spriteId: c351050d13cf2e642a35712a1b699cba
+    linkedCells: []
+    parentIndex: -1
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 128, y: 128}

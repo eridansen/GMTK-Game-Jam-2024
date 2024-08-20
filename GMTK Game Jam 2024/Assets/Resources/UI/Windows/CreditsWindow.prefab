@@ -747,7 +747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1959811105373751461, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
       propertyPath: m_text
-      value: Ry_six
+      value: Rysix
       objectReference: {fileID: 0}
     - target: {fileID: 1979640602828540259, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
       propertyPath: m_text
@@ -757,9 +757,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: TeamMember(Ry_six)
       objectReference: {fileID: 0}
+    - target: {fileID: 5618023212305680814, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.12999725
+      objectReference: {fileID: 0}
     - target: {fileID: 5844141214608286097, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
       propertyPath: m_text
-      value: Ry_six
+      value: Rysix
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -889,6 +893,10 @@ PrefabInstance:
     - target: {fileID: 3313274311277195723, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
       propertyPath: m_Name
       value: TeamMember(ReiXlen)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5618023212305680814, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.12999725
       objectReference: {fileID: 0}
     - target: {fileID: 5844141214608286097, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
       propertyPath: m_text
@@ -1023,6 +1031,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TeamMember(Nimbus6001)
       objectReference: {fileID: 0}
+    - target: {fileID: 5618023212305680814, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.12999725
+      objectReference: {fileID: 0}
     - target: {fileID: 5844141214608286097, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
       propertyPath: m_text
       value: Nimbus6001
@@ -1155,6 +1167,10 @@ PrefabInstance:
     - target: {fileID: 3313274311277195723, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
       propertyPath: m_Name
       value: TeamMember(Sebastian)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5618023212305680814, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.12999725
       objectReference: {fileID: 0}
     - target: {fileID: 5844141214608286097, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
       propertyPath: m_text
@@ -1289,6 +1305,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TeamMember(Min Htet Naing)
       objectReference: {fileID: 0}
+    - target: {fileID: 5618023212305680814, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.12999725
+      objectReference: {fileID: 0}
     - target: {fileID: 5844141214608286097, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
       propertyPath: m_text
       value: Min Htet Naing
@@ -1422,6 +1442,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'TeamMember(Jake) '
       objectReference: {fileID: 0}
+    - target: {fileID: 5618023212305680814, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.12999725
+      objectReference: {fileID: 0}
     - target: {fileID: 5844141214608286097, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
       propertyPath: m_text
       value: Jake
@@ -1465,11 +1489,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 266834807278954266, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
       propertyPath: m_fontSize
-      value: 3.85
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 266834807278954266, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
       propertyPath: m_fontSizeBase
-      value: 3.85
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 266834807278954266, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
       propertyPath: m_enableAutoSizing
@@ -1561,11 +1585,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1959811105373751461, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
       propertyPath: m_fontSize
-      value: 4.95
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1959811105373751461, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
       propertyPath: m_fontSizeBase
-      value: 4.95
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1959811105373751461, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
       propertyPath: m_enableAutoSizing
@@ -1577,11 +1601,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1979640602828540259, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
       propertyPath: m_fontSize
-      value: 3.85
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1979640602828540259, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
       propertyPath: m_fontSizeBase
-      value: 3.85
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1979640602828540259, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
       propertyPath: m_enableAutoSizing
@@ -1591,17 +1615,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: TeamMember(J. Isaac Gadient)
       objectReference: {fileID: 0}
+    - target: {fileID: 5618023212305680814, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.12999725
+      objectReference: {fileID: 0}
     - target: {fileID: 5844141214608286097, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
       propertyPath: m_text
       value: J. Isaac Gadient
       objectReference: {fileID: 0}
     - target: {fileID: 5844141214608286097, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
       propertyPath: m_fontSize
-      value: 4.95
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5844141214608286097, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
       propertyPath: m_fontSizeBase
-      value: 4.95
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5844141214608286097, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
       propertyPath: m_enableAutoSizing
@@ -1736,6 +1764,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TeamMember(Andybugs)
       objectReference: {fileID: 0}
+    - target: {fileID: 5618023212305680814, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.12999725
+      objectReference: {fileID: 0}
     - target: {fileID: 5844141214608286097, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
       propertyPath: m_text
       value: Andybugs
@@ -1868,6 +1900,10 @@ PrefabInstance:
     - target: {fileID: 3313274311277195723, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
       propertyPath: m_Name
       value: TeamMember(Bevisava)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5618023212305680814, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.12999725
       objectReference: {fileID: 0}
     - target: {fileID: 5844141214608286097, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
       propertyPath: m_text
@@ -2002,6 +2038,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TeamMember(Mathaeuz)
       objectReference: {fileID: 0}
+    - target: {fileID: 5618023212305680814, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.12999725
+      objectReference: {fileID: 0}
     - target: {fileID: 5844141214608286097, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
       propertyPath: m_text
       value: Mathaeuz
@@ -2135,6 +2175,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TeamMember(knoxy)
       objectReference: {fileID: 0}
+    - target: {fileID: 5618023212305680814, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.12999725
+      objectReference: {fileID: 0}
     - target: {fileID: 5844141214608286097, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
       propertyPath: m_text
       value: knoxy
@@ -2267,6 +2311,10 @@ PrefabInstance:
     - target: {fileID: 3313274311277195723, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
       propertyPath: m_Name
       value: TeamMember(Jkingy)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5618023212305680814, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.12999725
       objectReference: {fileID: 0}
     - target: {fileID: 5844141214608286097, guid: 11b933977ff2b4844836cf47bb58c9f5, type: 3}
       propertyPath: m_text

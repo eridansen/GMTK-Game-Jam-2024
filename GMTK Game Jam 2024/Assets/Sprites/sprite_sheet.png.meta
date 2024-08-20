@@ -694,6 +694,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: text_restart
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 171
+        width: 27
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdba83793bfa3cb428eac8de8843a302
+      internalID: 1743199701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: text_mainmenu
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 171
+        width: 35
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11374e658e5d08049938b64133bb21a4
+      internalID: -172860869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -713,7 +755,9 @@ TextureImporter:
       text_back: -192252261
       text_credits: 1242782900
       text_exit: 1635701071
+      text_mainmenu: -172860869
       text_play: 1407955336
+      text_restart: 1743199701
       text_settings: -1117318164
       tmp1_0: 442132885
       tmp1_1: 6811857

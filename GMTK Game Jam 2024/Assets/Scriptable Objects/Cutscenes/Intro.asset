@@ -16,8 +16,8 @@ MonoBehaviour:
   - image: {fileID: 0}
     text: "\u201CMother\u2026\u201D"
   - image: {fileID: -1459604418, guid: c55e6b7ea557794469f4798669dd11ec, type: 3}
-    text: "\u201C\u2026I\u2019ve never known if you can really hear me and process
-      my speech, encased in the stasis chamber\u2026\u201D"
+    text: "\u201C\u2026I\u2019ve never known if you can really hear me, encased in
+      the stasis chamber\u2026\u201D"
   - image: {fileID: -1459604418, guid: c55e6b7ea557794469f4798669dd11ec, type: 3}
     text: "\u201C\u2026and it\u2019s taken me decades, but I\u2019ve finally integrated
       a resonant array\u2026\u201D"

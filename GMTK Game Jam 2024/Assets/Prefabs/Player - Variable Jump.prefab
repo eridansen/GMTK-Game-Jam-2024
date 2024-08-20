@@ -24759,6 +24759,7 @@ MonoBehaviour:
     m_Bits: 72
   _groundCheck: {fileID: 5146704905538920242}
   _groundCheckRadius: 0.8
+  isGrounded: 0
   _moveSpeed: 15
   _sprintSpeed: 20
   stepSounds:
@@ -24830,8 +24831,6 @@ MonoBehaviour:
   _currentHealth: 100
   _maxHealth: 100
   _healAmount: 30
-  _healthBar: {fileID: 0}
-  _healthBarSpeed: 0.01
   _hurtSounds:
   - {fileID: 8300000, guid: d2c16aed2a4e0ac44a156cc1806c1057, type: 3}
   - {fileID: 8300000, guid: fb842cad2d52fa740b63d9702f64c296, type: 3}

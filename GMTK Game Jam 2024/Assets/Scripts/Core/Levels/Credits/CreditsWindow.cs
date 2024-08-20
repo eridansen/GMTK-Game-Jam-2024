@@ -70,7 +70,7 @@ namespace Core.Levels.Credits
 
         private void OnMathaeuzButtonClicked()
         {
-            Application.OpenURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+            Application.OpenURL("https://mathaeuz.itch.io/");
         }
 
         private void OnSebastianButtonClicked()
@@ -80,12 +80,12 @@ namespace Core.Levels.Credits
 
         private void OnRySixButtonClicked()
         {
-            Application.OpenURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+            Application.OpenURL("https://ryesix.itch.io/");
         }
 
         private void OnJakeButtonClicked()
         {
-            Application.OpenURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+            Application.OpenURL("https://jake52.itch.io");
         }
 
         private void OnJIssacGadientButtonClicked()
@@ -95,7 +95,6 @@ namespace Core.Levels.Credits
 
         private void OnAndybugsButtonClicked()
         {
-            Application.OpenURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
         }
         
         private void OnJkingyButtonClicked()
@@ -110,22 +109,20 @@ namespace Core.Levels.Credits
         
         private void OnBevisavaButtonClicked()
         {
-            Application.OpenURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
         }
 
         private void OnMinHtetNaingButtonClicked()
         {
-            Application.OpenURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+            Application.OpenURL("https://osbert.itch.io/");
         }
 
         private void OnReixlenButtonClicked()
         {
-            Application.OpenURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+            Application.OpenURL("https://reixlen-dev.itch.io");
         }
         
         private void OnNimbusButtonClicked()
         {
-            Application.OpenURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
         }
     }
 }

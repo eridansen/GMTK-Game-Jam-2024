@@ -18,7 +18,7 @@ public class Health: MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        if (_currentHealth < _currentHealth + damage)
+        if (_currentHealth - damage < 0)
         {
             Die();
         }

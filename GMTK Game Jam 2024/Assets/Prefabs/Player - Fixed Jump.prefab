@@ -97,6 +97,7 @@ MonoBehaviour:
     m_Bits: 72
   _groundCheck: {fileID: 5251115822037495468}
   _groundCheckRadius: 0.8
+  isGrounded: 0
   _moveSpeed: 13
   _sprintSpeed: 18
   stepSounds: []
@@ -144,15 +145,13 @@ MonoBehaviour:
   _currentHealth: 100
   _maxHealth: 100
   _healAmount: 30
-  _healthBar: {fileID: 6014822613910188363}
-  _healthBarSpeed: 0.01
   _hurtSounds: []
   invincibilityTime: 1
   knockbackForce: {x: 15, y: 5}
   enemyPosition: {x: 0, y: 0, z: 0}
   _healParticles: {fileID: 0}
   healParticlePosition: {fileID: 0}
-  _damage: 50
+  _damage: 10
   _attackSounds: []
   isAttacking: 0
 --- !u!61 &2491978547867221738

@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthBar: {fileID: 9208424426131306854}
-  _maxHealth: 80
+  _maxHealth: 5
   _animationSpeed: 0.05
   _currentHealth: 0
 --- !u!1 &670515656642405608

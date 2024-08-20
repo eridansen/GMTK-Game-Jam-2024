@@ -24842,7 +24842,7 @@ MonoBehaviour:
   enemyPosition: {x: 0, y: 0, z: 0}
   _healParticles: {fileID: 8317622050298989645}
   healParticlePosition: {fileID: 7846476616343966683}
-  _damage: 50
+  _damage: 10
   _attackSounds:
   - {fileID: 8300000, guid: 840f58c4746845645bd134d97011c223, type: 3}
   - {fileID: 8300000, guid: 36daa4c840d137c4caeaf57e3cf99bb4, type: 3}

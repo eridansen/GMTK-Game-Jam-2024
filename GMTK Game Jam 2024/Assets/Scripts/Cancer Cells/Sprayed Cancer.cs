@@ -8,6 +8,7 @@ public class SprayedCancer : MonoBehaviour, IDamageable
     [SerializeField] private float _lifeDuration;
     [SerializeField] private float _xBias = 0.3f; // bias towards more x value when Start()
     [SerializeField] private float _yBias = 0.3f; // bias towards more y value when Start()
+    [SerializeField] private float _healthPoint = 100f;
 
 
     public UnityAction<Transform> OnPlayerSpotted;
@@ -78,8 +79,11 @@ public class SprayedCancer : MonoBehaviour, IDamageable
 
     public void Damage(float damageAmount)
     {
-        Die();
-        //Debug.Log("player attacks");
+        _healthPoint -= damageAmount;
+        if (_healthPoint <= 0)
+        {
+            this.gameObject.SetActive(false);
+        }
         //health.TakeDamage(damageAmount);
     }
 }

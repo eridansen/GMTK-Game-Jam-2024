@@ -70,6 +70,6 @@ public class CancerCell : MonoBehaviour, IDamageable
         {
             this.gameObject.SetActive(false);
         }
-        health.TakeDamage(damageAmount);
+        //health.TakeDamage(damageAmount);
     }
 }

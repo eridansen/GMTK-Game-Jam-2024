@@ -149,12 +149,9 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ui_button_normal
       name: Static_Cancer_Cell
       rect:
         serializedVersion: 2
-        x: 16
-        y: 208
         x: 432
         y: 528
         width: 64

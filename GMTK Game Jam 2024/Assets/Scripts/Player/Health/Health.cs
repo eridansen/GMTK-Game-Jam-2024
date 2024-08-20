@@ -18,6 +18,11 @@ public class Health: MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        if (_currentHealth < _currentHealth + damage)
+        {
+            Die();
+        }
+        
         if(_coroutine == null)
         {
             _coroutine = StartCoroutine(DecreaseHealthRoutine(damage));
@@ -70,5 +75,10 @@ public class Health: MonoBehaviour
         }
 
         _coroutine = null;
+    }
+    
+    private void Die()
+    {
+        Destroy(gameObject);
     }
 }

@@ -8,7 +8,7 @@ namespace Core
         [SerializeField] private UIModule _uiModule;
         [SerializeField] private AudioManager _audioManager;
         [SerializeField] private SaveModule _saveModule;
-        [SerializeField] private Camera _mainCamera;
+        [SerializeField] private CameraManager _cameraManager;
 
         private void Awake()
         {
@@ -30,7 +30,7 @@ namespace Core
             DontDestroyOnLoad(_uiModule);
             DontDestroyOnLoad(_audioManager);
             DontDestroyOnLoad(_saveModule);
-            DontDestroyOnLoad(_mainCamera);
+            DontDestroyOnLoad(_cameraManager);
         }
         
         private void LoadSoundValues()

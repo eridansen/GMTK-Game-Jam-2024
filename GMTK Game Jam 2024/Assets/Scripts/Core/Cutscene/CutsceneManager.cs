@@ -41,7 +41,7 @@ namespace Core.Cutscene
 
         private IEnumerator DisplaySlide()
         {
-            _nextSlideButton.interactable = false;
+            _nextSlideButton.gameObject.SetActive(false);
             var slide = _currentCutscene.slides[_currentSlideIndex];
 
             if (_cutsceneImage.sprite != slide.image)
@@ -70,7 +70,7 @@ namespace Core.Cutscene
             }
 
             _isTextFullyDisplayed = true;
-            _nextSlideButton.interactable = true;
+            _nextSlideButton.gameObject.SetActive(true);
         }
 
         private void OnNextSlideButtonClicked()
@@ -85,6 +85,7 @@ namespace Core.Cutscene
                 }
                 else
                 {
+                    SaveModule.Instance.SaveIntroCutscene(1);
                     ended?.Invoke();
                 }
             }

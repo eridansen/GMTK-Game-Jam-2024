@@ -694,6 +694,108 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: mini_hp_bar
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 64
+        width: 11
+        height: 3
+      name: text_restart
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 171
+        width: 27
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90f49f92be405ba4e8eb4f1279aefe74
+      internalID: 1292255999
+      spriteID: cdba83793bfa3cb428eac8de8843a302
+      internalID: 1743199701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mini_hp_bar_bg
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 64
+        width: 11
+        height: 3
+      name: text_mainmenu
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 171
+        width: 35
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5ae20356f307404d9a1e2b719945cc1
+      internalID: -1416765255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mini_hp_bar_2
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 48
+        width: 19
+        height: 3
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b115192caa020f84db3febb0b023a0d6
+      internalID: -472924585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mini_hp_bar_2_bg
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 48
+        width: 19
+        height: 3
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24e77c09144f6e24586c9534afc80348
+      internalID: 964930152
+      spriteID: 11374e658e5d08049938b64133bb21a4
+      internalID: -172860869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -710,10 +812,16 @@ TextureImporter:
       background_light: -124906543
       background_light_outline: -1711731659
       block_for_level: -43978168
+      mini_hp_bar: 1292255999
+      mini_hp_bar_2: -472924585
+      mini_hp_bar_2_bg: 964930152
+      mini_hp_bar_bg: -1416765255
       text_back: -192252261
       text_credits: 1242782900
       text_exit: 1635701071
+      text_mainmenu: -172860869
       text_play: 1407955336
+      text_restart: 1743199701
       text_settings: -1117318164
       tmp1_0: 442132885
       tmp1_1: 6811857

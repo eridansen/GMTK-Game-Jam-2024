@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class CancerCell : MonoBehaviour, IDamageable
 {
-    [SerializeField] private float _healthPoint;
-
     [Header("Spray settings")]
     [SerializeField] private SprayedCancer _sprayedPrefab;
     [SerializeField] private float _sprayInterval;

@@ -122,12 +122,12 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.385}
+  m_Offset: {x: -0.00000007947286, y: 0.38499993}
   serializedVersion: 2
-  m_Radius: 0.07
+  m_Radius: 0.096212305
 --- !u!50 &1916927886125439353
 Rigidbody2D:
   serializedVersion: 4
@@ -188,7 +188,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a28f8644f99c6e4aae7d92ba1e7b824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lifeDuration: 60
+  _lifeDuration: 10
+  _xBias: 0.3
+  _yBias: 0.3
 --- !u!114 &1351662604174135692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,8 +218,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 10
-  _speed: 0.1
-  _attackDelay: 0.2
+  _speed: 0.05
+  _attackDelay: 0
   _range: 0
   TargetType: 0
 --- !u!114 &3789440436388982019
@@ -233,7 +235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthBar: {fileID: 6168166461576048841}
-  _maxHealth: 50
+  _maxHealth: 1
   _animationSpeed: 0.05
 --- !u!1 &2154474651070878359
 GameObject:
@@ -477,9 +479,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0066846213, y: 0}
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 1.4896069
 --- !u!114 &7793330546685408501
 MonoBehaviour:
   m_ObjectHideFlags: 0

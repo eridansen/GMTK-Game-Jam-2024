@@ -63,6 +63,7 @@ public class AttackingCellBattleBehaviour : MonoBehaviour
             if(collider.gameObject.TryGetComponent<PlayerCombat>(out  PlayerCombat player))
             {
                 player.Damage(_damage);
+                Destroy(this.gameObject);
             }
         }
     }

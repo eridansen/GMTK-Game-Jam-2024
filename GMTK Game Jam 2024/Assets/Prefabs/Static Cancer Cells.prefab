@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3931609933404793853
 RectTransform:
   m_ObjectHideFlags: 0
@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 6824171020332829467}
   m_Layer: 3
   m_Name: Static Cancer Cells
-  m_TagString: Untagged
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -373,7 +373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd92743674d923f4281b91238e8c4db5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthPoint: 50
+  _healthPoint: 200
   _sprayedPrefab: {fileID: 5659396308683569548, guid: fdf343ed1f4a12242adf16769e30aa8c, type: 3}
   _sprayInterval: 4
   _sprayAmount: 2
@@ -402,5 +402,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthBar: {fileID: 6600183382919264849}
-  _maxHealth: 100
+  _maxHealth: 200
   _animationSpeed: 0.1

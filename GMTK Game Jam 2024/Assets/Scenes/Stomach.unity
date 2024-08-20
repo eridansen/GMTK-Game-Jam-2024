@@ -133,11 +133,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 90.05
+      value: 72.03
       objectReference: {fileID: 0}
     - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 44.23
+      value: 25.22
       objectReference: {fileID: 0}
     - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
       propertyPath: m_LocalPosition.z
@@ -279,11 +279,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 34.1
+      value: 24.3
       objectReference: {fileID: 0}
     - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.13
+      value: 11.83
       objectReference: {fileID: 0}
     - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
       propertyPath: m_LocalPosition.z
@@ -339,130 +339,6 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3176696237150615352, guid: 6504b0a10bcd3174f96f04ab30c88a8c, type: 3}
   m_PrefabInstance: {fileID: 796317500}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &411835227
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1201218023}
-    m_Modifications:
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 74.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.98
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7992978127336691638, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_Name
-      value: Static Cancer Cells (5)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
---- !u!4 &411835228 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-  m_PrefabInstance: {fileID: 411835227}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &518427111
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1201218023}
-    m_Modifications:
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 72.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 25.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7992978127336691638, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_Name
-      value: Static Cancer Cells (6)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
---- !u!4 &518427112 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-  m_PrefabInstance: {fileID: 518427111}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &535198550
 GameObject:
@@ -622,11 +498,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 55.01
+      value: 64.12
       objectReference: {fileID: 0}
     - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 33.11
+      value: 29.08
       objectReference: {fileID: 0}
     - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
       propertyPath: m_LocalPosition.z
@@ -61161,6 +61037,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2202928603877401691, guid: 6504b0a10bcd3174f96f04ab30c88a8c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3176696237150615352, guid: 6504b0a10bcd3174f96f04ab30c88a8c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.9656832
@@ -61325,74 +61205,8 @@ Transform:
   - {fileID: 1510386592}
   - {fileID: 573061699}
   - {fileID: 149678866}
-  - {fileID: 1210073639}
-  - {fileID: 411835228}
-  - {fileID: 518427112}
-  - {fileID: 1532197641}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1210073638
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1201218023}
-    m_Modifications:
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 81.93
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 8.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7992978127336691638, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_Name
-      value: Static Cancer Cells (4)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
---- !u!4 &1210073639 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-  m_PrefabInstance: {fileID: 1210073638}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1386741895
 GameObject:
   m_ObjectHideFlags: 3
@@ -61800,7 +61614,7 @@ Transform:
   m_GameObject: {fileID: 1417897698}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -101.269196, y: -36.578197, z: -8.649356}
+  m_LocalPosition: {x: -110.21357, y: -36.564075, z: -8.649356}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -61899,11 +61713,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 45.98
+      value: 47.04
       objectReference: {fileID: 0}
     - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.95
+      value: 10.3
       objectReference: {fileID: 0}
     - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
       propertyPath: m_LocalPosition.z
@@ -61950,68 +61764,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
   m_PrefabInstance: {fileID: 1510386591}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &1532197640
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1201218023}
-    m_Modifications:
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 59.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 22.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7992978127336691638, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-      propertyPath: m_Name
-      value: Static Cancer Cells (7)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
---- !u!4 &1532197641 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4581619401879084299, guid: 45e9fe6aed8648f4bb9838927359f265, type: 3}
-  m_PrefabInstance: {fileID: 1532197640}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1607546544
 PrefabInstance:
@@ -135223,7 +134975,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -813, y: 384}
+  m_AnchoredPosition: {x: -712, y: 302}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1889855531

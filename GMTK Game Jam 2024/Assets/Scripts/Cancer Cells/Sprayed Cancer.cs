@@ -6,6 +6,9 @@ using UnityEngine.Events;
 public class SprayedCancer : MonoBehaviour, IDamageable
 {
     [SerializeField] private float _lifeDuration;
+    [SerializeField] private float _xBias = 0.3f; // bias towards more x value when Start()
+    [SerializeField] private float _yBias = 0.3f; // bias towards more y value when Start()
+
 
     public UnityAction<Transform> OnPlayerSpotted;
     public UnityAction<SprayedCancer> OnDie;
@@ -16,7 +19,7 @@ public class SprayedCancer : MonoBehaviour, IDamageable
     private AttackingCancerAnimator animator;
     private AttackingCellBattleBehaviour battleBehaviour;
     private Health health;
-
+    
 
     private void Awake()
     {
@@ -36,9 +39,21 @@ public class SprayedCancer : MonoBehaviour, IDamageable
 
     private void Start()
     {
-        Vector2 forceDir = new Vector2(Random.Range(-1f,1f),Random.Range(-1f,1f));
-        float forceMultiplier = 5f;
-        GetComponent<Rigidbody2D>().AddForce(forceDir * forceMultiplier);
+        float x = Random.Range(-1f, 1f);
+        if (Mathf.Abs(x) < 0.5)
+        {
+            x += _xBias * (x / Mathf.Abs(x)); // (x / Mathf.Abs(x)) for sign
+        }
+
+        float y = Random.Range(-1f, 1f);
+        if (Mathf.Abs(y) < 0.5)
+        {
+            y += _yBias * (y / Mathf.Abs(y)); // (y / Mathf.Abs(y)) for sign
+        }
+
+
+        Vector2 forceDir = new Vector2(x, y);
+        GetComponent<Rigidbody2D>().AddForce(forceDir * 10f);
     }
 
     private void SpotPlayer(Transform player)
@@ -58,10 +73,13 @@ public class SprayedCancer : MonoBehaviour, IDamageable
         animator.PlayDeathAnim();
         OnDie?.Invoke(this);
         ObjectPooler.ReturnGameObject(this);
+        Destroy(this.gameObject);
     }
 
     public void Damage(float damageAmount)
     {
-        health.TakeDamage(damageAmount);
+        Die();
+        //Debug.Log("player attacks");
+        //health.TakeDamage(damageAmount);
     }
 }

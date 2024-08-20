@@ -77,24 +77,38 @@ public class PlayerMovement : MonoBehaviour
     private int currentScale = 1;
     private bool isScaling = false;
 
+    [SerializeField] private bool isBig = false;
     private void Scaling()
     {
         if (isScaling) return;
-
-        if (Input.GetButtonDown("Scale Up"))
+        if (Input.GetButtonDown("Scale"))
         {
-            if (currentScale < _arrayOfPlayerScaleSettings.Length - 1)
-            {
-                currentScale++;
-            }
-        }
-        if (Input.GetButtonDown("Scale Down"))
-        {
-            if (currentScale > 0)
+            if (isBig)
             {
                 currentScale--;
+                isBig = false;
+            }
+            else
+            {
+                currentScale++;
+                isBig = true;
             }
         }
+
+//        if (Input.GetButtonDown("Scale Up"))
+//        {
+//            if (currentScale < _arrayOfPlayerScaleSettings.Length - 1)
+ //           {
+   //             currentScale++;
+     //       }
+//        }
+  //      if (Input.GetButtonDown("Scale Down"))
+    //    {
+    //        if (currentScale > 0)
+     //       {
+      //          currentScale--;
+       //     }
+       // }
         if (_currentPlayerScaleSettings != _arrayOfPlayerScaleSettings[currentScale])
         {
             _currentPlayerScaleSettings = _arrayOfPlayerScaleSettings[currentScale];

@@ -25,6 +25,7 @@ public class Health: MonoBehaviour
     }
     public IEnumerator DecreaseHealthRoutine(float damage)
     {
+        Debug.Log(currentHealth);
         currentHealth -= damage;
         if (currentHealth <= 0) 
             currentHealth = 0;

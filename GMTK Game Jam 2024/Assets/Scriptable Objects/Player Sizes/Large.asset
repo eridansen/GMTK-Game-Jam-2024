@@ -17,7 +17,7 @@ MonoBehaviour:
   gravityScale: 1.25
   walkSpeed: 11
   _sprintSpeed: 16
-  jumpSpeed: 12
+  jumpSpeed: 10
   fallSpeed: 10
   _jumpVelocityFalloff: 8
   wallSlideSpeed: 8

@@ -48,6 +48,7 @@ public class CancerCell : MonoBehaviour, IDamageable
     {
         foreach (var attacker in _attackersList)
             attacker.StartAttacking(attackTarget);
+        _attackersList.Clear();
     }
 
 
@@ -64,6 +65,11 @@ public class CancerCell : MonoBehaviour, IDamageable
 
     public void Damage(float damageAmount)
     {
+        _healthPoint -= damageAmount;
+        if ( _healthPoint <= 0)
+        {
+            this.gameObject.SetActive(false);
+        }
         health.TakeDamage(damageAmount);
     }
 }

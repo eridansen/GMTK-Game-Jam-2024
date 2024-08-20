@@ -50,6 +50,7 @@ public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
 
     public void Damage(float damageAmount)
     {
+        if(_currentHealth <= 0) return;
         if (invincibilityCounter > 0) return; // If the player is invincible, return
 
         invincibilityCounter = invincibilityTime; // Set the invincibility counter to the invincibility time

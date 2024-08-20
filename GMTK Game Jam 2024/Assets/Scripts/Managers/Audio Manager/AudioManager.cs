@@ -13,32 +13,12 @@ public class AudioManager : Singleton<AudioManager>
     {
         if (sound.clip == _musicSource.clip)
             return;
-
-        StartCoroutine(ChangeMusic(sound.clip));
-        
+        _musicSource.clip = sound.clip;
+        _musicSource.loop = true;
+        _musicSource.Play();    
     }
     
-    public IEnumerator ChangeMusic(AudioClip newMusic)
-    {
-        float fadeTime = _fadeTime; // Adjust fade time as needed
-        float startVolume = GetMusicVolume();
-
-        while (_musicSource.volume > 0)
-        {
-            _musicSource.volume -= startVolume * Time.deltaTime / fadeTime;
-            yield return null;
-        }
-
-        _musicSource.clip
- = newMusic;
-        _musicSource.Play();
-
-        while (_musicSource.volume < 1)
-        {
-            _musicSource.volume += startVolume * Time.deltaTime / fadeTime;
-            yield return null;
-        }
-    }
+   
 
     public void PlaySoundFXClip(AudioClip audioClip, Transform spawntransform, float volume)
     {

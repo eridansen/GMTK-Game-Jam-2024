@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using System.Linq;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ public class Pool
     public Pool(Component type) { this.PoolType = type; }
 
     public readonly Component PoolType;
-    
+    public int CellCount;
     public List<Component> Instances = new List<Component>();
 
     // To refactor. Find more descriptive name
@@ -20,6 +21,7 @@ public class Pool
 
 public class ObjectPooler : MonoBehaviour
 {
+    const int HARD_CAP = 70;
     private static List<Pool> poolsList = new List<Pool>();
 
     private static GameObject DefaultParent;
@@ -59,7 +61,7 @@ public class ObjectPooler : MonoBehaviour
     {
         Pool pool = null;
         // easier to debug, than with LINQ syntax
-        foreach(Pool p in poolsList)
+        foreach (Pool p in poolsList)
         {
             if (p.PoolType.GetType() == component.GetType())
             {
@@ -68,7 +70,7 @@ public class ObjectPooler : MonoBehaviour
             }
         }
 
-        if(pool == null)
+        if (pool == null)
         {
             pool = new Pool(component);
             poolsList.Add(pool);
@@ -82,7 +84,12 @@ public class ObjectPooler : MonoBehaviour
 
         Component instance = pool.Instances.FirstOrDefault();
 
-        if(instance == null)
+        if (pool.CellCount >= HARD_CAP)
+        {
+            return null;
+        }
+
+        if (instance == null)
         {
             GameObject newInstance = null;
 
@@ -94,12 +101,12 @@ public class ObjectPooler : MonoBehaviour
                 newInstance = Instantiate(component.gameObject, position, rotation);
                 newInstance.transform.SetParent(parent.transform, false);
                 newInstance.gameObject.SetActive(false);
-
                 pool.Instances.Add(newInstance.GetComponent(component.GetType()));
             }
 
             // and return the last one added
             newInstance.gameObject.SetActive(true);
+            pool.CellCount++;
             return newInstance.GetComponent(component.GetType());
         }
         else
@@ -109,6 +116,7 @@ public class ObjectPooler : MonoBehaviour
             instance.gameObject.SetActive(true);
 
             pool.Instances.Remove(instance);
+            pool.CellCount++;
             return instance;
         }
     }
@@ -135,9 +143,9 @@ public class ObjectPooler : MonoBehaviour
                 return DefaultParent;
             case PoolType.Particle:
                 return ParticlePoolParent;
-            case PoolType.Sound: 
+            case PoolType.Sound:
                 return SoundPoolParent;
-            case PoolType.GameObject: 
+            case PoolType.GameObject:
                 return GameObjectPoolParent;
 
             default: return null;
@@ -146,12 +154,12 @@ public class ObjectPooler : MonoBehaviour
     private void OnDisable()
     {
         // remove list if this game object pool is not used
-        foreach(var pool in poolsList)
+        foreach (var pool in poolsList)
         {
-            if(pool.wasUsedThisSession == false)
+            if (pool.wasUsedThisSession == false)
                 pool.usedLastSessions--;
 
-            if(pool.usedLastSessions == -3)
+            if (pool.usedLastSessions == -3)
                 poolsList.Remove(pool);
         }
     }

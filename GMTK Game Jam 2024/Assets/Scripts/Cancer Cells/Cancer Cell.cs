@@ -30,7 +30,10 @@ public class CancerCell : MonoBehaviour, IDamageable
         { 
             var attacker = ObjectPooler.ProvideObject(_sprayedPrefab, transform.position, 
                 _sprayedPrefab.transform.rotation) as SprayedCancer;
-
+                
+            if (attacker==null){
+                return;
+            }
             AddListender(attacker);
         }
     }

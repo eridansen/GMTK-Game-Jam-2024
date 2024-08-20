@@ -374,7 +374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprayedPrefab: {fileID: 5659396308683569548, guid: fdf343ed1f4a12242adf16769e30aa8c, type: 3}
-  _sprayInterval: 4
+  _sprayInterval: 1
   _sprayAmount: 2
 --- !u!114 &3832330970407602855
 MonoBehaviour:
@@ -402,7 +402,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthBar: {fileID: 6600183382919264849}
   _maxHealth: 70
-  _animationSpeed: 0.1
   _currentHealth: 0
 --- !u!1 &8071538033113887273
 GameObject:

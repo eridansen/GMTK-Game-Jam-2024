@@ -253,6 +253,10 @@ public class BossBehaviour : MonoBehaviour, IDamageable
             var attacker = ObjectPooler.ProvideObject(sprayedPrefab, transform.position,
                 sprayedPrefab.transform.rotation) as SprayedCancer;
 
+            if (attacker==null){
+                return;
+            }
+            
             AddListender(attacker);
         }
     }

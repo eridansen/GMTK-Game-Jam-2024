@@ -22,7 +22,7 @@ namespace Core
         private IEnumerator LoadSceneWithLoadingScreenCoroutine(string targetSceneName)
         {
             yield return SceneManager.LoadSceneAsync(_loadingScene);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1.5f);
             
             var asyncLoad = SceneManager.LoadSceneAsync(targetSceneName);
             

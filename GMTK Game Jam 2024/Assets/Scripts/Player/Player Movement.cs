@@ -29,9 +29,7 @@ public class PlayerMovement : MonoBehaviour
         Grounded();
         Animations();
 
-        Debug.Log(isKnockbacked + " knockbacked");
-        Debug.Log(uninterruptibleAnim + " uninterruptible");
-        Debug.Log(isHurt + " hurt");
+
         if (isDashing || isKnockbacked) return;
         if (uninterruptibleAnim || isDead || isHurt)
         {
@@ -53,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
 
     public IEnumerator Knockback(Vector3 direction, Vector2 force, float duration)
     {
+        playerCombat.isAttacking = false;
         isKnockbacked = true;
         float timer = 0;
         while (duration > timer)
@@ -180,8 +179,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Ground Check")]
     [SerializeField] private LayerMask _groundMask; // The layer mask for ground objects
     [SerializeField] private Transform _groundCheck; // The transform representing the position to check for ground
-    [SerializeField] private float _groundCheckRadius = 0.4f; // The radius for ground check
-    private bool isGrounded; // Flag indicating if the player is grounded
+    [SerializeField] private float _groundCheckRadius = 0.8f; // The radius for ground check
+    [SerializeField] private bool isGrounded; // Flag indicating if the player is grounded
 
     // Check if the player is grounded
     private void Grounded()

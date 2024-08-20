@@ -149,13 +149,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ui_button_normal
+      name: Static_Cancer_Cell
       rect:
         serializedVersion: 2
-        x: 16
-        y: 208
+        x: 432
+        y: 532
         width: 64
-        height: 64
+        height: 62
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 4, y: 4, z: 4, w: 4}
@@ -684,6 +684,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Static_Cancer_Cell: 979272501
       background_dark: 1528847696
       background_light: -124906543
       background_light_outline: -1711731659
@@ -787,7 +788,6 @@ TextureImporter:
       ui_button_back_hover: -1294123705
       ui_button_back_normal: -1423210038
       ui_button_back_pressed: 1485864523
-      ui_button_normal: 979272501
       ui_menu_button_hover: -1827079387
       ui_menu_button_pressed: -736023749
       ui_slider_platform_background: 1323826804

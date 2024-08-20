@@ -6,6 +6,6 @@ using UnityEngine;
 [Serializable]
 public class Sound
 {
-    public string? name;
+    public string name;
     public AudioClip clip;
 }

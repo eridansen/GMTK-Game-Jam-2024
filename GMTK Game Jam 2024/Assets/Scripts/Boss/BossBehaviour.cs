@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Core;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -79,6 +80,7 @@ public class BossBehaviour : MonoBehaviour, IDamageable
     [Header("Behaviour")]
     [SerializeField] private Rigidbody2D rigidBody;
     [SerializeField] private float introFallSpeed;
+    [SerializeField] private float deathEndDelay;
     void FixedUpdate()
     {
         if (inIntro)
@@ -122,8 +124,21 @@ public class BossBehaviour : MonoBehaviour, IDamageable
 
     private void Die()
     {
+        var colliders = new Collider2D[rigidBody.attachedColliderCount];
+        rigidBody.GetAttachedColliders(colliders);
+        foreach (var item in colliders)
+        {
+            item.enabled=false;
+        }
+        rigidBody.simulated=false;
+
         ChangeAnimationState(BOSS_DEATH);
         _healthBar.transform.parent.gameObject.SetActive(false);
+        Invoke(nameof(End), deathEndDelay);
+    }
+    void End()
+    {
+        SceneLoader.Instance.LoadSceneWithoutLoadingScreen(Constants.Scenes.Credits);
     }
     #endregion
 

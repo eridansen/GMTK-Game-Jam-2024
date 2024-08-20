@@ -113,6 +113,7 @@ MonoBehaviour:
   enemyPosition: {x: 0, y: 0, z: 0}
   rigidBody: {fileID: 5716904454288585085}
   introFallSpeed: 16
+  deathEndDelay: 3
   animator: {fileID: 7132090192746557767}
 --- !u!50 &5716904454288585085
 Rigidbody2D:
@@ -173,9 +174,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.4}
+  m_Offset: {x: 0, y: 0.3}
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.3
 --- !u!95 &7132090192746557767 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1160356261127867848, guid: ca1ec8db164f02c42ae8be5129494cf2, type: 3}

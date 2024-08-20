@@ -10,6 +10,12 @@ public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
     [SerializeField] private float _currentHealth = 100; // The player's health
     [SerializeField] private float _maxHealth = 100; // The player's maximum health
     [SerializeField] private float _healAmount = 30; // The player's maximum health
+    public Slider healthBar;
+    public Slider adBar;
+    public int maxHealth = 1000;
+    public int currentHealth;
+    public int maxAD = 1000;
+    public int currentAD;
 
     private PlayerMovement playerMovement;
 
@@ -85,12 +91,75 @@ public class PlayerCombat : MonoBehaviour,IDamageable,IHealable
         StartCoroutine(playerMovement.Knockback(direction, knockbackForce, 0.1f)); // Apply the knockback
     }
 
+
+
+    public void SetHealth(int health)
+    {
+        healthBar.value = health;
+    }
+
+    public void SetAD(int AD)
+    {
+        adBar.value = AD;
+    }
+
+    public void SetMaxHealth(int maxHealth)
+    {
+        healthBar.maxValue = maxHealth;
+        healthBar.value = maxHealth;
+    }
+
+    public void SetMaxAD(int maxAD)
+    {
+        adBar.maxValue = maxAD;
+        adBar.value = maxAD;
+    }
+
+    public void DoHeal(int heal)
+    {
+        currentHealth += heal;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+
+    }
+
+    public void AddAD(int addedAD)
+    {
+        currentAD += addedAD;
+        if (currentAD > maxAD)
+        {
+            currentAD = maxAD;
+        }
+
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        if (currentHealth < 0)
+        {
+            currentHealth = 0;
+        }
+
+    }
+
+    public void LoseAD(int lostAD)
+    {
+        currentAD -= lostAD;
+        if (currentAD < 0)
+        {
+            currentAD = 0;
+        }
+
+    }
+
+
+
     public void Heal(float healAmount)
     {
         if(_currentHealth == _maxHealth) return;
-
-        //RESOURCE GOES HERE -if player doesnt have enough resource, return out of function
-
 
         playerMovement.PlayParticleEffectInstance(healParticlePosition.position,_healParticles);
         _currentHealth += healAmount;

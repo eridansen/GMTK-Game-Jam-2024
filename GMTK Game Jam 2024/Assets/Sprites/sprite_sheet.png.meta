@@ -673,6 +673,90 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: HPBarFull
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 81
+        width: 86
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19a92fcebd5d4c843ac9da5c7deefed1
+      internalID: 1018497374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HPBarEmpty
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 64
+        width: 86
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e657901cbbaad84d950bef587938032
+      internalID: -900506750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ADBarFull
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 32
+        width: 86
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b029ad5399ca3da4fbee411e0b02332c
+      internalID: 216886429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ADBarEmpty
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 16
+        width: 86
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaa53e8f6406397469b897b160b5039b
+      internalID: -537495780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -684,6 +768,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      ADBarEmpty: -537495780
+      ADBarFull: 216886429
+      HPBarEmpty: -900506750
+      HPBarFull: 1018497374
       background_dark: 1528847696
       background_light: -124906543
       background_light_outline: -1711731659

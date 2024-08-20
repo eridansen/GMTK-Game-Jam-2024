@@ -9,21 +9,22 @@ namespace Core.Cutscene
     public class CutsceneManager : MonoBehaviour
     {
         public event Action ended;
-        
+
         [SerializeField] private Image _cutsceneImage;
         [SerializeField] private TextMeshProUGUI _cutsceneText;
         [SerializeField] private float _typingSpeed = 0.05f;
         [SerializeField] private Button _nextSlideButton;
-        
+
         private bool _isTextFullyDisplayed = false;
         private int _currentSlideIndex = 0;
         private Cutscene _currentCutscene;
+        private Coroutine _typingCoroutine;
 
         public void PlayCutscene(Cutscene cutscene)
         {
             _currentCutscene = cutscene;
             _currentSlideIndex = 0;
-            StartCoroutine(DisplaySlide());
+            _typingCoroutine = StartCoroutine(DisplaySlide());
         }
 
         private void Awake()
@@ -33,7 +34,10 @@ namespace Core.Cutscene
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Escape) || 
+                Input.GetKeyDown(KeyCode.KeypadEnter) || 
+                Input.GetKeyDown(KeyCode.Space) || 
+                Input.GetKeyDown(KeyCode.Mouse0))
             {
                 OnNextSlideButtonClicked();
             }
@@ -81,7 +85,7 @@ namespace Core.Cutscene
                 if (_currentSlideIndex < _currentCutscene.slides.Length)
                 {
                     _isTextFullyDisplayed = false;
-                    StartCoroutine(DisplaySlide());
+                    _typingCoroutine = StartCoroutine(DisplaySlide());
                 }
                 else
                 {
@@ -89,6 +93,19 @@ namespace Core.Cutscene
                     ended?.Invoke();
                 }
             }
+            else if (_typingCoroutine != null)
+            {
+                StopCoroutine(_typingCoroutine);
+                ShowFullText();
+            }
+        }
+
+        private void ShowFullText()
+        {
+            var slide = _currentCutscene.slides[_currentSlideIndex];
+            _cutsceneText.text = slide.text;
+            _isTextFullyDisplayed = true;
+            _nextSlideButton.gameObject.SetActive(true);
         }
     }
 }

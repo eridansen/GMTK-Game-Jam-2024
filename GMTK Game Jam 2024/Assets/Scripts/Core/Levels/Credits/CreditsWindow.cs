@@ -9,15 +9,16 @@ namespace Core.Levels.Credits
         [SerializeField] private Button _mainMenuButton;
         [SerializeField] private Button _mathaeuzButton;
         [SerializeField] private Button _sebastianButton;
-        [SerializeField] private Button _andybugsButton;
         [SerializeField] private Button _rySixButton;
         [SerializeField] private Button _jakeButton;
         [SerializeField] private Button _jIssacGadientButton;
+        [SerializeField] private Button _andybugsButton;
         [SerializeField] private Button _jkingyButton;
         [SerializeField] private Button _knoxyButton;
         [SerializeField] private Button _bevisavaButton;
         [SerializeField] private Button _minHtetNaingButton;
         [SerializeField] private Button _reixlenButton;
+        [SerializeField] private Button _nimbusButton;
         
         private CreditsController _levelController;
 
@@ -32,19 +33,20 @@ namespace Core.Levels.Credits
 
             _mathaeuzButton.onClick.AddListener(OnMathaeuzButtonClicked);
             _sebastianButton.onClick.AddListener(OnSebastianButtonClicked);
-            _andybugsButton.onClick.AddListener(OnAndybugsButtonClicked);
             _rySixButton.onClick.AddListener(OnRySixButtonClicked);
             _jakeButton.onClick.AddListener(OnJakeButtonClicked);
             _jIssacGadientButton.onClick.AddListener(OnJIssacGadientButtonClicked);
+            _andybugsButton.onClick.AddListener(OnAndybugsButtonClicked);
             _jkingyButton.onClick.AddListener(OnJkingyButtonClicked);
             _knoxyButton.onClick.AddListener(OnKnoxyButtonClicked);
             _bevisavaButton.onClick.AddListener(OnBevisavaButtonClicked);
             _minHtetNaingButton.onClick.AddListener(OnMinHtetNaingButtonClicked);
             _reixlenButton.onClick.AddListener(OnReixlenButtonClicked);
+            _nimbusButton.onClick.AddListener(OnNimbusButtonClicked);
 
             SetBackgroundPosition();
         }
-        
+
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Escape))
@@ -76,11 +78,6 @@ namespace Core.Levels.Credits
             Application.OpenURL("https://zebravibe.itch.io/");
         }
 
-        private void OnAndybugsButtonClicked()
-        {
-            Application.OpenURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
-        }
-
         private void OnRySixButtonClicked()
         {
             Application.OpenURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
@@ -93,12 +90,17 @@ namespace Core.Levels.Credits
 
         private void OnJIssacGadientButtonClicked()
         {
-            Application.OpenURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+            Application.OpenURL("http://jisaacgadient.com");
         }
 
-        private void OnJkingyButtonClicked()
+        private void OnAndybugsButtonClicked()
         {
             Application.OpenURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+        }
+        
+        private void OnJkingyButtonClicked()
+        {
+            Application.OpenURL("https://jkingy.itch.io/");
         }
 
         private void OnKnoxyButtonClicked()
@@ -117,6 +119,11 @@ namespace Core.Levels.Credits
         }
 
         private void OnReixlenButtonClicked()
+        {
+            Application.OpenURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+        }
+        
+        private void OnNimbusButtonClicked()
         {
             Application.OpenURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
         }

@@ -7,13 +7,13 @@ public class Health: MonoBehaviour
     [SerializeField] private Image _healthBar;
     [SerializeField] private float _maxHealth;
     [SerializeField] [Range(0.01f,0.1f)] private float _animationSpeed;
-    
-    private float currentHealth;
+    [Space]
+    [SerializeField] private float _currentHealth;
     private Coroutine _coroutine;
 
     private void Awake()
     {
-        currentHealth = _maxHealth;
+        _currentHealth = _maxHealth;
     }
 
     public void TakeDamage(float damage)
@@ -25,12 +25,12 @@ public class Health: MonoBehaviour
     }
     public IEnumerator DecreaseHealthRoutine(float damage)
     {
-        currentHealth -= damage;
-        if (currentHealth <= 0) 
-            currentHealth = 0;
+        _currentHealth -= damage;
+        if (_currentHealth <= 0) 
+            _currentHealth = 0;
 
         float initValue = _healthBar.fillAmount;
-        float percent = currentHealth / _maxHealth;
+        float percent = _currentHealth / _maxHealth;
 
         float iterator = 0;
 
@@ -53,12 +53,12 @@ public class Health: MonoBehaviour
     }
     public IEnumerator IncreaseHealthRoutine(float health)
     {
-        currentHealth += health;
-        if(currentHealth > _maxHealth)
-            currentHealth = _maxHealth;
+        _currentHealth += health;
+        if(_currentHealth > _maxHealth)
+            _currentHealth = _maxHealth;
 
         float initValue = _healthBar.fillAmount;
-        float percent = currentHealth / _maxHealth;
+        float percent = _currentHealth / _maxHealth;
 
         float iterator = 0;
 

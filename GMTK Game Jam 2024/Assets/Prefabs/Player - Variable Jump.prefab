@@ -4863,7 +4863,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1844218797
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -9894,7 +9894,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1844218797
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 50
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -14909,7 +14909,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1844218797
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -19770,7 +19770,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1844218797
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -24658,7 +24658,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1844218797
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -24709,7 +24709,7 @@ GameObject:
   - component: {fileID: 2355171440720677522}
   m_Layer: 0
   m_Name: Player - Variable Jump
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24758,7 +24758,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 72
   _groundCheck: {fileID: 5146704905538920242}
-  _groundCheckRadius: 0.2
+  _groundCheckRadius: 0.8
   _moveSpeed: 15
   _sprintSpeed: 20
   stepSounds:
@@ -24809,6 +24809,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fdb501f847fff604e8640dab7d923f62, type: 3}
   - {fileID: 8300000, guid: 72b1207e7e3b91745b7c201fed27722a, type: 3}
   - {fileID: 8300000, guid: 834cb51b82286ab41b37ce3823f7bfe4, type: 3}
+  isDashing: 0
   isHurt: 0
   _jumpParticles: {fileID: 2289836411998567861}
   _wallSlideParticles: {fileID: 2441873929085212816}
@@ -24828,6 +24829,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentHealth: 100
   _maxHealth: 100
+  _healAmount: 30
   _healthBar: {fileID: 0}
   _healthBarSpeed: 0.01
   _hurtSounds:
@@ -24960,7 +24962,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1844218797
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 5
   m_Sprite: {fileID: 5310734300583017369, guid: 56d146e54be9c114cb49a4110b774f95, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

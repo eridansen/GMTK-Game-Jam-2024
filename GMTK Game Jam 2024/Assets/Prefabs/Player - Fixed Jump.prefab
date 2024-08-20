@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 8075746453525793457}
   m_Layer: 0
   m_Name: Player - Fixed Jump
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,10 +96,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 72
   _groundCheck: {fileID: 5251115822037495468}
-  _groundCheckRadius: 0.4
-  isGrounded: 0
+  _groundCheckRadius: 0.8
   _moveSpeed: 13
   _sprintSpeed: 18
+  stepSounds: []
   _playerCanDoubleJump: 1
   _fixedJumpHeight: 1
   _coyoteTime: 0.2
@@ -107,6 +107,7 @@ MonoBehaviour:
   _jumpSpeed: 25
   _fallSpeed: 8
   _jumpVelocityFalloff: 14
+  _jumpSounds: []
   _playerCanWallJump: 1
   _wallMask:
     serializedVersion: 2
@@ -116,10 +117,18 @@ MonoBehaviour:
   _wallJumpingTime: 0.2
   _wallJumpingDuration: 0.2
   _wallJumpingPower: {x: 3, y: 18}
+  _wallJumpSounds: []
   _playerCanDash: 1
   _dashPower: 12
   _dashDuration: 0.3
   _dashCooldown: 1
+  _dashSounds: []
+  isDashing: 0
+  isHurt: 0
+  _jumpParticles: {fileID: 0}
+  _wallSlideParticles: {fileID: 0}
+  walkParticles: {fileID: 0}
+  runParticles: {fileID: 0}
 --- !u!114 &3115458107164886595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,9 +143,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentHealth: 100
   _maxHealth: 100
+  _healAmount: 30
   _healthBar: {fileID: 6014822613910188363}
   _healthBarSpeed: 0.01
+  _hurtSounds: []
+  invincibilityTime: 1
+  knockbackForce: {x: 15, y: 5}
+  enemyPosition: {x: 0, y: 0, z: 0}
+  _healParticles: {fileID: 0}
+  healParticlePosition: {fileID: 0}
   _damage: 50
+  _attackSounds: []
   isAttacking: 0
 --- !u!61 &2491978547867221738
 BoxCollider2D:
@@ -249,7 +266,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1844218797
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 2274195281304535021, guid: 56d146e54be9c114cb49a4110b774f95, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -259,7 +276,7 @@ SpriteRenderer:
   m_Size: {x: 0.34375, y: 0.71875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &8075746453525793457

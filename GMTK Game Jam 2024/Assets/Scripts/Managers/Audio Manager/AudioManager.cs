@@ -1,5 +1,5 @@
 using Helpers;
-using System;
+using System.Collections;
 using UnityEngine;
 
 public class AudioManager : Singleton<AudioManager>
@@ -7,12 +7,37 @@ public class AudioManager : Singleton<AudioManager>
     [SerializeField] private AudioSource _musicSource;
     [SerializeField] private AudioSource _sfxSource;
 
+    [SerializeField] private float _fadeTime = 0f;
+
     public void PlayMusicClip(Sound sound)
     {
-        AudioClip audioClip = sound.clip;
-        _musicSource.clip = audioClip;
-        _musicSource.loop = true;
+        if (sound.clip == _musicSource.clip)
+            return;
+
+        StartCoroutine(ChangeMusic(sound.clip));
+        
+    }
+    
+    public IEnumerator ChangeMusic(AudioClip newMusic)
+    {
+        float fadeTime = _fadeTime; // Adjust fade time as needed
+        float startVolume = GetMusicVolume();
+
+        while (_musicSource.volume > 0)
+        {
+            _musicSource.volume -= startVolume * Time.deltaTime / fadeTime;
+            yield return null;
+        }
+
+        _musicSource.clip
+ = newMusic;
         _musicSource.Play();
+
+        while (_musicSource.volume < 1)
+        {
+            _musicSource.volume += startVolume * Time.deltaTime / fadeTime;
+            yield return null;
+        }
     }
 
     public void PlaySoundFXClip(AudioClip audioClip, Transform spawntransform, float volume)
@@ -33,9 +58,7 @@ public class AudioManager : Singleton<AudioManager>
     public void PlayRandomSoundFXClip(AudioClip[] audioClip, Transform spawntransform, float volume)
     {
         int randomIndex = UnityEngine.Random.Range(0, audioClip.Length);
-        
-        PlaySoundFXClip(audioClip[randomIndex], spawntransform, volume);
-        
+        PlaySoundFXClip(audioClip[randomIndex], spawntransform, GetSfxVolume() * volume);
     }
 
     public void SetMusicVolume(float volume)

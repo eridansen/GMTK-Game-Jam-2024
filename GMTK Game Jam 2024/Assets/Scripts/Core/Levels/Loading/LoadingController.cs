@@ -2,7 +2,7 @@
 
 namespace Core.Levels.Loading
 {
-    public class LoadingController: MonoBehaviour
+    public class LoadingController : MonoBehaviour
     {
         [SerializeField] private GameObject _windowPrefab;
         private GameObject _window;

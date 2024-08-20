@@ -1,6 +1,9 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using Core;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,7 +27,7 @@ public class BossBehaviour : MonoBehaviour, IDamageable
 
     [HideInInspector] public Vector3 enemyPosition = Vector3.zero; // The position of the enemy that hit the player 
 
-    private float invincibilityCounter = 0; // The counter for the invincibility time
+    private float invencibilityDeadline = 0; // The counter for the invincibility time
     #endregion
 
     public void SetHealthBar(Image bar)
@@ -40,10 +43,10 @@ public class BossBehaviour : MonoBehaviour, IDamageable
 
     public void Damage(float damageAmount)
     {
-        if (inIntro || invincibilityCounter > 0) return; // If the player is invincible, return
+        if (inIntro || invencibilityDeadline > Time.time) return; // If the player is invincible, return
 
-        invincibilityCounter = invincibilityTime; // Set the invincibility counter to the invincibility time
-        ChangeAnimationState(BOSS_HURT);
+        invencibilityDeadline = Time.time + invincibilityTime; // Set the invincibility counter to the invincibility time
+        AttemptDisplayHurt();
         AudioManager.Instance.PlayRandomSoundFXClip(_hurtSounds, transform, 0.5f); // Play a random hurt sound
 
         _currentHealth -= damageAmount;
@@ -81,6 +84,7 @@ public class BossBehaviour : MonoBehaviour, IDamageable
     [SerializeField] private Rigidbody2D rigidBody;
     [SerializeField] private float introFallSpeed;
     [SerializeField] private float deathEndDelay;
+
     void FixedUpdate()
     {
         if (inIntro)
@@ -89,7 +93,16 @@ public class BossBehaviour : MonoBehaviour, IDamageable
             return;
         }
 
+        if (combatState == BOSS_SAW)
+        {
+            rigidBody.velocity = sawVelocity;
+        }
+
         isGrounded = false;
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        WallHit();
     }
 
     void OnCollisionStay2D(Collision2D collision)
@@ -120,6 +133,145 @@ public class BossBehaviour : MonoBehaviour, IDamageable
     {
         inIntro = false;
         ChangeAnimationState(BOSS_IDLE);
+        StartCoroutine(nameof(CombatRoutine));
+    }
+    [SerializeField] private float idleDurationBase = 0.5f;
+    [SerializeField] private float idleDurationHealth = 0.5f;
+    [SerializeField] private float wiggleForce = 10;
+    [SerializeField] private float wiggleInterval = 0.3f;
+
+    [Header("Spray settings")]
+    [SerializeField] private SprayedCancer sprayedPrefab;
+    [SerializeField] private float sprayDelay = 0.2f;
+    [SerializeField] private float sprayAmount = 2;
+    [SerializeField] private GameObject clawCollider;
+
+    [Header("Saw settings")]
+    [SerializeField] private float sawDuration = 3f;
+    [SerializeField] private float sawSpeed = 16f;
+    [SerializeField] private GameObject sawCollider;
+
+    string combatState = BOSS_IDLE;
+    Vector2 sawVelocity;
+    IEnumerator CombatRoutine()
+    {
+        var idleTransitions = new[]{
+            BOSS_CRAB,
+            BOSS_SAW_START,
+        };
+
+        var lastState = "";
+        while (_currentHealth > 0)
+        {
+            if (lastState == combatState)
+            {
+                yield return new WaitForSeconds(0.1f);
+                continue;
+            }
+            lastState = combatState;
+            ChangeAnimationState(combatState);
+            switch (combatState)
+            {
+                default:
+                    break;
+                case BOSS_IDLE:
+                    StartCoroutine(nameof(WiggleRoutine));
+                    yield return new WaitForSeconds(idleDurationBase + idleDurationHealth * (_currentHealth / _maxHealth));
+                    combatState = idleTransitions[UnityEngine.Random.Range(0, idleTransitions.Length)];
+                    break;
+                case BOSS_CRAB:
+                    yield return new WaitForSeconds(sprayDelay);
+                    Spray();
+                    clawCollider.SetActive(true);
+                    break;
+                case BOSS_SAW:
+                    yield return new WaitForSeconds(sawDuration);
+                    sawCollider.SetActive(false);
+                    combatState = BOSS_IDLE;
+                    rigidBody.gravityScale = 1;
+                    break;
+            }
+        }
+    }
+    IEnumerator WiggleRoutine()
+    {
+        while (combatState == BOSS_IDLE)
+        {
+            if (isGrounded)
+            {
+                rigidBody.velocity = UnityEngine.Random.Range(-wiggleForce, wiggleForce) * Vector2.right;
+            }
+            yield return new WaitForSeconds(wiggleInterval);
+        }
+    }
+
+    void AttemptDisplayHurt()
+    {
+        if (combatState != BOSS_IDLE)
+        {
+            return;
+        }
+        ChangeAnimationState(BOSS_HURT);
+    }
+
+    void BossCrabEnd()
+    {
+        clawCollider.SetActive(false);
+        combatState = BOSS_IDLE;
+    }
+
+    float[] validSawAngles = new[] {
+        45f,135f
+    };
+    void BossSawStart()
+    {
+        combatState = BOSS_SAW;
+        var angle = Mathf.PI * validSawAngles[UnityEngine.Random.Range(0, validSawAngles.Length)] / 360;
+        sawVelocity = new Vector2(
+            Mathf.Cos(angle),
+            Mathf.Cos(angle)
+        ) * sawSpeed;
+        rigidBody.gravityScale = 0;
+        sawCollider.SetActive(true);
+    }
+
+    float shiftDelay;
+    void WallHit()
+    {
+        if (combatState != BOSS_SAW)
+        {
+            return;
+        }
+        sawVelocity = new Vector2(sawVelocity.y, -sawVelocity.x);
+    }
+
+    private List<SprayedCancer> _attackersList = new List<SprayedCancer>();
+    private void Spray()
+    {
+        for (int i = 0; i < sprayAmount; i++)
+        {
+            var attacker = ObjectPooler.ProvideObject(sprayedPrefab, transform.position,
+                sprayedPrefab.transform.rotation) as SprayedCancer;
+
+            AddListender(attacker);
+        }
+    }
+    private void AddListender(SprayedCancer sprayedCancer)
+    {
+        _attackersList.Add(sprayedCancer);
+        sprayedCancer.OnPlayerSpotted += HiveAttack;
+        sprayedCancer.OnDie += RemoveListener;
+    }
+    public void RemoveListener(SprayedCancer listener)
+    {
+        listener.OnPlayerSpotted -= HiveAttack;
+        _attackersList.Remove(listener);
+    }
+
+    private void HiveAttack(Transform attackTarget)
+    {
+        foreach (var attacker in _attackersList)
+            attacker.StartAttacking(attackTarget);
     }
 
     private void Die()
@@ -128,9 +280,9 @@ public class BossBehaviour : MonoBehaviour, IDamageable
         rigidBody.GetAttachedColliders(colliders);
         foreach (var item in colliders)
         {
-            item.enabled=false;
+            item.enabled = false;
         }
-        rigidBody.simulated=false;
+        rigidBody.simulated = false;
 
         ChangeAnimationState(BOSS_DEATH);
         _healthBar.transform.parent.gameObject.SetActive(false);
@@ -167,15 +319,7 @@ public class BossBehaviour : MonoBehaviour, IDamageable
     }
     void BossHurtEnd()
     {
-
-    }
-    void BossCrabEnd()
-    {
-
-    }
-    void BossSawStart()
-    {
-
+        ChangeAnimationState(BOSS_IDLE);
     }
     #endregion
 }

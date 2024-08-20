@@ -14,6 +14,8 @@
 
             public const string FirstLevel = "FirstLevel";
             
+            public const string BossLevel = "BossLevel";
+            
             public static string Credits = "Credits";
         }
 

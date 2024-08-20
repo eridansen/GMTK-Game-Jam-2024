@@ -57,6 +57,9 @@ public class AudioManager : Singleton<AudioManager>
             
     public void PlayRandomSoundFXClip(AudioClip[] audioClip, Transform spawntransform, float volume)
     {
+        if (audioClip.Length==0){
+            return;
+        }
         int randomIndex = UnityEngine.Random.Range(0, audioClip.Length);
         PlaySoundFXClip(audioClip[randomIndex], spawntransform, GetSfxVolume() * volume);
     }

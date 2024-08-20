@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb9d5286bb59448cb09a0452bc4d8f1e, type: 3}
+  m_Name: Intro
+  m_EditorClassIdentifier: 
+  slides:
+  - image: {fileID: 0}
+    text: "\u201CMother\u2026\u201D"
+  - image: {fileID: -1459604418, guid: c55e6b7ea557794469f4798669dd11ec, type: 3}
+    text: "\u201C\u2026I\u2019ve never known if you can really hear me and process
+      my speech, encased in the stasis chamber\u2026\u201D"
+  - image: {fileID: -1459604418, guid: c55e6b7ea557794469f4798669dd11ec, type: 3}
+    text: "\u201C\u2026and it\u2019s taken me decades, but I\u2019ve finally integrated
+      a resonant array\u2026\u201D"
+  - image: {fileID: -1459604418, guid: c55e6b7ea557794469f4798669dd11ec, type: 3}
+    text: "\u201C\u2026the scinnsuit is fully functional!\u201D"
+  - image: {fileID: -1876556569, guid: c55e6b7ea557794469f4798669dd11ec, type: 3}
+    text: "\u201CDad abandoned us right after you got sick\u2026\u201D"
+  - image: {fileID: -1876556569, guid: c55e6b7ea557794469f4798669dd11ec, type: 3}
+    text: "\u201C\u2026but I have never left your side.\u201D"
+  - image: {fileID: -1876556569, guid: c55e6b7ea557794469f4798669dd11ec, type: 3}
+    text: "\u201CI\u2019ve kept you frozen in time ever since, to stop the disease
+      from spreading inside your body\u2026\u201D"
+  - image: {fileID: -1876556569, guid: c55e6b7ea557794469f4798669dd11ec, type: 3}
+    text: "\u201C\u2026until I could enter it myself to destroy all the cells trying
+      to consume you from within!\u201D"
+  - image: {fileID: -266385784, guid: c55e6b7ea557794469f4798669dd11ec, type: 3}
+    text: "\u201CI\u2019m ready, Mother\u2026\u201D"
+  - image: {fileID: -266385784, guid: c55e6b7ea557794469f4798669dd11ec, type: 3}
+    text: "\u201C\u2026whether we both survive or die here, you will always be in
+      my heart\u2026\u201D"
+  - image: {fileID: -266385784, guid: c55e6b7ea557794469f4798669dd11ec, type: 3}
+    text: "\u201C\u2026and I may be trapped always in yours!\u201D"

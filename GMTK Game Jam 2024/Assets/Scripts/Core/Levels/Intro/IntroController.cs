@@ -1,12 +1,17 @@
 ﻿using UnityEngine;
 
-namespace Core.Levels.Loading
+namespace Core.Levels.Intro
 {
-    public class LoadingController : MonoBehaviour
+    public class IntroController : MonoBehaviour
     {
         [SerializeField] private GameObject _windowPrefab;
         private GameObject _window;
 
+        public void GoToFirstLevel()
+        {
+            SceneLoader.Instance.LoadSceneWithLoadingScreen(Constants.Scenes.FirstLevel);
+        }
+        
         private void Awake()
         {
             InitializeWindow();
@@ -15,7 +20,7 @@ namespace Core.Levels.Loading
         private void InitializeWindow()
         {
             _window = UIModule.Instance.InstantiateUIPrefab(_windowPrefab);
-            _window.GetComponent<LoadingWindow>().Initialize(this);
+            _window.GetComponent<IntroWindow>().Initialize(this);
         }
     }
 }

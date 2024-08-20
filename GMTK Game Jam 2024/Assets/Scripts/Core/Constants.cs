@@ -9,6 +9,8 @@
             public const string MainMenu = "MainMenu";
             
             public const string Settings = "Settings";
+            
+            public static string Intro = "Intro";
 
             public const string FirstLevel = "FirstLevel";
             

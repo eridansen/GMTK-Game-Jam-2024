@@ -1,5 +1,4 @@
 using Helpers;
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -22,7 +21,7 @@ public class AudioManager : Singleton<AudioManager>
     public IEnumerator ChangeMusic(AudioClip newMusic)
     {
         float fadeTime = _fadeTime; // Adjust fade time as needed
-        float startVolume = _musicSource.volume;
+        float startVolume = GetMusicVolume();
 
         while (_musicSource.volume > 0)
         {
@@ -59,9 +58,7 @@ public class AudioManager : Singleton<AudioManager>
     public void PlayRandomSoundFXClip(AudioClip[] audioClip, Transform spawntransform, float volume)
     {
         int randomIndex = UnityEngine.Random.Range(0, audioClip.Length);
-        
-        PlaySoundFXClip(audioClip[randomIndex], spawntransform, volume);
-        
+        PlaySoundFXClip(audioClip[randomIndex], spawntransform, GetSfxVolume() * volume);
     }
 
     public void SetMusicVolume(float volume)

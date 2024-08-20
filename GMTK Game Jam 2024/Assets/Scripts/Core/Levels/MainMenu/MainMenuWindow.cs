@@ -51,7 +51,7 @@ namespace Core.Levels.MainMenu
         private void OnStartButtonClicked()
         {
             SaveBackgroundPosition();
-            SceneLoader.Instance.LoadSceneWithLoadingScreen(Constants.Scenes.FirstLevel);
+            SceneLoader.Instance.LoadSceneWithLoadingScreen(Constants.Scenes.Intro);
         }
         
         private void OnSettingsButtonClicked()

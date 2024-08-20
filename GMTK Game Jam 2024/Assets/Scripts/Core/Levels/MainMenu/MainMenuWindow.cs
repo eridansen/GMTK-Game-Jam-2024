@@ -52,7 +52,7 @@ namespace Core.Levels.MainMenu
         {
             SaveBackgroundPosition();
             var isIntroWatched = SaveModule.Instance.LoadIntroCutscene();
-            SceneLoader.Instance.LoadSceneWithLoadingScreen(isIntroWatched == 1 ? Constants.Scenes.FirstLevel : Constants.Scenes.Intro);
+            SceneLoader.Instance.LoadSceneWithLoadingScreen(isIntroWatched == 1 ? Constants.Scenes.FirstLevel : Constants.Scenes.Intro); // firstLevel
         }
         
         private void OnSettingsButtonClicked()

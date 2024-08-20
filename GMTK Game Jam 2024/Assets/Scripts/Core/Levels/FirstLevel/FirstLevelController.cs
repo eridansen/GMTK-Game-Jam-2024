@@ -1,10 +1,12 @@
-﻿using Cinemachine;
+﻿using Cancer_Cells;
+using Cinemachine;
 using UnityEngine;
 
 namespace Core.Levels.FirstLevel
 {
     public class FirstLevelController : MonoBehaviour
     {
+        [SerializeField] private CancerCellMonitor _cancerCellMonitor;
         [SerializeField] private CinemachineVirtualCamera _virtualCamera;
         [SerializeField] private GameObject _windowPrefab;
         [SerializeField] private GameObject _playerPrefab;
@@ -19,7 +21,7 @@ namespace Core.Levels.FirstLevel
             InitializeCamera();
             InitializeWindow();
         }
-        
+
         private void SpawnPlayer()
         {
             _player = Instantiate(_playerPrefab, _spawnPoint.position, Quaternion.identity);
@@ -34,7 +36,7 @@ namespace Core.Levels.FirstLevel
         private void InitializeWindow()
         {
             _window = UIModule.Instance.InstantiateUIPrefab(_windowPrefab);
-            _window.GetComponent<FirstLevelWindow>().Initialize(this, _playerCombat);
+            _window.GetComponent<FirstLevelWindow>().Initialize(this, _playerCombat, _cancerCellMonitor);
         }
     }
 }

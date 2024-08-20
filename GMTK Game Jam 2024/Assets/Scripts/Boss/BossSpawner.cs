@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class BossSpawner : MonoBehaviour
@@ -9,8 +7,13 @@ public class BossSpawner : MonoBehaviour
     [SerializeField] private float delay;
     [SerializeField] private Transform spawnPosition;
     [SerializeField] private BossBehaviour prefab;
-    [SerializeField] private Image bossBar;
+    [SerializeField] private Image _bossBar;
 
+    public void SetBossBar(Image bossBar)
+    {
+        _bossBar = bossBar;
+    }
+    
     void Awake()
     {
         Invoke(nameof(PopPod), delay);
@@ -30,8 +33,8 @@ public class BossSpawner : MonoBehaviour
         animator.speed = 0;
 
         var instance = Instantiate(prefab, spawnPosition.position, spawnPosition.rotation, null);
-        bossBar.transform.parent.gameObject.SetActive(true);
-        instance.SetHealthBar(bossBar);
+        _bossBar.transform.parent.gameObject.SetActive(true);
+        instance.SetHealthBar(_bossBar);
         enabled = false;
     }
 }

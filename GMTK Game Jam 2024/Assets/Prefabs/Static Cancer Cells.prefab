@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 5847143709028259130}
   - component: {fileID: 3832330970407602855}
   - component: {fileID: 6824171020332829467}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Static Cancer Cells
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -300,7 +300,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0018972456, y: -0.013281137}
   m_SpriteTilingProperty:
     border: {x: 0.04, y: 0.04, z: 0.04, w: 0.04}
     pivot: {x: 0.5, y: 0.5}
@@ -311,7 +311,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.63192266, y: 0.6015659}
   m_EdgeRadius: 0
 --- !u!50 &6446226409904332003
 Rigidbody2D:

@@ -18,7 +18,7 @@ public class MusicZone : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            AudioManager.Instance.StopMusic();
+            // AudioManager.Instance.StopMusic();
         }
     }
 }

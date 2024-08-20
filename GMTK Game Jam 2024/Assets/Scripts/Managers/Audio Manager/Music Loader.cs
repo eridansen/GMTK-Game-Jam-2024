@@ -13,6 +13,6 @@ public class MusicLoader : MonoBehaviour
 
     private void OnDestroy()
     {
-        AudioManager.Instance.StopMusic();
+        // AudioManager.Instance.StopMusic();
     }
 }

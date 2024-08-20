@@ -51,8 +51,7 @@ namespace Core.Levels.MainMenu
         private void OnStartButtonClicked()
         {
             SaveBackgroundPosition();
-            var isIntroWatched = 0;
-            //var isIntroWatched = SaveModule.Instance.LoadIntroCutscene();
+            var isIntroWatched = SaveModule.Instance.LoadIntroCutscene();
             SceneLoader.Instance.LoadSceneWithLoadingScreen(isIntroWatched == 1 ? Constants.Scenes.FirstLevel : Constants.Scenes.Intro);
         }
         
